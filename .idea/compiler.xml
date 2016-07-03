@@ -23,11 +23,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="openDiary" />
+        <module name="RocketMQ" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.6">
       <module name="openDiary" target="1.5" />
+      <module name="RocketMQ" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

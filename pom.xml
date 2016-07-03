@@ -6,7 +6,11 @@
 
     <groupId>com.sjf.open</groupId>
     <artifactId>open-diary</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>RocketMQ</module>
+    </modules>
 
     <properties>
         <rocketmq.version>3.2.6</rocketmq.version>
