@@ -12,9 +12,11 @@ import org.elasticsearch.search.aggregations.bucket.terms.StringTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.metrics.MetricsAggregationBuilder;
 import org.elasticsearch.search.aggregations.metrics.avg.Avg;
+import org.elasticsearch.search.aggregations.metrics.cardinality.Cardinality;
 import org.elasticsearch.search.aggregations.metrics.max.Max;
 import org.elasticsearch.search.aggregations.metrics.min.Min;
 import org.elasticsearch.search.aggregations.metrics.stats.Stats;
+import org.elasticsearch.search.aggregations.metrics.stats.extended.ExtendedStats;
 import org.elasticsearch.search.aggregations.metrics.sum.Sum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,8 +29,8 @@ import java.util.Map;
  *
  * 聚合功能
  */
-public class Aggregations {
-    private static final Logger logger = LoggerFactory.getLogger(Aggregations.class);
+public class MetricsAggregations {
+    private static final Logger logger = LoggerFactory.getLogger(MetricsAggregations.class);
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";
@@ -217,12 +219,77 @@ public class Aggregations {
         logger.info("员工最小年龄 {} 最大年龄 {} 平均年龄 {} 总年龄 {} 人数 {} 聚合名称 {}",min, max, avg, sum, count, agg.getName());
     }
 
+    /**
+     *  聚合之extendStats
+     * @param client
+     * @param index
+     * @param type
+     */
+    public static void extendStatsAggregation(Client client, String index, String type) {
+
+        // 聚合条件
+        MetricsAggregationBuilder extendStatsAggregation = AggregationBuilders.extendedStats("extendStats_age").field("age");
+
+        // 聚合
+        SearchRequestBuilder requestBuilder = client.prepareSearch();
+        requestBuilder.setIndices(index);
+        requestBuilder.setTypes(type);
+        requestBuilder.addAggregation(extendStatsAggregation);
+
+        // 执行
+        SearchResponse searchResponse = requestBuilder.execute().actionGet();
+
+        // 结果
+        ExtendedStats agg = searchResponse.getAggregations().get("extendStats_age");
+        double min = agg.getMin();
+        double max = agg.getMax();
+        double avg = agg.getAvg();
+        double sum = agg.getSum();
+        long count = agg.getCount();
+        double stdDeviation = agg.getStdDeviation();
+        double sumOfSquares = agg.getSumOfSquares();
+        double variance = agg.getVariance();
+
+        logger.info("员工最小年龄 {} 最大年龄 {} 平均年龄 {} 总年龄 {} 人数 {} stdDeviation {} sumOfSquares {} variance {} 聚合名称 {}",min, max, avg, sum, count, stdDeviation, sumOfSquares, variance, agg.getName());
+    }
+
+
+    /**
+     *  聚合之avg
+     * @param client
+     * @param index
+     * @param type
+     */
+    public static void cardinalityAggregation(Client client, String index, String type) {
+
+        // 聚合条件
+        MetricsAggregationBuilder cardinalityAggregation = AggregationBuilders.cardinality("cardinality_age").field("age");
+
+        // 聚合
+        SearchRequestBuilder requestBuilder = client.prepareSearch();
+        requestBuilder.setIndices(index);
+        requestBuilder.setTypes(type);
+        requestBuilder.addAggregation(cardinalityAggregation);
+
+        // 执行
+        SearchResponse searchResponse = requestBuilder.execute().actionGet();
+
+        // 结果
+        Cardinality agg = searchResponse.getAggregations().get("cardinality_age");
+        long value = agg.getValue();
+
+        logger.info("员工基数 {} 聚合名称 {}",value,agg.getName());
+    }
+
     public static void main(String[] args) {
         Client client = Common.createClient();
-        //minAggregation(client,INDEX,TYPE);
-        //maxAggregation(client,INDEX,TYPE);
-        //sumAggregation(client,INDEX,TYPE);
-        //avgAggregation(client,INDEX,TYPE);
-        statsAggregation(client,INDEX,TYPE);
+        // minAggregation(client,INDEX,TYPE);
+        // maxAggregation(client,INDEX,TYPE);
+        // sumAggregation(client,INDEX,TYPE);
+        // avgAggregation(client,INDEX,TYPE);
+        // statsAggregation(client,INDEX,TYPE);
+        // extendStatsAggregation(client,INDEX,TYPE);
+        cardinalityAggregation(client,INDEX,TYPE);
+        client.close();
     }
 }

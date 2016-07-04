@@ -1,12 +1,18 @@
 package com.sjf.open.api;
 
+import com.sjf.open.common.Common;
 import org.elasticsearch.action.get.GetRequestBuilder;
 import org.elasticsearch.action.get.GetResponse;
+import org.elasticsearch.action.search.MultiSearchRequestBuilder;
 import org.elasticsearch.action.search.MultiSearchResponse;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +22,9 @@ import org.slf4j.LoggerFactory;
 public class Search {
 
     private static final Logger logger = LoggerFactory.getLogger(Search.class);
+
+    private static String INDEX = "qunar-index";
+    private static String TYPE = "employee";
 
     /**
      * Get请求Builder
@@ -52,27 +61,113 @@ public class Search {
     }
 
     /**
-     * 查询所有
+     * 查询全部
+     * 
+     * @param client
      */
     public static void searchAll(Client client) {
         SearchResponse searchResponse = client.prepareSearch().execute().actionGet();
-        logger.info("[matchAll on the whole cluster with all default options] --- {}", searchResponse.toString());
+        // 结果
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+        logger.info("----------searAll");
+        for (SearchHit searchHit : searchHits) {
+            logger.info("----------hit source {}", searchHit.getSource());
+        } // for
     }
 
-    public static void multiSearch(Client client) {
-        SearchRequestBuilder srb1 = client.prepareSearch().setQuery(QueryBuilders.queryStringQuery("football")).setSize(1);
-        SearchRequestBuilder srb2 = client.prepareSearch().setQuery(QueryBuilders.matchQuery("first_name", "gao")).setSize(1);
+    /**
+     * search之MultiSearch
+     * @param client
+     * @param index
+     * @param type
+     */
+    public static void multiSearch(Client client,String index,String type) {
 
-        MultiSearchResponse sr = client.prepareMultiSearch()
-                .add(srb1)
-                .add(srb2)
-                .execute().actionGet();
+        // 第一个搜索
+        SearchRequestBuilder searchRequestBuilderOne = client.prepareSearch();
+        searchRequestBuilderOne.setIndices(index);
+        searchRequestBuilderOne.setTypes(type);
+        searchRequestBuilderOne.setQuery(QueryBuilders.queryStringQuery("football"));
 
-        long nbHits = 0;
-        for (MultiSearchResponse.Item item : sr.getResponses()) {
+        // 第二个搜索
+        SearchRequestBuilder searchRequestBuilderTwo = client.prepareSearch();
+        searchRequestBuilderTwo.setIndices(index);
+        searchRequestBuilderTwo.setTypes(type);
+        searchRequestBuilderTwo.setQuery(QueryBuilders.matchQuery("first_name", "gao"));
+
+        // 多搜索
+        MultiSearchRequestBuilder multiSearchRequestBuilder = client.prepareMultiSearch();
+        multiSearchRequestBuilder.add(searchRequestBuilderOne);
+        multiSearchRequestBuilder.add(searchRequestBuilderTwo);
+
+        // 执行
+        MultiSearchResponse multiSearchResponse = multiSearchRequestBuilder.execute().actionGet();
+
+        // 结果
+        MultiSearchResponse.Item[] responseItem = multiSearchResponse.getResponses();
+        logger.info("----------multiSearch");
+        for (MultiSearchResponse.Item item : responseItem) {
             SearchResponse response = item.getResponse();
-            logger.info("multiSearch---- " + response);
-            nbHits += response.getHits().getTotalHits();
-        }
+            logger.info("----------multiSearch---Item");
+            SearchHit[] searchHits = response.getHits().getHits();
+            for(SearchHit searchHit : searchHits){
+                logger.info("---------- hit source {}",searchHit.getSource());
+            } // for
+        } //for
+    }
+
+    /**
+     * 分页查询
+     * 
+     * @param client
+     * @param index
+     * @param type
+     * @param pageIndex
+     * @param pageSize
+     */
+    public static void searchByPage(Client client, String index, String type, int pageIndex, int pageSize) {
+        // 搜索
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
+        searchRequestBuilder.setTypes(type);
+        // 设置起始页
+        searchRequestBuilder.setFrom(pageIndex);
+        // 设置每页个数
+        searchRequestBuilder.setSize(pageSize);
+
+        // 执行
+        SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
+
+        // 结果
+        logger.info("----------searchByPage");
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+        for (SearchHit searchHit : searchHits) {
+            logger.info("----------hit source {}", searchHit.getSource());
+        } // for
+    }
+
+    /**
+     * 使用scroll进行查询
+     * 
+     * @param client
+     * @param index
+     * @param type
+     */
+    public static void searchByScroll(Client client, String index, String type) {
+        SearchResponse searchResponse = client.prepareSearch(index).setTypes(type).setSearchType(SearchType.DEFAULT)
+                .setScroll(new TimeValue(20000)).execute().actionGet();
+        logger.info("scroll_id {}", searchResponse.getScrollId());
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+        for (SearchHit searchHit : searchHits) {
+            logger.info("hit source {}", searchHit.getSource());
+        } // for
+    }
+
+    public static void main(String[] args) {
+        Client client = Common.createClient();
+//        searchByScroll(client,INDEX,TYPE);
+//        searchAll(client);
+//        searchByPage(client, INDEX, TYPE, 2, 3);
+        multiSearch(client,INDEX,TYPE);
+        client.close();
     }
 }
