@@ -7,8 +7,6 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.search.aggregations.AggregationBuilder;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.global.Global;
-import org.elasticsearch.search.aggregations.metrics.MetricsAggregationBuilder;
-import org.elasticsearch.search.aggregations.metrics.min.Min;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

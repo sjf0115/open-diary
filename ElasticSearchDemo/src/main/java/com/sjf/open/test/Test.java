@@ -45,36 +45,6 @@ public class Test {
         return client;
     }
 
-    /**
-     * @param index
-     * @param type
-     * @param id
-     * */
-    private static void put(String index, String type, String id) {
-        try {
-            XContentBuilder xContentBuilder = XContentFactory.jsonBuilder()
-                    .startObject()
-                    .field("first_name", "zhou")
-                    .field("last_name", "qi")
-                    .field("age", 28)
-                    .field("about", "我来自新疆队")
-                    .startArray("interests")
-                    .value("basketball")
-                    .value("book")
-                    .endArray()
-                    .endObject();
-
-            IndexResponse response = client.prepareIndex(index, type, id)
-                    .setSource(xContentBuilder)
-                    .setTTL(8000)
-                    .execute().actionGet();
-
-            logger.info("indexes a JSON document into an index result {}",response.toString());
-        } catch (IOException e) {
-            logger.error("indexes a JSON document into an index fail {} ", e);
-        }
-    }
-
     public static void main(String[] args) {
 
         client = Init();

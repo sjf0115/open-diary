@@ -12,7 +12,6 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,13 +64,17 @@ public class Search {
      * 
      * @param client
      */
-    public static void searchAll(Client client) {
-        SearchResponse searchResponse = client.prepareSearch().execute().actionGet();
+    public static void searchAll(Client client,String index,String type) {
+        // 搜索
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
+        searchRequestBuilder.setTypes(type);
+        // 执行
+        SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
         // 结果
         SearchHit[] searchHits = searchResponse.getHits().getHits();
-        logger.info("----------searAll");
+        logger.info("----------searchAll");
         for (SearchHit searchHit : searchHits) {
-            logger.info("----------hit source {}", searchHit.getSource());
+            logger.info("----------hit source: id {} source {}", searchHit.getId(), searchHit.getSource());
         } // for
     }
 
@@ -165,9 +168,9 @@ public class Search {
     public static void main(String[] args) {
         Client client = Common.createClient();
 //        searchByScroll(client,INDEX,TYPE);
-//        searchAll(client);
+        searchAll(client,INDEX,"student");
 //        searchByPage(client, INDEX, TYPE, 2, 3);
-        multiSearch(client,INDEX,TYPE);
+//        multiSearch(client,INDEX,TYPE);
         client.close();
     }
 }
