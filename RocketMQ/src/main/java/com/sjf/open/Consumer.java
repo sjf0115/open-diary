@@ -95,7 +95,6 @@ public class Consumer {
     private static void registerMessageListener(DefaultMQPushConsumer consumer) {
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             // 默认messageList里只有一条消息，可以通过设置consumeMessageBatchMaxSize参数来批量接收消息
-            @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> messageList, ConsumeConcurrentlyContext context) {
                 logger.info("{} Receive New Messages {}", Thread.currentThread().getName(), messageList.size());
                 consumeSubscribleMessage(messageList);
