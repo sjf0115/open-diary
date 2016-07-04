@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="267f9f46-6ccc-4061-a294-2f76d178b873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/common/Common.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElasticSearchDemo/target/classes/com/sjf/open/api/Aggregations.class" afterPath="$PROJECT_DIR$/ElasticSearchDemo/target/classes/com/sjf/open/api/Aggregations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElasticSearchDemo/target/classes/com/sjf/open/test/Test.class" afterPath="$PROJECT_DIR$/ElasticSearchDemo/target/classes/com/sjf/open/test/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/api/Aggregations.java" afterPath="$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/api/Aggregations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/test/Test.java" afterPath="$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/test/Test.java" />
     </list>
     <ignored path="openDiary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +31,8 @@
       <file leaf-file-name="Aggregations.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/api/Aggregations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="77" column="11" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="11" />
+            <state relative-caret-position="363">
+              <caret line="213" column="34" selection-start-line="213" selection-start-column="34" selection-end-line="213" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -838,12 +833,12 @@
       <workItem from="1467557531225" duration="1094000" />
       <workItem from="1467558644922" duration="184000" />
       <workItem from="1467559694993" duration="105000" />
-      <workItem from="1467597973488" duration="10022000" />
+      <workItem from="1467597973488" duration="10810000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11405000" />
+    <option name="totallyTimeSpent" value="12193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-7" width="1920" height="1087" extended-state="6" />
@@ -1072,8 +1067,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/api/Aggregations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="77" column="11" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="11" />
+        <state relative-caret-position="363">
+          <caret line="213" column="34" selection-start-line="213" selection-start-column="34" selection-end-line="213" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
