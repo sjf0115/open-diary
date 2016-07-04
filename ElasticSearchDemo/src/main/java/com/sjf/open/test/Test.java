@@ -81,27 +81,12 @@ public class Test {
         }
     }
 
-
-
-    private static void terminateAfter() {
-        SearchResponse sr = client.prepareSearch(INDEX)
-                .setTerminateAfter(4)
-                .get();
-
-        if (sr.isTerminatedEarly()) {
-            logger.info("is terminatedEarly");
-        }
-        else{
-            logger.info("is not terminatedEarly");
-        }
-        logger.info("SearchResponse ---- " + sr);
-    }
-
     public static void main(String[] args) {
 
         client = Init();
 
-        Aggregations.aggs(client,INDEX,TYPE);
+//        Aggregations.aggs(client,INDEX,TYPE);
+        Aggregations.minAggregation(client,INDEX,TYPE);
 
         client.close();
     }
