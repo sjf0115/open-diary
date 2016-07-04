@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * Created by xiaosi on 16-7-4.
  */
 public class TermLevelQuery {
-    private static final Logger logger = LoggerFactory.getLogger(Search.class);
+    private static final Logger logger = LoggerFactory.getLogger(TermLevelQuery.class);
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";

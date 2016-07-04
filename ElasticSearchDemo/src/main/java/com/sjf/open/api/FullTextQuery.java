@@ -15,7 +15,7 @@ import com.sjf.open.common.Common;
  * Created by xiaosi on 16-7-4.
  */
 public class FullTextQuery {
-    private static final Logger logger = LoggerFactory.getLogger(Search.class);
+    private static final Logger logger = LoggerFactory.getLogger(FullTextQuery.class);
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";
