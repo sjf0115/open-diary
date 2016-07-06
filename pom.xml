@@ -12,6 +12,7 @@
     <modules>
         <module>RocketMQ</module>
         <module>ElasticSearchDemo</module>
+        <module>BaseOperation</module>
     </modules>
 
     <properties>
