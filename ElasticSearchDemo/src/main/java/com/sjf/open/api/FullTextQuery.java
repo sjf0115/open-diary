@@ -18,8 +18,10 @@ public class FullTextQuery {
     private static final Logger logger = LoggerFactory.getLogger(FullTextQuery.class);
 
     private static String INDEX = "qunar-index";
+    private static String TEST_INDEX = "test-index";
     private static String TYPE = "employee";
     private static String STUDENT_TYPE = "student";
+    private static String STU_TYPE = "stu";
 
     /**
      * 返回查询结果
@@ -31,7 +33,7 @@ public class FullTextQuery {
         SearchHit[] searchHits = searchResponse.getHits().getHits();
         logger.info("----------termMatch size {}", searchHits.length);
         for (SearchHit searchHit : searchHits) {
-            logger.info("----------hit source: id {} source{}", searchHit.getId(), searchHit.getSource());
+            logger.info("----------hit source: id {} score {} source{}", searchHit.getId(), searchHit.getScore(), searchHit.getSource());
         } // for
     }
 
@@ -42,7 +44,7 @@ public class FullTextQuery {
      * @param index
      * @param type
      */
-    public static void matchAll(Client client, String index, String type) {
+    public static void matchAllQuery(Client client, String index, String type) {
 
         // Query
         QueryBuilder queryBuilder = QueryBuilders.matchAllQuery();
@@ -66,10 +68,10 @@ public class FullTextQuery {
      * @param index
      * @param type
      */
-    public static void match(Client client, String index, String type) {
+    public static void matchQuery(Client client, String index, String type) {
 
         // Query
-        QueryBuilder queryBuilder = QueryBuilders.matchQuery("school", "西安电子科技大学");
+        QueryBuilder queryBuilder = QueryBuilders.matchQuery("college", "计算机学院2");
 
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
@@ -90,7 +92,7 @@ public class FullTextQuery {
      * @param index
      * @param type
      */
-    public static void multiMatch(Client client, String index, String type) {
+    public static void multiMatchQuery(Client client, String index, String type) {
 
         // Query
         QueryBuilder queryBuilder = QueryBuilders.multiMatchQuery("football", "about", "interests");
@@ -107,11 +109,35 @@ public class FullTextQuery {
         queryResult(searchResponse);
     }
 
+    /**
+     * query之stringQuery
+     * @param client
+     * @param index
+     * @param type
+     */
+    public static void stringQuery(Client client, String index, String type) {
+
+        // Query
+        QueryBuilder queryBuilder = QueryBuilders.queryStringQuery("+西安电子科技大学 -计算机学院");
+
+        // Search
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
+        searchRequestBuilder.setTypes(type);
+        searchRequestBuilder.setQuery(queryBuilder);
+
+        // 执行
+        SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
+
+        // 结果
+        queryResult(searchResponse);
+    }
+
     public static void main(String[] args) {
         Client client = Common.createClient();
-         matchAll(client,INDEX,TYPE);
-        // match(client,INDEX,STUDENT_TYPE);
-        // multiMatch(client,INDEX,TYPE);
+//         matchAllQuery(client,INDEX,TYPE);
+         matchQuery(client,TEST_INDEX,STU_TYPE);
+        // multiMatchQuery(client,INDEX,TYPE);
+//         stringQuery(client,INDEX,STUDENT_TYPE);
         client.close();
     }
 }

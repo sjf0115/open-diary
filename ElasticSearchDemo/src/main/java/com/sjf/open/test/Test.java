@@ -3,6 +3,8 @@ package com.sjf.open.test;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.sjf.open.api.MetricsAggregations;
 import org.elasticsearch.action.index.IndexResponse;
@@ -45,12 +47,29 @@ public class Test {
         return client;
     }
 
+    /**
+     * 中文分词
+     * @param str
+     * @return
+     */
+    public static String checkChinese(String str){
+        String sb = new String();
+        Pattern pattern = Pattern.compile("[\u3007\u4E00-\u9FCB\uE815-\uE864]");//只匹配一个中文字符
+        Matcher matcher = pattern.matcher(str);
+        while(matcher.find()){
+            sb += matcher.group()+";";
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
 
         client = Init();
 
 //        Aggregations.aggs(client,INDEX,TYPE);
-        MetricsAggregations.minAggregation(client,INDEX,TYPE);
+//        MetricsAggregations.minAggregation(client,INDEX,TYPE);
+
+        logger.info("{}",checkChinese("college of computer"));
 
         client.close();
     }

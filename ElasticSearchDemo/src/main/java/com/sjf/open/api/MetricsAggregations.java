@@ -4,10 +4,10 @@ import com.sjf.open.common.Common;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.aggregations.Aggregation;
 import org.elasticsearch.search.aggregations.AggregationBuilder;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
-import org.elasticsearch.search.aggregations.bucket.terms.LongTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.StringTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.metrics.MetricsAggregationBuilder;
@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,6 +35,8 @@ public class MetricsAggregations {
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";
+    private static String TEST_INDEX = "test-index";
+    private static String STU_TYPE = "stu";
 
     /**
      * 聚合统计
@@ -44,44 +47,39 @@ public class MetricsAggregations {
     public static void aggs(Client client, String index, String type) {
 
         // 聚合条件
-        AggregationBuilder ageAggregationBuilder = AggregationBuilders.terms("by_age").field("age");
+        AggregationBuilder collegeAggregationBuilder = AggregationBuilders.terms("by_college").field("college");
         // 子聚合条件
-        AggregationBuilder firstNameAggregationBuilder = AggregationBuilders.terms("by_firstName").field("first_name");
+        AggregationBuilder sexAggregationBuilder = AggregationBuilders.terms("by_sex").field("sex");
         // 聚合条件下添加子聚合条件
-        ageAggregationBuilder.subAggregation(firstNameAggregationBuilder);
+        collegeAggregationBuilder.subAggregation(sexAggregationBuilder);
 
         // 聚合
         SearchRequestBuilder requestBuilder = client.prepareSearch();
         requestBuilder.setIndices(index);
         requestBuilder.setTypes(type);
-        requestBuilder.addAggregation(ageAggregationBuilder);
+        requestBuilder.setQuery(QueryBuilders.matchQuery("college","计算机学院"));
+        requestBuilder.addAggregation(collegeAggregationBuilder);
 
         // 执行
         SearchResponse searchResponse = requestBuilder.execute().actionGet();
 
         // 结果
         Map<String, Aggregation> aggMap = searchResponse.getAggregations().asMap();
-
-        LongTerms gradeTerms = (LongTerms) aggMap.get("by_age");
-
-        Iterator<Terms.Bucket> ageBucketIte = gradeTerms.getBuckets().iterator();
-
-        while (ageBucketIte.hasNext()) {
-            Terms.Bucket ageBucket = ageBucketIte.next();
-            logger.info("{} 年龄 有 {} 个员工 {}", ageBucket.getKey(), ageBucket.getDocCount());
-            StringTerms firstNameTerms = (StringTerms) ageBucket.getAggregations().asMap().get("by_firstName");
-            Iterator<Terms.Bucket> firstNameBucketIte = firstNameTerms.getBuckets().iterator();
-            while (firstNameBucketIte.hasNext()) {
-                Terms.Bucket firstNameBucket = firstNameBucketIte.next();
-                logger.info("--- {} 年龄 姓 {} 有 {} 个员工", ageBucket.getKey(), firstNameBucket.getKey(),
-                        firstNameBucket.getDocCount());
+        StringTerms collegeTerms = (StringTerms) aggMap.get("by_college");
+        List<Terms.Bucket> collegeBucketList = collegeTerms.getBuckets();
+        for(Terms.Bucket collegeBucket : collegeBucketList){
+            logger.info("[{}] 有 {} 个学生", collegeBucket.getKey(), collegeBucket.getDocCount());
+            StringTerms sexTerms = (StringTerms) collegeBucket.getAggregations().asMap().get("by_sex");
+            List<Terms.Bucket> sexBucketList = sexTerms.getBuckets();
+            for(Terms.Bucket sexBucket : sexBucketList){
+                logger.info("--- [{}] 中 [{}] 有 {} 个", collegeBucket.getKey(), sexBucket.getKey(), sexBucket.getDocCount());
             } // while
-        } // while
+        }//for
     }
 
     /**
-     * https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/_metrics_aggregations.html 最小值
-     *  聚合之min
+     * https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/_metrics_aggregations.html 最小值 聚合之min
+     * 
      * @param client
      * @param index
      * @param type
@@ -104,11 +102,12 @@ public class MetricsAggregations {
         Min agg = searchResponse.getAggregations().get("min_age");
         double value = agg.getValue();
 
-        logger.info("员工中最小年龄 {} 聚合名称 {}",value,agg.getName());
+        logger.info("员工中最小年龄 {} 聚合名称 {}", value, agg.getName());
     }
 
     /**
-     *  聚合之max
+     * 聚合之max
+     * 
      * @param client
      * @param index
      * @param type
@@ -131,11 +130,12 @@ public class MetricsAggregations {
         Max agg = searchResponse.getAggregations().get("max_age");
         double value = agg.getValue();
 
-        logger.info("员工中最大年龄 {} 聚合名称 {}",value,agg.getName());
+        logger.info("员工中最大年龄 {} 聚合名称 {}", value, agg.getName());
     }
 
     /**
-     *  聚合之sum
+     * 聚合之sum
+     * 
      * @param client
      * @param index
      * @param type
@@ -158,11 +158,12 @@ public class MetricsAggregations {
         Sum agg = searchResponse.getAggregations().get("sum_age");
         double value = agg.getValue();
 
-        logger.info("员工总年龄 {} 聚合名称 {}",value,agg.getName());
+        logger.info("员工总年龄 {} 聚合名称 {}", value, agg.getName());
     }
 
     /**
-     *  聚合之avg
+     * 聚合之avg
+     * 
      * @param client
      * @param index
      * @param type
@@ -185,11 +186,12 @@ public class MetricsAggregations {
         Avg agg = searchResponse.getAggregations().get("avg_age");
         double value = agg.getValue();
 
-        logger.info("员工平均年龄 {} 聚合名称 {}",value,agg.getName());
+        logger.info("员工平均年龄 {} 聚合名称 {}", value, agg.getName());
     }
 
     /**
-     *  聚合之stats
+     * 聚合之stats
+     * 
      * @param client
      * @param index
      * @param type
@@ -216,11 +218,12 @@ public class MetricsAggregations {
         double sum = agg.getSum();
         long count = agg.getCount();
 
-        logger.info("员工最小年龄 {} 最大年龄 {} 平均年龄 {} 总年龄 {} 人数 {} 聚合名称 {}",min, max, avg, sum, count, agg.getName());
+        logger.info("员工最小年龄 {} 最大年龄 {} 平均年龄 {} 总年龄 {} 人数 {} 聚合名称 {}", min, max, avg, sum, count, agg.getName());
     }
 
     /**
-     *  聚合之extendStats
+     * 聚合之extendStats
+     * 
      * @param client
      * @param index
      * @param type
@@ -228,7 +231,8 @@ public class MetricsAggregations {
     public static void extendStatsAggregation(Client client, String index, String type) {
 
         // 聚合条件
-        MetricsAggregationBuilder extendStatsAggregation = AggregationBuilders.extendedStats("extendStats_age").field("age");
+        MetricsAggregationBuilder extendStatsAggregation = AggregationBuilders.extendedStats("extendStats_age")
+                .field("age");
 
         // 聚合
         SearchRequestBuilder requestBuilder = client.prepareSearch();
@@ -250,12 +254,13 @@ public class MetricsAggregations {
         double sumOfSquares = agg.getSumOfSquares();
         double variance = agg.getVariance();
 
-        logger.info("员工最小年龄 {} 最大年龄 {} 平均年龄 {} 总年龄 {} 人数 {} stdDeviation {} sumOfSquares {} variance {} 聚合名称 {}",min, max, avg, sum, count, stdDeviation, sumOfSquares, variance, agg.getName());
+        logger.info("员工最小年龄 {} 最大年龄 {} 平均年龄 {} 总年龄 {} 人数 {} stdDeviation {} sumOfSquares {} variance {} 聚合名称 {}", min,
+                max, avg, sum, count, stdDeviation, sumOfSquares, variance, agg.getName());
     }
 
-
     /**
-     *  聚合之avg
+     * 聚合之avg
+     * 
      * @param client
      * @param index
      * @param type
@@ -263,7 +268,8 @@ public class MetricsAggregations {
     public static void cardinalityAggregation(Client client, String index, String type) {
 
         // 聚合条件
-        MetricsAggregationBuilder cardinalityAggregation = AggregationBuilders.cardinality("cardinality_age").field("age");
+        MetricsAggregationBuilder cardinalityAggregation = AggregationBuilders.cardinality("cardinality_age")
+                .field("age");
 
         // 聚合
         SearchRequestBuilder requestBuilder = client.prepareSearch();
@@ -278,7 +284,7 @@ public class MetricsAggregations {
         Cardinality agg = searchResponse.getAggregations().get("cardinality_age");
         long value = agg.getValue();
 
-        logger.info("员工基数 {} 聚合名称 {}",value,agg.getName());
+        logger.info("员工基数 {} 聚合名称 {}", value, agg.getName());
     }
 
     public static void main(String[] args) {
@@ -289,7 +295,8 @@ public class MetricsAggregations {
         // avgAggregation(client,INDEX,TYPE);
         // statsAggregation(client,INDEX,TYPE);
         // extendStatsAggregation(client,INDEX,TYPE);
-        cardinalityAggregation(client,INDEX,TYPE);
+        // cardinalityAggregation(client, INDEX, TYPE);
+        aggs(client,TEST_INDEX,STU_TYPE);
         client.close();
     }
 }

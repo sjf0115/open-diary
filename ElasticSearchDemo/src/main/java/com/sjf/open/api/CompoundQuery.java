@@ -4,6 +4,7 @@ import com.sjf.open.common.Common;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
@@ -19,6 +20,8 @@ public class CompoundQuery {
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";
     private static String STUDENT_TYPE = "student";
+    private static String TEST_INDEX = "test-index";
+    private static String STU_TYPE = "stu";
 
     /**
      * 返回查询结果
@@ -48,13 +51,20 @@ public class CompoundQuery {
         // "21")).must(QueryBuilders.termQuery("sex", "girl"));
         // QueryBuilder queryBuilder = QueryBuilders.boolQuery().must(QueryBuilders.termQuery("age",
         // "21")).mustNot(QueryBuilders.termQuery("sex", "girl"));
-        QueryBuilder queryBuilder = QueryBuilders.boolQuery().must(QueryBuilders.termQuery("age", "21"))
-                .should(QueryBuilders.termQuery("sex", "girl"));
+
+        BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
+        boolQueryBuilder.must(QueryBuilders.termQuery("sex","boy"));
+
+        BoolQueryBuilder subBoolQueryBuilder = QueryBuilders.boolQuery();
+        subBoolQueryBuilder.should(QueryBuilders.termQuery("college","计算机学院"));
+        subBoolQueryBuilder.should(QueryBuilders.termQuery("college","计算机学院2"));
+
+        boolQueryBuilder.must(subBoolQueryBuilder);
 
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
         searchRequestBuilder.setTypes(type);
-        searchRequestBuilder.setQuery(queryBuilder);
+        searchRequestBuilder.setQuery(boolQueryBuilder);
 
         // 执行
         SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
@@ -89,8 +99,8 @@ public class CompoundQuery {
 
     public static void main(String[] args) {
         Client client = Common.createClient();
-//        boolQuery(client, INDEX, STUDENT_TYPE);
-        indicesQuery(client, INDEX, "qunar",STUDENT_TYPE);
+        boolQuery(client, TEST_INDEX, STU_TYPE);
+//        indicesQuery(client, INDEX, "qunar",STUDENT_TYPE);
         client.close();
     }
 }

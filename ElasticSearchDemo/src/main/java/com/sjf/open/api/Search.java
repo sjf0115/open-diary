@@ -24,6 +24,8 @@ public class Search {
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";
+    private static String TEST_INDEX = "test-index";
+    private static String STU_TYPE = "stu";
 
     /**
      * Get请求Builder
@@ -64,7 +66,7 @@ public class Search {
      * 
      * @param client
      */
-    public static void searchAll(Client client,String index,String type) {
+    public static void searchAll(Client client, String index, String type) {
         // 搜索
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
         searchRequestBuilder.setTypes(type);
@@ -80,11 +82,12 @@ public class Search {
 
     /**
      * search之MultiSearch
+     * 
      * @param client
      * @param index
      * @param type
      */
-    public static void multiSearch(Client client,String index,String type) {
+    public static void multiSearch(Client client, String index, String type) {
 
         // 第一个搜索
         SearchRequestBuilder searchRequestBuilderOne = client.prepareSearch();
@@ -113,10 +116,10 @@ public class Search {
             SearchResponse response = item.getResponse();
             logger.info("----------multiSearch---Item");
             SearchHit[] searchHits = response.getHits().getHits();
-            for(SearchHit searchHit : searchHits){
-                logger.info("---------- hit source {}",searchHit.getSource());
+            for (SearchHit searchHit : searchHits) {
+                logger.info("---------- hit source {}", searchHit.getSource());
             } // for
-        } //for
+        } // for
     }
 
     /**
@@ -156,21 +159,38 @@ public class Search {
      * @param type
      */
     public static void searchByScroll(Client client, String index, String type) {
-        SearchResponse searchResponse = client.prepareSearch(index).setTypes(type).setSearchType(SearchType.DEFAULT)
-                .setScroll(new TimeValue(20000)).execute().actionGet();
-        logger.info("scroll_id {}", searchResponse.getScrollId());
-        SearchHit[] searchHits = searchResponse.getHits().getHits();
-        for (SearchHit searchHit : searchHits) {
-            logger.info("hit source {}", searchHit.getSource());
-        } // for
+        // 搜索条件
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch();
+        searchRequestBuilder.setIndices(index);
+        searchRequestBuilder.setTypes(type);
+        searchRequestBuilder.setScroll(new TimeValue(60000));
+        searchRequestBuilder.setSize(2);
+
+        // 执行
+        SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
+        logger.info("--------- scroll_id {}", searchResponse.getScrollId());
+
+        while (true) {
+            logger.info("---------- scroll");
+            SearchHit[] searchHits = searchResponse.getHits().getHits();
+            for (SearchHit searchHit : searchHits) {
+                String source = searchHit.getSource().toString();
+                logger.info("--------- source {}", source);
+            } // for
+            searchResponse = client.prepareSearchScroll(searchResponse.getScrollId()).setScroll(new TimeValue(60000))
+                    .execute().actionGet();
+            if (searchResponse.getHits().getHits().length == 0) {
+                break;
+            } // if
+        } // while
     }
 
     public static void main(String[] args) {
         Client client = Common.createClient();
-//        searchByScroll(client,INDEX,TYPE);
-        searchAll(client,INDEX,"student");
-//        searchByPage(client, INDEX, TYPE, 2, 3);
-//        multiSearch(client,INDEX,TYPE);
+//        searchByScroll(client, TEST_INDEX, STU_TYPE);
+         searchAll(client, TEST_INDEX, STU_TYPE);
+        // searchByPage(client, INDEX, TYPE, 2, 3);
+        // multiSearch(client,INDEX,TYPE);
         client.close();
     }
 }
