@@ -23,6 +23,7 @@ public class Search {
     private static final Logger logger = LoggerFactory.getLogger(Search.class);
 
     private static String INDEX = "qunar-index";
+    private static String BEHAVIOR_INDEX = "identitifier_count20160702";
     private static String TYPE = "employee";
     private static String TEST_INDEX = "test-index";
     private static String STU_TYPE = "stu";
@@ -92,14 +93,12 @@ public class Search {
         // 第一个搜索
         SearchRequestBuilder searchRequestBuilderOne = client.prepareSearch();
         searchRequestBuilderOne.setIndices(index);
-        searchRequestBuilderOne.setTypes(type);
-        searchRequestBuilderOne.setQuery(QueryBuilders.queryStringQuery("football"));
+        searchRequestBuilderOne.setQuery(QueryBuilders.matchPhraseQuery("gid", "1438C0C1-7C17-6C14-E119-1702A7940572"));
 
         // 第二个搜索
         SearchRequestBuilder searchRequestBuilderTwo = client.prepareSearch();
         searchRequestBuilderTwo.setIndices(index);
-        searchRequestBuilderTwo.setTypes(type);
-        searchRequestBuilderTwo.setQuery(QueryBuilders.matchQuery("first_name", "gao"));
+        searchRequestBuilderTwo.setQuery(QueryBuilders.matchPhraseQuery("gid", "16461F80-14A9-1C05-6C14-3B7A140F763E"));
 
         // 多搜索
         MultiSearchRequestBuilder multiSearchRequestBuilder = client.prepareMultiSearch();
@@ -186,11 +185,12 @@ public class Search {
     }
 
     public static void main(String[] args) {
-        Client client = Common.createClient();
-//        searchByScroll(client, TEST_INDEX, STU_TYPE);
-         searchAll(client, TEST_INDEX, STU_TYPE);
+//        Client client = Common.createClient();
+        Client client = Common.createClient("user_behavior","l-innovation2.wap.cn2.qunar.com",9300);
+        // searchByScroll(client, TEST_INDEX, STU_TYPE);
+        // searchAll(client, TEST_INDEX, STU_TYPE);
         // searchByPage(client, INDEX, TYPE, 2, 3);
-        // multiSearch(client,INDEX,TYPE);
+         multiSearch(client,BEHAVIOR_INDEX,TYPE);
         client.close();
     }
 }

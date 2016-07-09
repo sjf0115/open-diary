@@ -34,7 +34,8 @@ public class TermLevelQuery {
         SearchHit[] searchHits = searchResponse.getHits().getHits();
         logger.info("----------termMatch size {}", searchHits.length);
         for (SearchHit searchHit : searchHits) {
-            logger.info("----------hit source: id {} score {} source{}", searchHit.getId(), searchHit.getScore(), searchHit.getSource());
+            logger.info("----------hit source: id {} score {} source{}", searchHit.getId(), searchHit.getScore(),
+                    searchHit.getSource());
         } // for
     }
 
@@ -64,6 +65,7 @@ public class TermLevelQuery {
 
     /**
      * query之中文短语查询
+     * 
      * @param client
      * @param index
      * @param type
@@ -72,11 +74,11 @@ public class TermLevelQuery {
 
         // Query
         BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
-        boolQueryBuilder.must(QueryBuilders.termQuery("college","计"));
-        boolQueryBuilder.must(QueryBuilders.termQuery("college","算"));
-        boolQueryBuilder.must(QueryBuilders.termQuery("college","机"));
-        boolQueryBuilder.must(QueryBuilders.termQuery("college","学"));
-        boolQueryBuilder.must(QueryBuilders.termQuery("college","院"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("college", "计"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("college", "算"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("college", "机"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("college", "学"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("college", "院"));
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
         searchRequestBuilder.setTypes(type);
@@ -92,7 +94,7 @@ public class TermLevelQuery {
     public static void phraseQuery(Client client, String index, String type) {
 
         // Query
-        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchPhraseQuery("school","西安电子科技大学");
+        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchPhraseQuery("school", "西安电子科技大学");
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
         searchRequestBuilder.setTypes(type);
@@ -191,8 +193,8 @@ public class TermLevelQuery {
         // termsQuery(client, INDEX, STUDENT_TYPE);
         // rangeQuery(client, INDEX, STUDENT_TYPE);
         // existsQuery(client, INDEX, STUDENT_TYPE);
-//        termPhraseQuery(client, INDEX, STUDENT_TYPE);
-//        phraseQuery(client, INDEX, STUDENT_TYPE);
+//         termPhraseQuery(client, INDEX, STUDENT_TYPE);
+        // phraseQuery(client, INDEX, STUDENT_TYPE);
         client.close();
     }
 }

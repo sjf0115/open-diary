@@ -3,17 +3,25 @@ package com.sjf.open.test;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.sjf.open.api.MetricsAggregations;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.search.SearchRequestBuilder;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.collect.HppcMaps;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,15 +70,28 @@ public class Test {
         return sb.toString();
     }
 
+    public static void test(String index, String type){
+        // Query
+        QueryBuilder queryBuilder = QueryBuilders.matchPhraseQuery("gid","0009F361-6E5F-E9DF-5219-6F993EC25BFE");
+        // Search
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
+        searchRequestBuilder.setTypes(type);
+        searchRequestBuilder.setQuery(queryBuilder);
+
+        // 执行
+        SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+        for (SearchHit searchHit : searchHits) {
+            String age = searchHit.getSource().get("gid").toString();
+            Map<String,String> interest = (Map<String,String>)searchHit.getSource().get("indexCount");
+            logger.info("------------------ ************** --- age {} interest {}", age,interest.toString());
+        } // for
+    }
+
     public static void main(String[] args) {
 
         client = Init();
-
-//        Aggregations.aggs(client,INDEX,TYPE);
-//        MetricsAggregations.minAggregation(client,INDEX,TYPE);
-
-        logger.info("{}",checkChinese("college of computer"));
-
+        test("qunar-index","business");
         client.close();
     }
 }

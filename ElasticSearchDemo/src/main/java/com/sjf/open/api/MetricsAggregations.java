@@ -78,8 +78,6 @@ public class MetricsAggregations {
     }
 
     /**
-     * https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/_metrics_aggregations.html 最小值 聚合之min
-     * 
      * @param client
      * @param index
      * @param type
@@ -285,6 +283,10 @@ public class MetricsAggregations {
         long value = agg.getValue();
 
         logger.info("员工基数 {} 聚合名称 {}", value, agg.getName());
+    }
+
+    private static void test(){
+
     }
 
     public static void main(String[] args) {
