@@ -1,4 +1,4 @@
-package com.sjf.open;
+package com.sjf.open.guava;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;

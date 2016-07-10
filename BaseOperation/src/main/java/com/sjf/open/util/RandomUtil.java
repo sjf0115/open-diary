@@ -1,4 +1,4 @@
-package com.sjf.open;
+package com.sjf.open.util;
 
 import java.util.Random;
 
