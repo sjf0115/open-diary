@@ -93,12 +93,12 @@ public class Search {
         // 第一个搜索
         SearchRequestBuilder searchRequestBuilderOne = client.prepareSearch();
         searchRequestBuilderOne.setIndices(index);
-        searchRequestBuilderOne.setQuery(QueryBuilders.matchPhraseQuery("gid", "1438C0C1-7C17-6C14-E119-1702A7940572"));
+        searchRequestBuilderOne.setQuery(QueryBuilders.termQuery("college", "计算机学院"));
 
         // 第二个搜索
         SearchRequestBuilder searchRequestBuilderTwo = client.prepareSearch();
         searchRequestBuilderTwo.setIndices(index);
-        searchRequestBuilderTwo.setQuery(QueryBuilders.matchPhraseQuery("gid", "16461F80-14A9-1C05-6C14-3B7A140F763E"));
+        searchRequestBuilderTwo.setQuery(QueryBuilders.termQuery("college", "通信学院"));
 
         // 多搜索
         MultiSearchRequestBuilder multiSearchRequestBuilder = client.prepareMultiSearch();
@@ -185,12 +185,12 @@ public class Search {
     }
 
     public static void main(String[] args) {
-//        Client client = Common.createClient();
-        Client client = Common.createClient("user_behavior","l-innovation2.wap.cn2.qunar.com",9300);
+        Client client = Common.createClient();
+//        Client client = Common.createClient("user_behavior","l-innovation2.wap.cn2.qunar.com",9300);
         // searchByScroll(client, TEST_INDEX, STU_TYPE);
         // searchAll(client, TEST_INDEX, STU_TYPE);
         // searchByPage(client, INDEX, TYPE, 2, 3);
-         multiSearch(client,BEHAVIOR_INDEX,TYPE);
+         multiSearch(client,"test-index","stu");
         client.close();
     }
 }
