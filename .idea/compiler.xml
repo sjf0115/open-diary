@@ -25,12 +25,14 @@
         <processorPath useClasspath="true" />
         <module name="BaseOperation" />
         <module name="ElasticSearchDemo" />
+        <module name="MapReduceDemo" />
         <module name="RocketMQ" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
       <module name="BaseOperation" target="1.5" />
       <module name="ElasticSearchDemo" target="1.5" />
+      <module name="MapReduceDemo" target="1.5" />
       <module name="openDiary" target="1.5" />
       <module name="RocketMQ" target="1.6" />
     </bytecodeTargetLevel>

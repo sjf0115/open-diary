@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BaseOperation/BaseOperation.iml" filepath="$PROJECT_DIR$/BaseOperation/BaseOperation.iml" />
       <module fileurl="file://$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" filepath="$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" filepath="$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RocketMQ/RocketMQ.iml" filepath="$PROJECT_DIR$/RocketMQ/RocketMQ.iml" />
       <module fileurl="file://$PROJECT_DIR$/openDiary.iml" filepath="$PROJECT_DIR$/openDiary.iml" />
     </modules>
