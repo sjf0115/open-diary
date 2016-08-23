@@ -5,6 +5,18 @@ kylin_home="KYLIN_HOME"
 kylin_location="/opt/apache-kylin-1.5.2.1-bin"
 
 
+kafka_name="kafka"
+kafka_home="KAFKA_HOME"
+kafka_location="/opt/kafka_2.11-0.10.0.0"
+
+scala_name="scala"
+scala_home="SCALA_HOME"
+scala_location="/opt/scala-2.11.8"
+
+mongodb_name="mongodb"
+mongodb_home="MONGODB_HOME"
+mongodb_location="/opt/mongodb-ubuntu1404-3.2.8"
+
 ## 配置环境
 # home_desc -> export 注释
 # home_key ->  export key
@@ -18,7 +30,9 @@ function export_env_home
     sudo echo "# ${home_desc}"  >>  /etc/profile
     sudo echo "export ${home_key}=${home_value}"  >>  /etc/profile
     sudo echo 'export PATH=${'"${home_key}"'}/bin:$PATH'  >>  /etc/profile
-    source /etc/profile
 }
 
-export_env_home ${kylin_name} ${kylin_home} ${kylin_location}
+# export_env_home ${kylin_name} ${kylin_home} ${kylin_location}
+#export_env_home ${kafka_name} ${kafka_home} ${kafka_location}
+#export_env_home ${scala_name} ${scala_home} ${scala_location}
+export_env_home ${mongodb_name} ${mongodb_home} ${mongodb_location}

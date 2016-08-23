@@ -23,8 +23,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="BaseOperation" />
         <module name="ElasticSearchDemo" />
+        <module name="KafkaDemo" />
         <module name="MapReduceDemo" />
         <module name="RocketMQ" />
       </profile>
@@ -32,9 +32,11 @@
     <bytecodeTargetLevel target="1.6">
       <module name="BaseOperation" target="1.5" />
       <module name="ElasticSearchDemo" target="1.5" />
+      <module name="KafkaDemo" target="1.5" />
       <module name="MapReduceDemo" target="1.5" />
       <module name="openDiary" target="1.5" />
       <module name="RocketMQ" target="1.6" />
+      <module name="WebDemo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
