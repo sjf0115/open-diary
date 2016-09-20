@@ -1,0 +1,10 @@
+{
+  "namespace":"com.sjf.open",
+  "type":"record",
+  "name":"User",
+  "fields":[
+    {"name":"name","type":"string"},
+    {"name":"age","type":["int","null"]},
+    {"name":"favorite","type":["string","null"]}
+  ]
+}

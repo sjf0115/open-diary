@@ -55,5 +55,11 @@
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver</artifactId>
         </dependency>
+
+        <!-- avro -->
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -11,6 +11,9 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/RestFullServiceDemo" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -19,6 +22,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/RestFullDemo/pom.xml" />
         <option value="$PROJECT_DIR$/WebDemo/pom.xml" />
       </set>
     </option>

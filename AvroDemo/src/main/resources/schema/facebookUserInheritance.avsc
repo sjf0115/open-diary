@@ -1,0 +1,23 @@
+{
+    "namespace": "com.sjf.open",
+    "name": "FacebookSpecialUser1",
+    "type": "record",
+    "fields": [
+        {
+            "name": "type",
+            "type": "string"
+        },
+        {
+            "name": "user",
+            "type": com.sjf.open.FacebookUser
+        },
+        {
+            "name": "extension",
+            "type": [
+                com.sjf.open.FacebookSpecialUserExtension1,
+                com.sjf.open.FacebookSpecialUserExtension2,
+                "null"
+            ]
+        }
+    ]
+}

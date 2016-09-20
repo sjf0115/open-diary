@@ -23,20 +23,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="AvroDemo" />
         <module name="ElasticSearchDemo" />
         <module name="KafkaDemo" />
         <module name="MapReduceDemo" />
+        <module name="RestFullServiceDemo" />
         <module name="RocketMQ" />
+        <module name="ThriftDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
+      <module name="AvroDemo" target="1.6" />
       <module name="BaseOperation" target="1.5" />
       <module name="ElasticSearchDemo" target="1.5" />
       <module name="KafkaDemo" target="1.5" />
       <module name="MapReduceDemo" target="1.5" />
       <module name="openDiary" target="1.5" />
+      <module name="RestFullDemo" target="1.5" />
+      <module name="RestFullServiceDemo" target="1.5" />
       <module name="RocketMQ" target="1.6" />
-      <module name="WebDemo" target="1.5" />
+      <module name="ThriftDemo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

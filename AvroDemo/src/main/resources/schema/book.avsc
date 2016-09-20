@@ -1,0 +1,10 @@
+{
+  "namespace":"com.sjf.open.model",
+  "type":"record",
+  "name":"Book",
+  "fields":[
+    {"name":"name","type":"string"},
+    {"name":"price","type":["double","null"]},
+    {"name":"author","type":com.sjf.open.model.User}
+  ]
+}

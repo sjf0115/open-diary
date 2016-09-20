@@ -1,12 +1,14 @@
 package com.sjf.open.mongodb;
 
 import com.beust.jcommander.internal.Lists;
+import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,12 @@ public class Test {
     private static String dataBaseName = "test";
     private static final String ip = "localhost";
     private static final int port = 27017;
+
+    private static Block<Document> printBlock = new Block<Document>() {
+        public void apply(final Document document) {
+            logger.info("-------- printBlock {}",document.toJson());
+        }
+    };
 
     /**
      * 连接数据库
@@ -62,10 +70,10 @@ public class Test {
      * @param database
      */
     public static void insertDocument(String collectionName, MongoDatabase database){
-        Document document = new Document("title", "MongoDB : The Definitive Guide").
-                append("author", "Kristina Chodorow").
-                append("year", "2010-9-24").
-                append("price", 39.99);
+        Document document = new Document("title", "MongoDB").
+                append("author", "Chodorow").
+                append("year", "2012-9-24").
+                append("price", 38.99);
 
 
         Document document2 = new Document("title", "MongoDB实战").
@@ -97,6 +105,25 @@ public class Test {
     }
 
     /**
+     * 检索第一个文档
+     * @param collection
+     */
+    public static void findFirst(MongoCollection<Document> collection){
+        Document document = collection.find().first();
+        logger.info("---------- findFirst {}", document.toJson());
+    }
+
+    /**
+     * 使用检索过滤器获取文档
+     * @param collection
+     */
+    public static void findByFilter(MongoCollection<Document> collection){
+        collection.find(Filters.eq("author","丁雪丰")).forEach(printBlock);
+        collection.find(Filters.gt("price",39)).forEach(printBlock);
+        collection.find(Filters.and(Filters.gt("price",39), Filters.lt("price", 40))).forEach(printBlock);
+    }
+
+    /**
      * 更新文档
      * @param collection
      */
@@ -111,9 +138,10 @@ public class Test {
      */
     public static void delete(MongoCollection collection){
         //删除符合条件的第一个文档
-        collection.deleteOne(Filters.eq("price", 52.0));
+        DeleteResult deleteResult = collection.deleteOne(Filters.eq("price", 38.99));
+        logger.info("-------- delete {}", deleteResult.toString());
         //删除所有符合条件的文档
-        //collection.deleteMany (Filters.eq("price", 52.0));
+        //DeleteResult deleteResult = collection.deleteMany (Filters.eq("price", 52.0));
     }
 
     public static void main(String[] args) {
@@ -122,9 +150,11 @@ public class Test {
         //getCollection("Book", mongoDatabase);
         //insertDocument("Book", mongoDatabase);
         MongoCollection collection = getCollection("Book", mongoDatabase);
-        //findAll(collection);
+        findAll(collection);
         //update(collection);
         delete(collection);
-        findAll(collection);
+        //findAll(collection);
+        //findFirst(collection);
+        //findByFilter(collection);
     }
 }

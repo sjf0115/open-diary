@@ -5,11 +5,9 @@ package com.sjf.open;
  */
 public class Test {
     public static void main(String[] args) {
-        String str = "玉树地区|玉树藏族自治州|玉树州|玉树县";
+        String str = "MU733|经停";
         String str2 = "aa|bb";
         String[] arr = str.split("\\|");
-        for(String city : arr){
-            System.out.println(city);
-        }
+        System.out.println(arr[0]);
     }
 }

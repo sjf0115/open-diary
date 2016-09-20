@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RestFullServiceDemo:war">
+    <output-path>$PROJECT_DIR$/RestFullServiceDemo/target</output-path>
+    <root id="archive" name="open.restFull.war">
+      <element id="artifact" artifact-name="RestFullServiceDemo:war exploded" />
+    </root>
+  </artifact>
+</component>

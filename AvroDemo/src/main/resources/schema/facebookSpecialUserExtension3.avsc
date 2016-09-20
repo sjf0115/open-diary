@@ -1,0 +1,11 @@
+{
+    "namespace": "com.sjf.open",
+    "name": "FacebookSpecialUserExtension3",
+    "type": "record",
+    "fields": [
+        {
+            "name": "specialData3",
+            "type": "int"
+        }
+    ]
+}
