@@ -18,6 +18,7 @@
         <module>RestFullServiceDemo</module>
         <module>AvroDemo</module>
         <module>ThriftDemo</module>
+        <module>ThriftRPCDemo</module>
     </modules>
 
     <properties>

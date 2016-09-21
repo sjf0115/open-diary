@@ -23,6 +23,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/RestFullDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/ThriftRPCDemo/pom.xml" />
         <option value="$PROJECT_DIR$/WebDemo/pom.xml" />
       </set>
     </option>
