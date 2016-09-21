@@ -77,12 +77,7 @@ public class CalculatorClient {
         return client;
     }
 
-
-
-
-
     public static void main(String[] args) {
-
 
         try {
 
