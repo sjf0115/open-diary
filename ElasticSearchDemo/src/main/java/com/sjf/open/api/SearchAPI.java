@@ -7,7 +7,6 @@ import org.elasticsearch.action.search.MultiSearchRequestBuilder;
 import org.elasticsearch.action.search.MultiSearchResponse;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilders;
@@ -18,9 +17,9 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by xiaosi on 16-7-4.
  */
-public class Search {
+public class SearchAPI {
 
-    private static final Logger logger = LoggerFactory.getLogger(Search.class);
+    private static final Logger logger = LoggerFactory.getLogger(SearchAPI.class);
 
     private static String INDEX = "qunar-index";
     private static String BEHAVIOR_INDEX = "identitifier_count20160702";

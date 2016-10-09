@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by xiaosi on 16-7-4.
  */
-public class CompoundQuery {
-    private static final Logger logger = LoggerFactory.getLogger(CompoundQuery.class);
+public class CompoundQueryAPI {
+    private static final Logger logger = LoggerFactory.getLogger(CompoundQueryAPI.class);
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";

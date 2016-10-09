@@ -58,33 +58,6 @@ public class MappingAPI {
 
     }
 
-    /**
-     *
-     * @param client
-     */
-    public static void putMapping(Client client , String index) {
-        XContentBuilder mapping = null;
-        try {
-            mapping = jsonBuilder().prettyPrint()
-                    .startObject()
-                    .startObject(index)
-                    .startObject("properties")
-                    .startObject("title").field("type", "string").field("index","not_analyzed").field("store", "yes").endObject()
-                    .startObject("description").field("type", "string").field("index", "not_analyzed").endObject()
-                    .startObject("price").field("type", "double").endObject()
-                    .startObject("onSale").field("type", "boolean").endObject()
-                    .startObject("type").field("type", "string").endObject()
-                    .startObject("createDate").field("type", "date").endObject()
-                    .endObject()
-                    .endObject()
-                    .endObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        PutMappingRequest mappingRequest = Requests.putMappingRequest(index).type(index).source(mapping);
-        client.admin().indices().putMapping(mappingRequest).actionGet();
-    }
-
     public static void applyMapping(Client client, String index, String type) throws Exception {
 
         client.admin().indices().prepareCreate(ConstantUtil.STU_INDEX).execute().actionGet();

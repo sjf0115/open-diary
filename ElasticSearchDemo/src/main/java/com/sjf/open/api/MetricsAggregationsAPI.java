@@ -21,7 +21,6 @@ import org.elasticsearch.search.aggregations.metrics.sum.Sum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -30,8 +29,8 @@ import java.util.Map;
  *
  * 聚合功能
  */
-public class MetricsAggregations {
-    private static final Logger logger = LoggerFactory.getLogger(MetricsAggregations.class);
+public class MetricsAggregationsAPI {
+    private static final Logger logger = LoggerFactory.getLogger(MetricsAggregationsAPI.class);
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";

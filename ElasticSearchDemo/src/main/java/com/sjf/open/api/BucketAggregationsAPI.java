@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by xiaosi on 16-7-4.
  */
-public class BucketAggregations {
-    private static final Logger logger = LoggerFactory.getLogger(BucketAggregations.class);
+public class BucketAggregationsAPI {
+    private static final Logger logger = LoggerFactory.getLogger(BucketAggregationsAPI.class);
 
     private static String INDEX = "qunar-index";
     private static String TYPE = "employee";

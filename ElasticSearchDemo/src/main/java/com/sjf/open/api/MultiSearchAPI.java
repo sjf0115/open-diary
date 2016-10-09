@@ -1,7 +1,5 @@
 package com.sjf.open.api;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.sjf.open.common.Common;
 import org.elasticsearch.action.search.MultiSearchRequestBuilder;
 import org.elasticsearch.action.search.MultiSearchResponse;
