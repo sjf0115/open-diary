@@ -1,0 +1,13 @@
+{
+  "stu-index-2" : {
+    "settings" : {
+    },
+    "properties" : {
+      "name" : { "type":"String" , "store":"true", "index" : "not_analyzed"},
+      "age" : { "type":"integer" , "store":"true", "index" : "not_analyzed"},
+      "sex" : { "type":"String" , "store":"true", "index" : "not_analyzed"},
+      "college" : { "type":"String" , "store":"true", "index" : "not_analyzed"},
+      "school" : { "type":"String" , "store":"true", "index" : "not_analyzed"}
+    }
+  }
+}

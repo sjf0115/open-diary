@@ -1,12 +1,17 @@
 package com.sjf.open.common;
 
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.xcontent.XContentBuilder;
+import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.search.SearchHit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -47,5 +52,19 @@ public class Common {
             logger.error("buildClient---Host异常 {}", e);
         }
         return client;
+    }
+
+    /**
+     * 返回查询结果
+     *
+     * @param searchResponse
+     */
+    public static void queryResult(SearchResponse searchResponse) {
+        // 结果
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+        logger.info("----------termMatch size {}", searchHits.length);
+        for (SearchHit searchHit : searchHits) {
+            logger.info("----------hit source: id {} score {} source{}", searchHit.getId(), searchHit.getScore(), searchHit.getSource());
+        } // for
     }
 }

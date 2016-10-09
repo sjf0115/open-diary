@@ -189,8 +189,8 @@ public class Search {
 //        Client client = Common.createClient("user_behavior","l-innovation2.wap.cn2.qunar.com",9300);
         // searchByScroll(client, TEST_INDEX, STU_TYPE);
         // searchAll(client, TEST_INDEX, STU_TYPE);
-        // searchByPage(client, INDEX, TYPE, 2, 3);
-         multiSearch(client,"test-index","stu");
+         searchByPage(client, INDEX, TYPE, 2, 3);
+         //multiSearch(client,"test-index","stu");
         client.close();
     }
 }

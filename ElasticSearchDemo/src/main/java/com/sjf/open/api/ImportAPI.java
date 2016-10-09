@@ -5,10 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Maps;
 import com.sjf.open.model.Student;
 import com.sjf.open.common.Common;
+import com.sjf.open.utils.ConstantUtil;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.index.IndexRequestBuilder;
 import org.elasticsearch.action.index.IndexResponse;
-import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
@@ -21,13 +21,8 @@ import java.util.Map;
 /**
  * Created by xiaosi on 16-7-4.
  */
-public class Document {
-    private static final Logger logger = LoggerFactory.getLogger(Document.class);
-
-    private static String INDEX = "qunar-index";
-    private static String TYPE = "student";
-    private static String TEST_INDEX = "test-index";
-    private static String STU_TYPE = "stu";
+public class ImportAPI {
+    private static final Logger logger = LoggerFactory.getLogger(ImportAPI.class);
 
     /**
      *
@@ -39,8 +34,8 @@ public class Document {
     private static void put(Client client, String index, String type, String id) {
         try {
             XContentBuilder xContentBuilder = XContentFactory.jsonBuilder();
-            xContentBuilder.startObject().field("name", "王俊辉").field("sex", "girl").field("age", 21)
-                    .field("college", "电子工程学院").field("school", "中国科技大学").endObject();
+            xContentBuilder.startObject().field("name", "王俊辉").field("sex", "boy").field("age", 24)
+                    .field("college", "软件学院").field("school", "西安电子科技大学").endObject();
 
             // Index
             IndexRequestBuilder indexRequestBuilder = client.prepareIndex(index, type, id);
@@ -104,7 +99,9 @@ public class Document {
         Map<String, String> map = Maps.newHashMap();
         map.put("name", "穆勒");
         map.put("sex", "boy");
-        map.put("college", "德国");
+        map.put("age", "25");
+        map.put("college", "计算机学院ddddd");
+        map.put("school", "西安电子科技大学");
 
         // Index
         IndexRequestBuilder indexRequestBuilder = client.prepareIndex(index, type, id);
@@ -147,11 +144,7 @@ public class Document {
 
     public static void main(String[] args) {
         Client client = Common.createClient();
-        // put(client,INDEX,TYPE,"4");
-        // putByBean(client, TEST_INDEX, STU_TYPE, "3");
-
-        String json = "{\"gid\":\"000AC690-756D-9939-37B0-3B224FDC40FF\",\"indexCount\":{\"FLIGHT_SEARCH\":11}}";
-        putByJSON(client, INDEX,"business","3",json);
+        put(client, ConstantUtil.STU_INDEX, ConstantUtil.STUDENT_MAPPING_TYPE, "1");
         client.close();
     }
 }

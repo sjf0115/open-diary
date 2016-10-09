@@ -71,7 +71,7 @@ public class FullTextQuery {
     public static void matchQuery(Client client, String index, String type) {
 
         // Query
-        QueryBuilder queryBuilder = QueryBuilders.matchQuery("college", "计算机学院2");
+        QueryBuilder queryBuilder = QueryBuilders.matchQuery("college", "计算机学院");
 
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
@@ -136,7 +136,7 @@ public class FullTextQuery {
         Client client = Common.createClient();
 //         matchAllQuery(client,INDEX,TYPE);
          matchQuery(client,TEST_INDEX,STU_TYPE);
-        // multiMatchQuery(client,INDEX,TYPE);
+//         multiMatchQuery(client,INDEX,TYPE);
 //         stringQuery(client,INDEX,STUDENT_TYPE);
         client.close();
     }

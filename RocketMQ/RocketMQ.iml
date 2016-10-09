@@ -14,7 +14,7 @@
     <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-client:3.2.6" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-common:3.2.6" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-remoting:3.2.6" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.3" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.7" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.25.Final" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.rocketmq:rocketmq-store:3.2.6" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />

@@ -12,11 +12,13 @@ import org.elasticsearch.search.SearchHit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
+
 /**
  * Created by xiaosi on 16-7-4.
  */
-public class TermLevelQuery {
-    private static final Logger logger = LoggerFactory.getLogger(TermLevelQuery.class);
+public class TermQueryAPI {
+    private static final Logger logger = LoggerFactory.getLogger(TermQueryAPI.class);
 
     private static String INDEX = "qunar-index";
     private static String TEST_INDEX = "test-index";
@@ -49,7 +51,7 @@ public class TermLevelQuery {
     public static void termQuery(Client client, String index, String type) {
 
         // Query
-        QueryBuilder queryBuilder = QueryBuilders.termQuery("college", "计算机学院");
+        QueryBuilder queryBuilder = QueryBuilders.termQuery("school", "西安电子科技大学");
 
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
@@ -91,10 +93,17 @@ public class TermLevelQuery {
         queryResult(searchResponse);
     }
 
+    /**
+     *
+     * @param client
+     * @param index
+     * @param type
+     */
     public static void phraseQuery(Client client, String index, String type) {
 
         // Query
-        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchPhraseQuery("school", "西安电子科技大学");
+        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchPhraseQuery("school", "西安");
+
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
         searchRequestBuilder.setTypes(type);
@@ -186,15 +195,7 @@ public class TermLevelQuery {
 
     public static void main(String[] args) {
         Client client = Common.createClient();
-        // matchAll(client,INDEX,TYPE);
-        // match(client,INDEX,STUDENT_TYPE);
-        // multiMatch(client,INDEX,TYPE);
-        termQuery(client, TEST_INDEX, STU_TYPE);
-        // termsQuery(client, INDEX, STUDENT_TYPE);
-        // rangeQuery(client, INDEX, STUDENT_TYPE);
-        // existsQuery(client, INDEX, STUDENT_TYPE);
-//         termPhraseQuery(client, INDEX, STUDENT_TYPE);
-        // phraseQuery(client, INDEX, STUDENT_TYPE);
+        phraseQuery(client, "student-index", "student-mapping-2");
         client.close();
     }
 }
