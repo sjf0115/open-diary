@@ -31,7 +31,7 @@ public class ImportAPI {
      * @param type
      * @param id
      */
-    private static void put(Client client, String index, String type, String id) {
+    public static boolean put(Client client, String index, String type, String id) {
         try {
             XContentBuilder xContentBuilder = XContentFactory.jsonBuilder();
             xContentBuilder.startObject().field("name", "王俊辉").field("sex", "boy").field("age", 24)
@@ -46,9 +46,12 @@ public class ImportAPI {
             IndexResponse indexResponse = indexRequestBuilder.execute().actionGet();
 
             logger.info("----------put {}", indexResponse.toString());
+
+            return indexResponse.isCreated();
         } catch (IOException e) {
             logger.error("----------put fail {} ", e);
         }
+        return false;
     }
 
     /**
@@ -59,7 +62,7 @@ public class ImportAPI {
      * @param type
      * @param id
      */
-    private static void putByBean(Client client, String index, String type, String id) {
+    public static void putByBean(Client client, String index, String type, String id) {
         // 具体插入什么插入数据，取决于索引和类型结构,例如下面的age和school不会被插入,因为索引中不存在改字段
         Student student = new Student();
         student.setAge(21);
@@ -95,7 +98,7 @@ public class ImportAPI {
      * @param type
      * @param id
      */
-    private static void putByMap(Client client, String index, String type, String id) {
+    public static void putByMap(Client client, String index, String type, String id) {
         Map<String, String> map = Maps.newHashMap();
         map.put("name", "穆勒");
         map.put("sex", "boy");
@@ -121,7 +124,7 @@ public class ImportAPI {
      * @param id
      * @param json
      */
-    private static void putByJSON(Client client, String index, String type, String id, String json) {
+    public static void putByJSON(Client client, String index, String type, String id, String json) {
         // Index
         IndexRequestBuilder indexRequestBuilder = client.prepareIndex(index, type, id);
         indexRequestBuilder.setSource(json);
@@ -138,13 +141,7 @@ public class ImportAPI {
      * @param index
      * @param type
      */
-    private static void bulkRequest(Client client, String index, String type){
+    public static void bulkRequest(Client client, String index, String type){
         BulkRequestBuilder bulkRequest = client.prepareBulk();
-    }
-
-    public static void main(String[] args) {
-        Client client = Common.createClient();
-        put(client, ConstantUtil.STU_INDEX, ConstantUtil.STUDENT_MAPPING_TYPE, "1");
-        client.close();
     }
 }

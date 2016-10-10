@@ -40,6 +40,8 @@
         <javax.servlet.version>3.1.0</javax.servlet.version>
         <avro.version>1.8.1</avro.version>
         <thrift.version>0.9.3</thrift.version>
+        <apache.commons.version>3.4</apache.commons.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -238,7 +240,6 @@
                 <version>${jersey.version}</version>
             </dependency>
 
-
             <!-- servlet -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -258,6 +259,20 @@
                 <groupId>org.apache.thrift</groupId>
                 <artifactId>libthrift</artifactId>
                 <version>${thrift.version}</version>
+            </dependency>
+
+            <!-- apache-common -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.commons.version}</version>
+            </dependency>
+
+            <!-- junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
 
         </dependencies>
