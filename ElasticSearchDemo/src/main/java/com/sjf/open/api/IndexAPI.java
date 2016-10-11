@@ -2,8 +2,12 @@ package com.sjf.open.api;
 
 import com.carrotsearch.hppc.cursors.ObjectCursor;
 import com.google.common.base.Objects;
+import com.google.common.collect.UnmodifiableIterator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.translate.NumericEntityUnescaper;
+import org.elasticsearch.action.admin.indices.alias.IndicesAliasesResponse;
+import org.elasticsearch.action.admin.indices.alias.exists.AliasesExistResponse;
+import org.elasticsearch.action.admin.indices.alias.get.GetAliasesResponse;
 import org.elasticsearch.action.admin.indices.close.CloseIndexResponse;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
@@ -12,12 +16,14 @@ import org.elasticsearch.action.admin.indices.exists.types.TypesExistsResponse;
 import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsResponse;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
 import org.elasticsearch.action.admin.indices.open.OpenIndexResponse;
+import org.elasticsearch.action.admin.indices.settings.put.UpdateSettingsResponse;
 import org.elasticsearch.action.admin.indices.stats.CommonStats;
 import org.elasticsearch.action.admin.indices.stats.IndexStats;
 import org.elasticsearch.action.admin.indices.stats.IndicesStatsResponse;
 import org.elasticsearch.action.admin.indices.stats.ShardStats;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.IndicesAdminClient;
+import org.elasticsearch.cluster.metadata.AliasMetaData;
 import org.elasticsearch.cluster.metadata.MappingMetaData;
 import org.elasticsearch.common.collect.ImmutableOpenMap;
 import org.elasticsearch.common.settings.Settings;
@@ -27,6 +33,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 
@@ -233,6 +240,72 @@ public class IndexAPI {
     }
 
     /**
+     * 判断别名是否存在
+     * @param client
+     * @param aliases
+     * @return
+     */
+    public static boolean isAliasExist(Client client, String... aliases){
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        AliasesExistResponse response = indicesAdminClient.prepareAliasesExist(aliases).get();
+        return response.isExists();
+
+    }
+
+    /**
+     * 为索引创建别名
+     * @param client
+     * @param index
+     * @param alias
+     * @return
+     */
+    public static boolean addAliasIndex(Client client, String index , String alias){
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        IndicesAliasesResponse response = indicesAdminClient.prepareAliases().addAlias(index, alias).get();
+        return response.isAcknowledged();
+
+    }
+
+    /**
+     * 获取别名
+     * @param client
+     * @param aliases
+     */
+    public static void getAliasIndex(Client client, String... aliases){
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        GetAliasesResponse response = indicesAdminClient.prepareGetAliases(aliases).get();
+        ImmutableOpenMap<String, List<AliasMetaData>> aliasesMap = response.getAliases();
+
+        UnmodifiableIterator<String> iterator = aliasesMap.keysIt();
+
+        while(iterator.hasNext()){
+            String key = iterator.next();
+            List<AliasMetaData> aliasMetaDataList = aliasesMap.get(key);
+            for(AliasMetaData aliasMetaData : aliasMetaDataList){
+                logger.info("--------- getAliasIndex {}", aliasMetaData.getAlias());
+            }
+        }
+    }
+
+    /**
+     * 删除别名
+     * @param client
+     * @param index
+     * @param aliases
+     * @return
+     */
+    public static boolean deleteAliasIndex(Client client, String index, String... aliases){
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        IndicesAliasesResponse response = indicesAdminClient.prepareAliases().removeAlias(index, aliases).get();
+        return response.isAcknowledged();
+
+    }
+
+    /**
      * 获取mapping
      * @param client
      * @param index
@@ -252,6 +325,21 @@ public class IndexAPI {
                 }
             }
         }
+    }
+
+    /**
+     * 更新设置
+     * @param client
+     * @param index
+     * @param settings
+     * @return
+     */
+    public static boolean updateSettingsIndex(Client client, String index, Settings settings){
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        UpdateSettingsResponse response = indicesAdminClient.prepareUpdateSettings(index).setSettings(settings).get();
+        return response.isAcknowledged();
+
     }
 
 }

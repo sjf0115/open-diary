@@ -2,6 +2,7 @@ package com.sjf.open.api;
 
 import com.sjf.open.common.Common;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.common.settings.Settings;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -118,5 +119,51 @@ public class IndexAPITest {
     public void getIndexMapping() throws Exception {
         String index = "qunar-index";
         IndexAPI.getIndexMapping(client, index);
+    }
+
+    @Test
+    public void addAliasIndex() throws Exception {
+        String index = "test-index";
+        String aliasName = "test";
+        boolean result = IndexAPI.addAliasIndex(client, index, aliasName);
+        logger.info("--------- addAliasIndex {}", result);
+    }
+
+    @Test
+    public void isAliasExist() throws Exception {
+        String aliasName = "simp*";
+        String aliasName2 = "test";
+        boolean result = IndexAPI.isAliasExist(client, aliasName, aliasName2);
+        logger.info("--------- isAliasExist {}", result); // true
+    }
+
+    @Test
+    public void getAliasIndex() throws Exception {
+        String aliasName = "simp*";
+        String aliasName2 = "test";
+        IndexAPI.getAliasIndex(client, aliasName, aliasName2); // simple test
+    }
+
+    @Test
+    public void deleteAliasIndex() throws Exception {
+        String index = "test-index";
+        String aliasName = "test";
+
+        boolean result = IndexAPI.deleteAliasIndex(client, index, aliasName);
+        logger.info("--------- deleteAliasIndex {}", result); // true
+    }
+
+    @Test
+    public void updateSettingsIndex() throws Exception {
+        String index = "test-index";
+        Settings settings = Settings.builder().put("index.number_of_replicas", 2).build();
+
+        if(!IndexAPI.isIndexExists(client, index)){
+            logger.info("--------- updateSettingsIndex 索引 [{}] 不存在", index);
+            return;
+        }
+
+        boolean result = IndexAPI.updateSettingsIndex(client, index, settings);
+        logger.info("--------- updateSettingsIndex {}", result); // true
     }
 }
