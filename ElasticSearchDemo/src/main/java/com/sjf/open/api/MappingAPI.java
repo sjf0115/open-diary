@@ -95,10 +95,4 @@ public class MappingAPI {
         br.close();
         return bufferJSON.toString();
     }
-
-    public static void main(String[] args) {
-        Client client = Common.createClient();
-        IndexAPI.createIndex(client, ConstantUtil.STU_INDEX);
-        createMapping(client);
-    }
 }

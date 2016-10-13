@@ -9,6 +9,7 @@ import org.elasticsearch.action.admin.indices.alias.IndicesAliasesResponse;
 import org.elasticsearch.action.admin.indices.alias.exists.AliasesExistResponse;
 import org.elasticsearch.action.admin.indices.alias.get.GetAliasesResponse;
 import org.elasticsearch.action.admin.indices.close.CloseIndexResponse;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsResponse;
@@ -128,39 +129,28 @@ public class IndexAPI {
     }
 
     /**
-     * 创建索引 指定setting
+     * 创建索引 指定setting mapping
      * @param client
      * @param index
+     * @param type
+     * @param settings
+     * @param mappingBuilder
      * @return
      */
-    public static boolean createIndex(Client client, String index){
-
-        // settings
-        Settings settings = Settings.builder().put("index.number_of_shards", 5).put("index.number_of_replicas", 1).build();
-
-        // mapping
-        XContentBuilder mappingBuilder;
-        try {
-            mappingBuilder = XContentFactory.jsonBuilder()
-                    .startObject()
-                        .startObject(index)
-                            .startObject("properties")
-                                .startObject("query").field("type", "string").field("store", "yes").field("index", "not_analyzed").endObject()
-                                .startObject("itemList").field("type", "string").field("store", "yes").endObject()
-                            .endObject()
-                        .endObject()
-                    .endObject();
-        } catch (Exception e) {
-            logger.error("--------- createIndex 创建 mapping 失败：",e);
-            return false;
-        }
+    public static boolean createIndex(Client client, String index, String type, Settings settings, XContentBuilder mappingBuilder){
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
-        CreateIndexResponse response = indicesAdminClient.prepareCreate(index)
-                .setSettings(settings)
-                .addMapping(index, mappingBuilder)
-                .get();
+        CreateIndexRequestBuilder createIndexRequestBuilder = indicesAdminClient.prepareCreate(index);
 
+        if(!Objects.equal(settings, null)){
+            createIndexRequestBuilder.setSettings(settings);
+        }
+
+        if(!Objects.equal(mappingBuilder, null)){
+            createIndexRequestBuilder.addMapping(type, mappingBuilder);
+        }
+
+        CreateIndexResponse response = createIndexRequestBuilder.get();
         return response.isAcknowledged();
 
     }
@@ -173,7 +163,7 @@ public class IndexAPI {
     public static boolean deleteIndex(Client client, String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
-        DeleteIndexResponse response = indicesAdminClient.prepareDelete(index).execute().actionGet();
+        DeleteIndexResponse response = indicesAdminClient.prepareDelete(index).get();
         return response.isAcknowledged();
 
     }
@@ -229,7 +219,7 @@ public class IndexAPI {
                         .endObject()
                     .endObject();
         } catch (Exception e) {
-            logger.error("--------- createIndex 创建 mapping 失败：", e);
+            logger.error("--------- putIndexMapping 创建 mapping 失败：", e);
             return false;
         }
 

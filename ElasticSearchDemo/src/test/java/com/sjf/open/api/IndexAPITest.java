@@ -3,6 +3,8 @@ package com.sjf.open.api;
 import com.sjf.open.common.Common;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.xcontent.XContentBuilder;
+import org.elasticsearch.common.xcontent.XContentFactory;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,19 +57,43 @@ public class IndexAPITest {
 
     @Test
     public void createIndex() throws Exception {
-        String index = "suggestion-index";
+
+        String index = "football-2-index";
+        String type = "football-2-type";
+
         if(IndexAPI.isIndexExists(client, index)){
             logger.info("--------- createIndex 索引 [{}] 已经存在", index);
             return;
         }
 
-        boolean result = IndexAPI.createIndex(client, index);
+        // settings
+        Settings settings = Settings.builder().put("index.number_of_shards", 5).put("index.number_of_replicas", 1).build();
+
+        // mapping
+        XContentBuilder mappingBuilder;
+        try {
+            mappingBuilder = XContentFactory.jsonBuilder()
+                    .startObject()
+                    .startObject(type)
+                    .startObject("properties")
+                    .startObject("name").field("type", "string").field("store", "yes").endObject()
+                    .startObject("club").field("type", "string").field("store", "yes").endObject()
+                    .startObject("country").field("type", "string").field("store", "yes").field("index", "not_analyzed").endObject()
+                    .endObject()
+                    .endObject()
+                    .endObject();
+        } catch (Exception e) {
+            logger.error("--------- createIndex 创建 mapping 失败：", e);
+            return;
+        }
+
+        boolean result = IndexAPI.createIndex(client, index, type, settings, mappingBuilder);
         logger.info("--------- createIndex {}",result);
     }
 
     @Test
     public void deleteIndex() throws Exception {
-        String index = "simple-index";
+        String index = "football-index";
         if(!IndexAPI.isIndexExists(client, index)){
             logger.info("--------- deleteIndex 索引 [{}] 不存在", index);
             return;
