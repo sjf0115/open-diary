@@ -19,31 +19,64 @@ public class TermQueryAPITest {
 
     @Test
     public void termQuery() throws Exception {
-        TermQueryAPI.termQuery(client);
+        String index = "simple-index";
+        String type = "simple-type";
+        TermQueryAPI.termQuery(client, index, type);
     }
 
     @Test
     public void termsQuery() throws Exception {
-        TermQueryAPI.termsQuery(client);
+        String index = "football-index";
+        String type = "football-type";
+        TermQueryAPI.termsQuery(client, index, type);
     }
 
     @Test
     public void rangeQuery() throws Exception {
-        TermQueryAPI.rangeQuery(client);
+        String index = "qunar-index";
+        String type = "student";
+        TermQueryAPI.rangeQuery(client, index, type);
     }
 
     @Test
     public void existsQuery() throws Exception {
-        TermQueryAPI.existsQuery(client);
+        String index = "football-index";
+        String type = "football-type";
+        TermQueryAPI.existsQuery(client, index, type);
     }
 
     @Test
     public void prefixQuery() throws Exception {
-        TermQueryAPI.prefixQuery(client);
+        String index = "football-index";
+        String type = "football-type";
+        TermQueryAPI.prefixQuery(client, index, type);
     }
 
     @Test
     public void wildcardQuery() throws Exception {
-        TermQueryAPI.wildcardQuery(client);
+        String index = "football-index";
+        String type = "football-type";
+        TermQueryAPI.wildcardQuery(client, index, type);
+    }
+
+    @Test
+    public void regexpQuery() throws Exception {
+        String index = "football-index";
+        String type = "football-type";
+        TermQueryAPI.regexpQuery(client, index, type);
+    }
+
+    @Test
+    public void fuzzyQuery() throws Exception {
+        String index = "football-index";
+        String type = "football-type";
+        TermQueryAPI.fuzzyQuery(client, index, type);
+    }
+
+    @Test
+    public void fuzzyQuery2() throws Exception {
+        String index = "qunar-index";
+        String type = "student";
+        TermQueryAPI.fuzzyQuery2(client, index, type);
     }
 }
