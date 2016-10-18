@@ -1,4 +1,4 @@
-package com.sjf.open.api;
+package com.sjf.open.api.indexAPI;
 
 import com.sjf.open.common.Common;
 import org.elasticsearch.client.Client;
@@ -58,8 +58,8 @@ public class IndexAPITest {
     @Test
     public void createIndex() throws Exception {
 
-        String index = "football-2-index";
-        String type = "football-2-type";
+        String index = "football-index";
+        String type = "football-type";
 
         if(IndexAPI.isIndexExists(client, index)){
             logger.info("--------- createIndex 索引 [{}] 已经存在", index);
@@ -192,4 +192,5 @@ public class IndexAPITest {
         boolean result = IndexAPI.updateSettingsIndex(client, index, settings);
         logger.info("--------- updateSettingsIndex {}", result); // true
     }
+
 }

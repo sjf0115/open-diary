@@ -1,4 +1,4 @@
-package com.sjf.open.api;
+package com.sjf.open.api.otherAPI;
 
 import com.sjf.open.common.Common;
 import org.elasticsearch.action.search.SearchRequestBuilder;

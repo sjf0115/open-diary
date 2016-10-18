@@ -1,9 +1,11 @@
-package com.sjf.open.api;
+package com.sjf.open.api.indexAPI;
 
 
 import com.google.common.collect.Maps;
 import com.sjf.open.common.Common;
 import com.sjf.open.model.FootballPlayer;
+import com.sjf.open.utils.RandomUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
@@ -53,14 +55,12 @@ public class IndexDocAPITest {
 
         String index = "football-index";
         String type = "football-type";
-        String id = "3";
+        String id = "11";
 
-        // 具体插入什么插入数据 取决于索引和类型结构 例如下面的age不会被插入 索引中不存在该字段
         FootballPlayer footballPlayer = new FootballPlayer();
-        footballPlayer.setName("卡卡");
-        footballPlayer.setAge(35);
-        footballPlayer.setClub("奥兰多城俱乐部");
-        footballPlayer.setCountry("巴西");
+        footballPlayer.setName("范佩西");
+        footballPlayer.setClub("曼联俱乐部");
+        footballPlayer.setCountry("荷兰");
 
         boolean result = IndexDocAPI.indexDocByBean(client, index, type , id,  footballPlayer);
         logger.info("--------- indexDocByBean {}", result);
@@ -69,14 +69,16 @@ public class IndexDocAPITest {
     @Test
     public void indexDocByMap() throws Exception {
 
-        String index = "football-index";
-        String type = "football-type";
-        String id = "2";
+        String index = "student-index";
+        String type = "student-type";
+        String id = "3";
 
         Map<String, Object> map = Maps.newHashMap();
-        map.put("name", "穆勒");
-        map.put("club", "拜仁慕尼黑俱乐部");
-        map.put("country", "德国");
+        map.put("name", "C罗");
+        map.put("sex", "boy");
+        map.put("age", 34);
+        map.put("college", "计算机学院");
+        map.put("school", "麻省理工学院");
 
         boolean result = IndexDocAPI.indexDocByMap(client, index, type , id,  map);
         logger.info("--------- indexDocByMap {}", result);
@@ -98,8 +100,40 @@ public class IndexDocAPITest {
     }
 
     @Test
-    public void bulkRequest() throws Exception {
+    public void test() throws Exception {
+        String index = "simple-index";
+        String type = "simple-type";
 
+        FootballPlayer footballPlayer;
+
+        for(int i = 0;i < 100000000; i++){
+            String country = "";
+            while(StringUtils.isBlank(country)){
+                country = RandomUtil.getRandomMixedStr(6);
+            }
+
+            String club = "";
+            while(StringUtils.isBlank(club)){
+                club = RandomUtil.getRandomMixedStr(5) + "俱乐部";
+            }
+
+            String name = "";
+            while(StringUtils.isBlank(name)){
+                name = RandomUtil.getRandomMixedStr(4);
+            }
+
+
+            footballPlayer = new FootballPlayer();
+            footballPlayer.setName(name);
+            footballPlayer.setClub(club);
+            footballPlayer.setCountry(country);
+
+            String id = i + "";
+
+            boolean result = IndexDocAPI.indexDocByBean(client, index, type , id,  footballPlayer);
+            logger.info("--------- indexDocByBean {}", result);
+
+        }
     }
 
 }

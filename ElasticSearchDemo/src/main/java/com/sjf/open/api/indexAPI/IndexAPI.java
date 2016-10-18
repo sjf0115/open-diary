@@ -1,13 +1,13 @@
-package com.sjf.open.api;
+package com.sjf.open.api.indexAPI;
 
 import com.carrotsearch.hppc.cursors.ObjectCursor;
 import com.google.common.base.Objects;
 import com.google.common.collect.UnmodifiableIterator;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.text.translate.NumericEntityUnescaper;
 import org.elasticsearch.action.admin.indices.alias.IndicesAliasesResponse;
 import org.elasticsearch.action.admin.indices.alias.exists.AliasesExistResponse;
 import org.elasticsearch.action.admin.indices.alias.get.GetAliasesResponse;
+import org.elasticsearch.action.admin.indices.analyze.AnalyzeRequestBuilder;
+import org.elasticsearch.action.admin.indices.analyze.AnalyzeResponse;
 import org.elasticsearch.action.admin.indices.close.CloseIndexResponse;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;

@@ -5,7 +5,6 @@ package com.sjf.open.model;
  */
 public class FootballPlayer {
     private String name = "";
-    private int age;
     private String club = "";
     private String country = "";
 
@@ -15,14 +14,6 @@ public class FootballPlayer {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getClub() {
@@ -45,7 +36,6 @@ public class FootballPlayer {
     public String toString() {
         return "FootballPlayer{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
                 ", club='" + club + '\'' +
                 ", country='" + country + '\'' +
                 '}';
