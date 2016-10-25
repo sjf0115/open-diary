@@ -14,7 +14,9 @@ import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsResponse;
 import org.elasticsearch.action.admin.indices.exists.types.TypesExistsResponse;
+import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsRequestBuilder;
 import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsResponse;
+import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
 import org.elasticsearch.action.admin.indices.open.OpenIndexResponse;
 import org.elasticsearch.action.admin.indices.settings.put.UpdateSettingsResponse;
@@ -195,41 +197,6 @@ public class IndexAPI {
     }
 
     /**
-     * 设置映射
-     * @param client
-     * @param index
-     * @param type
-     * @return
-     */
-    public static boolean putIndexMapping(Client client, String index, String type){
-
-        // mapping
-        XContentBuilder mappingBuilder;
-        try {
-            mappingBuilder = XContentFactory.jsonBuilder()
-                    .startObject()
-                        .startObject(type)
-                            .startObject("properties")
-                                .startObject("name").field("type", "string").field("store", "yes").endObject()
-                                .startObject("sex").field("type", "string").field("store", "yes").endObject()
-                                .startObject("college").field("type", "string").field("store", "yes").endObject()
-                                .startObject("age").field("type", "long").field("store", "yes").endObject()
-                                .startObject("school").field("type", "string").field("store", "yes").field("index", "not_analyzed").endObject()
-                            .endObject()
-                        .endObject()
-                    .endObject();
-        } catch (Exception e) {
-            logger.error("--------- putIndexMapping 创建 mapping 失败：", e);
-            return false;
-        }
-
-        IndicesAdminClient indicesAdminClient = client.admin().indices();
-        PutMappingResponse response = indicesAdminClient.preparePutMapping(index).setType(type).setSource(mappingBuilder).get();
-        return response.isAcknowledged();
-
-    }
-
-    /**
      * 判断别名是否存在
      * @param client
      * @param aliases
@@ -296,6 +263,75 @@ public class IndexAPI {
     }
 
     /**
+     * 设置映射
+     * @param client
+     * @param index
+     * @param type
+     * @return
+     */
+    public static boolean putIndexMapping(Client client, String index, String type){
+
+        // mapping
+        XContentBuilder mappingBuilder;
+        try {
+            mappingBuilder = XContentFactory.jsonBuilder()
+                    .startObject()
+                    .startObject(type)
+                    .startObject("properties")
+                    .startObject("name").field("type", "string").field("store", "yes").endObject()
+                    .startObject("sex").field("type", "string").field("store", "yes").endObject()
+                    .startObject("college").field("type", "string").field("store", "yes").endObject()
+                    .startObject("age").field("type", "long").field("store", "yes").endObject()
+                    .startObject("school").field("type", "string").field("store", "yes").field("index", "not_analyzed").endObject()
+                    .endObject()
+                    .endObject()
+                    .endObject();
+        } catch (Exception e) {
+            logger.error("--------- putIndexMapping 创建 mapping 失败：", e);
+            return false;
+        }
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        PutMappingRequestBuilder putMappingRequestBuilder = indicesAdminClient.preparePutMapping(index);
+        putMappingRequestBuilder.setType(type);
+        putMappingRequestBuilder.setSource(mappingBuilder);
+
+        // 结果
+        PutMappingResponse response = putMappingRequestBuilder.get();
+        return response.isAcknowledged();
+
+    }
+
+    public static boolean putIndexMapping2(Client client, String index, String type){
+
+        // mapping
+        XContentBuilder mappingBuilder;
+        try {
+            mappingBuilder = XContentFactory.jsonBuilder()
+                    .startObject()
+                    .startObject(type)
+                    .startObject("properties")
+                    .startObject("club").field("type", "string").field("index", "analyzed").field("analyzer", "english").endObject()
+                    .endObject()
+                    .endObject()
+                    .endObject();
+        } catch (Exception e) {
+            logger.error("--------- putIndexMapping 创建 mapping 失败：", e);
+            return false;
+        }
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        PutMappingRequestBuilder putMappingRequestBuilder = indicesAdminClient.preparePutMapping(index);
+        putMappingRequestBuilder.setType(type);
+        putMappingRequestBuilder.setSource(mappingBuilder);
+
+        // 结果
+        PutMappingResponse response = putMappingRequestBuilder.get();
+        return response.isAcknowledged();
+
+    }
+
+    /**
      * 获取mapping
      * @param client
      * @param index
@@ -303,13 +339,15 @@ public class IndexAPI {
     public static void getIndexMapping(Client client, String index){
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
-        GetMappingsResponse response = indicesAdminClient.prepareGetMappings(index).get();
+        GetMappingsRequestBuilder getMappingsRequestBuilder = indicesAdminClient.prepareGetMappings(index);
+        GetMappingsResponse response = getMappingsRequestBuilder.get();
+
+        // 结果
         for(ObjectCursor<String> key : response.getMappings().keys()){
             ImmutableOpenMap<String, MappingMetaData> mapping = response.getMappings().get(key.value);
-            System.out.println("------------------------");
             for(ObjectCursor<String> key2 : mapping.keys()){
                 try {
-                    System.out.println("-------------" + mapping.get(key2.value).sourceAsMap().toString());
+                    logger.info("------------- {}", mapping.get(key2.value).sourceAsMap().toString());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

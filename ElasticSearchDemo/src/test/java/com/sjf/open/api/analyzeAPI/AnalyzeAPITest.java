@@ -32,4 +32,14 @@ public class AnalyzeAPITest {
         AnalyzeAPI.analyzeIndexAndField(client, index, field, value);
     }
 
+    @Test
+    public void analyzeByAnalyzer() throws Exception {
+        // String simpleAnalyzer = "simple";
+        String standardAnalyzer = "standard";
+        // String whitespaceAnalyzer = "whitespace";
+        String englishAnalyzer = "english";
+        String value = "Set the shape to semi-transparent by calling set_trans(5)";
+        AnalyzeAPI.analyzeByAnalyzer(client, standardAnalyzer, "皇家马德里");
+    }
+
 }

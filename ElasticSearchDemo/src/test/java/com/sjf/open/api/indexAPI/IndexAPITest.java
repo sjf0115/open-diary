@@ -45,7 +45,7 @@ public class IndexAPITest {
 
     @Test
     public void createSimpleIndex() throws Exception {
-        String index = "simple-index";
+        String index = "test-index";
         if(IndexAPI.isIndexExists(client, index)){
             logger.info("--------- createSimpleIndex 索引 [{}] 已经存在", index);
             return;
@@ -93,7 +93,7 @@ public class IndexAPITest {
 
     @Test
     public void deleteIndex() throws Exception {
-        String index = "football-index";
+        String index = "test-index";
         if(!IndexAPI.isIndexExists(client, index)){
             logger.info("--------- deleteIndex 索引 [{}] 不存在", index);
             return;
@@ -128,26 +128,6 @@ public class IndexAPITest {
     }
 
     @Test
-    public void putIndexMapping() throws Exception {
-        String index = "simple-index";
-        String type = "simple-type";
-
-        if(!IndexAPI.isIndexExists(client, index)){
-            logger.info("--------- putIndexMapping 索引 [{}] 不存在", index);
-            return;
-        }
-
-        boolean result = IndexAPI.putIndexMapping(client, index, type);
-        logger.info("--------- putIndexMapping {}",result);
-    }
-
-    @Test
-    public void getIndexMapping() throws Exception {
-        String index = "qunar-index";
-        IndexAPI.getIndexMapping(client, index);
-    }
-
-    @Test
     public void addAliasIndex() throws Exception {
         String index = "test-index";
         String aliasName = "test";
@@ -177,6 +157,26 @@ public class IndexAPITest {
 
         boolean result = IndexAPI.deleteAliasIndex(client, index, aliasName);
         logger.info("--------- deleteAliasIndex {}", result); // true
+    }
+
+    @Test
+    public void putIndexMapping() throws Exception {
+        String index = "test-index";
+        String type = "test-type";
+
+        if(!IndexAPI.isIndexExists(client, index)){
+            logger.info("--------- putIndexMapping 索引 [{}] 不存在", index);
+            return;
+        }
+
+        boolean result = IndexAPI.putIndexMapping2(client, index, type);
+        logger.info("--------- putIndexMapping {}",result);
+    }
+
+    @Test
+    public void getIndexMapping() throws Exception {
+        String index = "test-index";
+        IndexAPI.getIndexMapping(client, index);
     }
 
     @Test

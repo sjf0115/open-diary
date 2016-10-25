@@ -132,10 +132,4 @@ public class DocumentAPI {
 
     }
 
-    /*// 参数
-    Map<String, Object> param = Maps.newConcurrentMap();
-    param.put("name", "高准翼");
-    param.put("college", "软件学院");
-    //updateRequestBuilder.setScript(nameScript);
-    //Script nameScript = new Script("ctx._source.name = name", ScriptService.ScriptType.INLINE, "native", param);*/
 }

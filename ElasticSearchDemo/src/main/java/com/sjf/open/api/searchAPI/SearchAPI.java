@@ -7,10 +7,12 @@ import org.elasticsearch.action.search.MultiSearchResponse;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchScrollRequestBuilder;
+import org.elasticsearch.action.support.IndicesOptions;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,6 +27,117 @@ import java.util.List;
 public class SearchAPI {
 
     private static final Logger logger = LoggerFactory.getLogger(SearchAPI.class);
+
+    /**
+     * 打印返回信息
+     * @param response
+     */
+    private static void print(SearchResponse response){
+        // 结果
+        SearchHit[] searchHits = response.getHits().getHits();
+        for (SearchHit searchHit : searchHits) {
+            logger.info("----------hit source: id {} source {}", searchHit.getId(), searchHit.getSource());
+        } // for
+    }
+
+    /**
+     * 查询全部
+     * @param client
+     */
+    public static void search(Client client){
+
+        // 搜索
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch();
+
+        // 执行
+        SearchResponse response = searchRequestBuilder.get();
+
+        // 结果
+        TimeValue took = response.getTook();
+        logger.info("-------- search searchHit took [{}]", took);
+
+        int totalShards = response.getTotalShards();
+        logger.info("-------- search searchHit totalShards [{}]", totalShards);
+
+        int successfulShards = response.getSuccessfulShards();
+        logger.info("-------- search searchHit successfulShards [{}]", successfulShards);
+
+        int failedShards = response.getFailedShards();
+        logger.info("-------- search searchHit failedShards [{}]", failedShards);
+
+        SearchHits searchHits = response.getHits();
+        long total = searchHits.getTotalHits();
+        logger.info("-------- search searchHit total [{}]", total);
+        float maxScore = searchHits.getMaxScore();
+        logger.info("-------- search searchHit maxScore [{}]", maxScore);
+
+        SearchHit[] searchHitArray = searchHits.getHits();
+        for (SearchHit searchHit : searchHitArray) {
+            logger.info("--------- search searchHit index [{}]", searchHit.getIndex());
+            logger.info("--------- search searchHit type [{}]", searchHit.getType());
+            logger.info("--------- search searchHit id [{}]", searchHit.getId());
+            logger.info("--------- search searchHit score [{}]", searchHit.getScore());
+            logger.info("--------- search searchHit source [{}]", searchHit.getSourceAsString());
+        } // for
+
+    }
+
+    /**
+     * 查询全部
+     *
+     * @param client
+     */
+    public static void searchAll(Client client, String index, String type) {
+
+        // 搜索
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
+        searchRequestBuilder.setTypes(type);
+        // 执行
+        SearchResponse response = searchRequestBuilder.get();
+        // 打印返回信息
+        print(response);
+
+    }
+
+    /**
+     * 多索引和多类型搜索
+     * @param client
+     */
+    public static void searchByIndicesAndTypes(Client client){
+        // 搜索
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch();
+        searchRequestBuilder.setIndices("*index");
+        // 执行
+        SearchResponse response = searchRequestBuilder.get();
+        // 打印返回信息
+        print(response);
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param client
+     * @param index
+     * @param type
+     * @param from
+     * @param size
+     */
+    public static void searchByPage(Client client, String index, String type, int from, int size) {
+
+        // 搜索
+        SearchRequestBuilder searchRequestBuilder = client.prepareSearch();
+        searchRequestBuilder.setIndices(index);
+        searchRequestBuilder.setTypes(type);
+        searchRequestBuilder.setFrom(from);
+        searchRequestBuilder.setSize(size);
+
+        // 执行
+        SearchResponse response = searchRequestBuilder.get();
+
+        // 打印结果
+        print(response);
+
+    }
 
     /**
      * 使用scroll进行搜索
@@ -165,54 +278,6 @@ public class SearchAPI {
             } // for
         } // for
 
-    }
-
-    /**
-     * 查询全部
-     * 
-     * @param client
-     */
-    public static void searchAll(Client client, String index, String type) {
-        // 搜索
-        SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
-        searchRequestBuilder.setTypes(type);
-        // 执行
-        SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
-        // 结果
-        SearchHit[] searchHits = searchResponse.getHits().getHits();
-        logger.info("----------searchAll");
-        for (SearchHit searchHit : searchHits) {
-            logger.info("----------hit source: id {} source {}", searchHit.getId(), searchHit.getSource());
-        } // for
-    }
-
-    /**
-     * 分页查询
-     * 
-     * @param client
-     * @param index
-     * @param type
-     * @param pageIndex
-     * @param pageSize
-     */
-    public static void searchByPage(Client client, String index, String type, int pageIndex, int pageSize) {
-        // 搜索
-        SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
-        searchRequestBuilder.setTypes(type);
-        // 设置起始页
-        searchRequestBuilder.setFrom(pageIndex);
-        // 设置每页个数
-        searchRequestBuilder.setSize(pageSize);
-
-        // 执行
-        SearchResponse searchResponse = searchRequestBuilder.execute().actionGet();
-
-        // 结果
-        logger.info("----------searchByPage");
-        SearchHit[] searchHits = searchResponse.getHits().getHits();
-        for (SearchHit searchHit : searchHits) {
-            logger.info("----------hit source {}", searchHit.getSource());
-        } // for
     }
 
 }

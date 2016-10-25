@@ -69,16 +69,16 @@ public class IndexDocAPITest {
     @Test
     public void indexDocByMap() throws Exception {
 
-        String index = "student-index";
-        String type = "student-type";
-        String id = "3";
+        String index = "test-index";
+        String type = "test-type";
+        String id = "1";
 
         Map<String, Object> map = Maps.newHashMap();
         map.put("name", "C罗");
-        map.put("sex", "boy");
-        map.put("age", 34);
-        map.put("college", "计算机学院");
-        map.put("school", "麻省理工学院");
+        map.put("sex", true);
+        map.put("age", 31);
+        map.put("birthday", "1985-02-05");
+        map.put("club", "皇家马德里俱乐部");
 
         boolean result = IndexDocAPI.indexDocByMap(client, index, type , id,  map);
         logger.info("--------- indexDocByMap {}", result);

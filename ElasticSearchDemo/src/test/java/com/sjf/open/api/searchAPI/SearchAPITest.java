@@ -17,6 +17,32 @@ public class SearchAPITest {
     private static Client client = Common.createClient();
 
     @Test
+    public void search() throws Exception {
+        SearchAPI.search(client);
+    }
+
+    @Test
+    public void searchAll() throws Exception {
+        String index = "football-index";
+        String type = "football-type";
+        SearchAPI.searchAll(client, index, type);
+    }
+
+    @Test
+    public void searchByIndicesAndTypes() throws Exception {
+        SearchAPI.searchByIndicesAndTypes(client);
+    }
+
+    @Test
+    public void searchByPage() throws Exception {
+        String index = "football-index";
+        String type = "football-type";
+        int from = 5;
+        int size = 3;
+        SearchAPI.searchByPage(client, index, type, from, size);
+    }
+
+    @Test
     public void multiSearch() throws Exception {
         SearchAPI.multiSearch(client);
     }
