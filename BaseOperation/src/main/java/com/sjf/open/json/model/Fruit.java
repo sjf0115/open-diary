@@ -1,15 +1,13 @@
-package com.sjf.open.model;
-
-
-import com.sjf.open.json.model.Author;
+package com.sjf.open.json.model;
 
 /**
- * Created by xiaosi on 16-7-13.
+ * Created by xiaosi on 16-11-16.
  */
-public class Book {
+public class Fruit {
+
     private String name;
-    private double price;
-    private Author author;
+    private transient double price;
+    private String location;
 
     public String getName() {
         return name;
@@ -27,20 +25,20 @@ public class Book {
         this.price = price;
     }
 
-    public Author getAuthor() {
-        return author;
+    public String getLocation() {
+        return location;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Fruit{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", author=" + author +
+                ", location='" + location + '\'' +
                 '}';
     }
 }

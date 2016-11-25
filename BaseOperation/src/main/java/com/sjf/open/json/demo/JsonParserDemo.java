@@ -1,4 +1,4 @@
-package com.sjf.open.json;
+package com.sjf.open.json.demo;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.sjf.open.json.model.ClickDetail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,8 +47,7 @@ public class JsonParserDemo {
             if(isValid(type,schemeUrl)){
                 logger.info("------------------------- valid type {} --- schemeUrl {}", type, schemeUrl);
                 clickDetail = new ClickDetail();
-                clickDetail.setUrl(schemeUrl);
-                clickDetail.setBusiness(type);
+//                clickDetail.setBusiness(type);
                 result.add(clickDetail);
             }
         }
@@ -99,8 +99,7 @@ public class JsonParserDemo {
             if(isValid(type, url)){
                 logger.info("------------------------- valid type {} url {}",type, url);
                 clickDetail = new ClickDetail();
-                clickDetail.setUrl(url);
-                clickDetail.setBusiness(type);
+//                clickDetail.setBusiness(type);
                 clickDetailList.add(clickDetail);
             }
         }

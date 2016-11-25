@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AvroDemo/AvroDemo.iml" filepath="$PROJECT_DIR$/AvroDemo/AvroDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/BaseOperation/BaseOperation.iml" filepath="$PROJECT_DIR$/BaseOperation/BaseOperation.iml" />
       <module fileurl="file://$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" filepath="$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HiveCode/HiveCode.iml" filepath="$PROJECT_DIR$/HiveCode/HiveCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/KafkaDemo/KafkaDemo.iml" filepath="$PROJECT_DIR$/KafkaDemo/KafkaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" filepath="$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/PythonDemo/PythonDemo.iml" filepath="$PROJECT_DIR$/PythonDemo/PythonDemo.iml" />
