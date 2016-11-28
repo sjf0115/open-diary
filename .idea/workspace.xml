@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="267f9f46-6ccc-4061-a294-2f76d178b873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseOperation/src/main/sh/sh_test.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseOperation/src/main/sh/sh_range.sh" />
     </list>
     <ignored path="openDiary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,9 +116,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1825">
               <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,11 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sh_test.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/sh/sh_test.sh">
+      <file leaf-file-name="sh_range.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/sh/sh_range.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="672">
+              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -179,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/json/model/Student.java" />
         <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/json/model/Company.java" />
         <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/json/annotation/Excluded.java" />
         <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/json/model/B.java" />
@@ -230,6 +226,7 @@
         <option value="$PROJECT_DIR$/HiveCode/src/main/java/com/sjf/open/hive/udf/udtf/TrainOrderPriceSplitUDTF.java" />
         <option value="$PROJECT_DIR$/HiveCode/src/main/java/com/sjf/open/hive/udf/udtf/BookParserUDTF.java" />
         <option value="$PROJECT_DIR$/BaseOperation/src/main/sh/sh_test.sh" />
+        <option value="$PROJECT_DIR$/BaseOperation/src/main/sh/sh_range.sh" />
       </list>
     </option>
   </component>
@@ -459,19 +456,19 @@
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BaseOperation/src/main" />
+      <recent name="$PROJECT_DIR$/ThriftDemo/src/main" />
+      <recent name="$PROJECT_DIR$/ThriftRPCDemo/src/main" />
+      <recent name="$PROJECT_DIR$/ThriftDemo/src/main/java" />
+      <recent name="$PROJECT_DIR$/ThriftDemo/src/main/java/com/sjf/open" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.sjf.open.hive.udf" />
       <recent name="com.sjf.open.api.updateAPI" />
       <recent name="com.sjf.open.api.queryAPI" />
       <recent name="com.sjf.open.api.indexAPI" />
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ThriftRPCDemo/src/main/java/com/sjf/open" />
-      <recent name="$PROJECT_DIR$/AvroDemo/src/main/resources/schema" />
-      <recent name="$PROJECT_DIR$/PythonDemo" />
-      <recent name="$PROJECT_DIR$/RestFullServiceDemo/src/main/java" />
-      <recent name="$PROJECT_DIR$/RocketMQ/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sjf.open.hive.udf.udtf" />
@@ -480,12 +477,12 @@
       <recent name="com.sjf.open.json" />
       <recent name="com.sjf.open.utils" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/BaseOperation/src/main" />
-      <recent name="$PROJECT_DIR$/ThriftDemo/src/main" />
-      <recent name="$PROJECT_DIR$/ThriftRPCDemo/src/main" />
-      <recent name="$PROJECT_DIR$/ThriftDemo/src/main/java" />
-      <recent name="$PROJECT_DIR$/ThriftDemo/src/main/java/com/sjf/open" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BaseOperation/src/main/sh" />
+      <recent name="$PROJECT_DIR$/ThriftRPCDemo/src/main/java/com/sjf/open" />
+      <recent name="$PROJECT_DIR$/AvroDemo/src/main/resources/schema" />
+      <recent name="$PROJECT_DIR$/PythonDemo" />
+      <recent name="$PROJECT_DIR$/RestFullServiceDemo/src/main/java" />
     </key>
   </component>
   <component name="RunManager" selected="Bash.sh_test.sh">
@@ -1677,7 +1674,7 @@
       <workItem from="1480038974663" duration="1211000" />
       <workItem from="1480047496837" duration="9521000" />
       <workItem from="1480298111979" duration="1473000" />
-      <workItem from="1480301415802" duration="1565000" />
+      <workItem from="1480301415802" duration="1818000" />
     </task>
     <servers />
   </component>
@@ -1714,7 +1711,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="649965000" />
+    <option name="totallyTimeSpent" value="650218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1739,8 +1736,8 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32656422" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2421959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7849829" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2421959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.78471476" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25521407" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1825,13 +1822,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar!/com/google/gson/Gson.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="368" column="0" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.7/gson-2.7-sources.jar!/com/google/gson/Gson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -2098,9 +2088,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1825">
           <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2165,6 +2153,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/sh/sh_test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/sh/sh_while.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -2173,10 +2169,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/sh/sh_test.sh">
+    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/sh/sh_range.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="672">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
           <folding />
         </state>
       </provider>
