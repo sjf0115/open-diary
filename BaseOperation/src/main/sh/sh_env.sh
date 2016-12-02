@@ -20,10 +20,14 @@ robomongo_name="robomongo"
 robomongo_home="ROBOMONGO_HOME"
 robomongo_location="/opt/robomongo-0.9.0"
 
-
 flume_name="flume"
 flume_home="FLUME_HOME"
 flume_location="/opt/apache-flume-1.6.0-bin"
+
+hbase_name="hbase"
+hbase_home="HBASE_HOME"
+hbase_location="/opt/hbase-1.2.2"
+
 
 ## 配置环境
 # home_desc -> export 注释
@@ -45,4 +49,5 @@ function export_env_home
 #export_env_home ${scala_name} ${scala_home} ${scala_location}
 #export_env_home ${mongodb_name} ${mongodb_home} ${mongodb_location}
 #export_env_home ${robomongo_name} ${robomongo_home} ${robomongo_location}
-export_env_home ${flume_name} ${flume_home} ${flume_location}
+#export_env_home ${flume_name} ${flume_home} ${flume_location}
+export_env_home ${hbase_name} ${hbase_home} ${hbase_location}
