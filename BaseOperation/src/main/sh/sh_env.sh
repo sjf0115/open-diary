@@ -1,8 +1,12 @@
 #!/bin/sh
 
+hadoop_name="hadoop"
+hadoop_home="HADOOP_HOME"
+hadoop_location="/home/xiaosi/opt/hadoop-2.7.3"
+
 kylin_name="kylin"
 kylin_home="KYLIN_HOME"
-kylin_location="/opt/apache-kylin-1.5.2.1-bin"
+kylin_location="/home/xiaosi/opt/kylin-1.6"
 
 kafka_name="kafka"
 kafka_home="KAFKA_HOME"
@@ -22,11 +26,11 @@ robomongo_location="/opt/robomongo-0.9.0"
 
 flume_name="flume"
 flume_home="FLUME_HOME"
-flume_location="/opt/apache-flume-1.6.0-bin"
+flume_location="/home/xiaosi/opt/flume-1.6.0"
 
 hbase_name="hbase"
 hbase_home="HBASE_HOME"
-hbase_location="/opt/hbase-1.2.2"
+hbase_location="/home/xiaosi/opt/hbase-1.2.2"
 
 
 ## 配置环境
@@ -44,10 +48,10 @@ function export_env_home
     sudo echo 'export PATH=${'"${home_key}"'}/bin:$PATH'  >>  /etc/profile
 }
 
-# export_env_home ${kylin_name} ${kylin_home} ${kylin_location}
+export_env_home ${kylin_name} ${kylin_home} ${kylin_location}
 #export_env_home ${kafka_name} ${kafka_home} ${kafka_location}
 #export_env_home ${scala_name} ${scala_home} ${scala_location}
 #export_env_home ${mongodb_name} ${mongodb_home} ${mongodb_location}
 #export_env_home ${robomongo_name} ${robomongo_home} ${robomongo_location}
 #export_env_home ${flume_name} ${flume_home} ${flume_location}
-export_env_home ${hbase_name} ${hbase_home} ${hbase_location}
+#export_env_home ${hbase_name} ${hbase_home} ${hbase_location}
