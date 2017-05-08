@@ -25,6 +25,7 @@
         <processorPath useClasspath="true" />
         <module name="AvroDemo" />
         <module name="ElasticSearchDemo" />
+        <module name="FlumeDemo" />
         <module name="HiveCode" />
         <module name="KafkaDemo" />
         <module name="MapReduceDemo" />
@@ -35,11 +36,12 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.6">
       <module name="AvroDemo" target="1.6" />
-      <module name="BaseOperation" target="1.6" />
-      <module name="ElasticSearchDemo" target="1.6" />
-      <module name="HiveCode" target="1.6" />
-      <module name="KafkaDemo" target="1.6" />
-      <module name="MapReduceDemo" target="1.6" />
+      <module name="BaseOperation" target="1.5" />
+      <module name="ElasticSearchDemo" target="1.5" />
+      <module name="FlumeDemo" target="1.5" />
+      <module name="HiveCode" target="1.5" />
+      <module name="KafkaDemo" target="1.5" />
+      <module name="MapReduceDemo" target="1.5" />
       <module name="openDiary" target="1.5" />
       <module name="RestFullServiceDemo" target="1.5" />
       <module name="RocketMQ" target="1.6" />

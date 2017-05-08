@@ -18,6 +18,11 @@
             <artifactId>elasticsearch</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.searchbox</groupId>
+            <artifactId>jest</artifactId>
+        </dependency>
+
         <!-- guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -34,7 +39,6 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
-
 
         <!-- fastjson -->
         <dependency>

@@ -7,6 +7,8 @@ public class Address implements Cloneable{
     private String province;
     private String city;
 
+    public String street;
+
     public Address() {
     }
 
@@ -19,7 +21,15 @@ public class Address implements Cloneable{
         this.city = city;
     }
 
-    public String getProvince() {
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    private String getProvince() {
         return province;
     }
 

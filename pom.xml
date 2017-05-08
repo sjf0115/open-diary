@@ -19,6 +19,7 @@
         <module>AvroDemo</module>
         <module>ThriftDemo</module>
         <module>HiveCode</module>
+        <module>FlumeDemo</module>
     </modules>
 
     <properties>
@@ -43,6 +44,7 @@
         <thrift.version>0.9.3</thrift.version>
         <apache.commons.version>3.4</apache.commons.version>
         <junit.version>4.12</junit.version>
+        <jest.version>2.4.0</jest.version>
     </properties>
 
     <dependencyManagement>
@@ -52,6 +54,12 @@
                 <groupId>org.elasticsearch</groupId>
                 <artifactId>elasticsearch</artifactId>
                 <version>${elasticsearch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.searchbox</groupId>
+                <artifactId>jest</artifactId>
+                <version>${jest.version}</version>
             </dependency>
 
             <!-- rocketmq -->
