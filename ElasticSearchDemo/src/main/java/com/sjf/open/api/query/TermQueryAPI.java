@@ -1,5 +1,6 @@
 package com.sjf.open.api.query;
 
+import com.sjf.open.api.common.ESClientBuilder;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
@@ -18,7 +19,6 @@ import org.elasticsearch.search.SearchHit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 /**
  * Created by xiaosi on 16-7-4.
  *
@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 public class TermQueryAPI {
 
     private static final Logger logger = LoggerFactory.getLogger(TermQueryAPI.class);
+    private static Client client = ESClientBuilder.builder();
 
     /**
      * 返回查询结果
@@ -47,12 +48,8 @@ public class TermQueryAPI {
     /**
      * query之Match All Query
      *
-     * @param client
      */
-    public static void matchAllQuery(Client client) {
-
-        String index = "football-index";
-        String type = "football-type";
+    public static void matchAllQuery(String index, String type) {
 
         // Query
         QueryBuilder queryBuilder = QueryBuilders.matchAllQuery();
@@ -71,14 +68,15 @@ public class TermQueryAPI {
 
     /**
      * 词条查询
-     * @param client
      * @param index
      * @param type
+     * @param key
+     * @param value
      */
-    public static void termQuery(Client client, String index, String type) {
+    public static void termQuery(String index, String type, String key, String value) {
 
         // Query
-        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("country", "AWxhOn".toLowerCase());
+        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery(key, value);
 
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
@@ -94,14 +92,14 @@ public class TermQueryAPI {
 
     /**
      * 多词条查询
-     * @param client
+     * 
      * @param index
      * @param type
      */
-    public static void termsQuery(Client client, String index, String type) {
+    public static void termsQuery(String index, String type, String key, String ... values) {
 
         // Query
-        TermsQueryBuilder termsQueryBuilder = QueryBuilders.termsQuery("country", "比利时", "德国");
+        TermsQueryBuilder termsQueryBuilder = QueryBuilders.termsQuery(key, values);
 
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
@@ -117,11 +115,11 @@ public class TermQueryAPI {
 
     /**
      * 范围查询
-     * @param client
+     * 
      * @param index
      * @param type
      */
-    public static void rangeQuery(Client client, String index, String type) {
+    public static void rangeQuery(String index, String type) {
 
         // Query
         RangeQueryBuilder rangeQueryBuilder = QueryBuilders.rangeQuery("age");
@@ -130,7 +128,7 @@ public class TermQueryAPI {
         rangeQueryBuilder.includeLower(true);
         rangeQueryBuilder.includeUpper(true);
 
-        //RangeQueryBuilder rangeQueryBuilder = QueryBuilders.rangeQuery("age").gte(19).lte(21);
+        // RangeQueryBuilder rangeQueryBuilder = QueryBuilders.rangeQuery("age").gte(19).lte(21);
 
         // Search
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch(index);
@@ -147,11 +145,11 @@ public class TermQueryAPI {
 
     /**
      * 存在查询
-     * @param client
+     * 
      * @param index
      * @param type
      */
-    public static void existsQuery(Client client, String index, String type) {
+    public static void existsQuery(String index, String type) {
 
         // Query
         ExistsQueryBuilder existsQueryBuilder = QueryBuilders.existsQuery("name");
@@ -171,9 +169,11 @@ public class TermQueryAPI {
 
     /**
      * 前缀查询
-     * @param client
+     * 
+     * @param index
+     * @param type
      */
-    public static void prefixQuery(Client client, String index, String type) {
+    public static void prefixQuery(String index, String type) {
 
         // Query
         PrefixQueryBuilder prefixQueryBuilder = QueryBuilders.prefixQuery("country", "葡萄");
@@ -192,11 +192,11 @@ public class TermQueryAPI {
 
     /**
      * 通配符查询
-     * @param client
+     * 
      * @param index
      * @param type
      */
-    public static void wildcardQuery(Client client, String index, String type){
+    public static void wildcardQuery(String index, String type) {
 
         // Query
         WildcardQueryBuilder wildcardQueryBuilder = QueryBuilders.wildcardQuery("country", "西*牙");
@@ -215,11 +215,11 @@ public class TermQueryAPI {
 
     /**
      * 正则表达式查询
-     * @param client
+     * 
      * @param index
      * @param type
      */
-    public static void regexpQuery(Client client, String index, String type){
+    public static void regexpQuery(String index, String type) {
 
         // Query
         RegexpQueryBuilder regexpQueryBuilder = QueryBuilders.regexpQuery("country", "(西班|葡萄)牙");
@@ -238,11 +238,11 @@ public class TermQueryAPI {
 
     /**
      * 模糊查询 字符型
-     * @param client
+     * 
      * @param index
      * @param type
      */
-    public static void fuzzyQuery(Client client, String index, String type){
+    public static void fuzzyQuery(String index, String type) {
 
         // Query
         FuzzyQueryBuilder fuzzyQueryBuilder = QueryBuilders.fuzzyQuery("country", "洗班牙");
@@ -265,11 +265,11 @@ public class TermQueryAPI {
 
     /**
      * 模糊查询 数值型
-     * @param client
+     * 
      * @param index
      * @param type
      */
-    public static void fuzzyQuery2(Client client, String index, String type){
+    public static void fuzzyQuery2(String index, String type) {
 
         // Query
         FuzzyQueryBuilder fuzzyQueryBuilder = QueryBuilders.fuzzyQuery("age", "18");

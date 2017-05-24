@@ -1,12 +1,8 @@
 package com.sjf.open.demo;
 
-import com.sjf.open.api.common.ESClientBuilder;
 import com.sjf.open.api.index.IndexAPI;
 import com.sjf.open.api.index.IndexDocAPI;
-import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder;
-import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
-import org.elasticsearch.client.Client;
-import org.elasticsearch.client.IndicesAdminClient;
+import com.sjf.open.api.query.TermQueryAPI;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
 import org.slf4j.Logger;
@@ -54,7 +50,6 @@ public class IndexDemo {
 
     }
 
-
     public static void indexDocument(String index, String type){
         String json = "{\n" +
                 "  \"userInfo\": {\n" +
@@ -67,10 +62,17 @@ public class IndexDemo {
         IndexDocAPI.indexDocByJSON(index, type, "1", json);
     }
 
+    public static void search(String index, String type) {
+        TermQueryAPI.termQuery(index, type, "userInfo.gid", "0006F0F0-A311-A176-57BE-FB7260A63024");
+    }
+
     public static void main(String[] args) {
         String index = "nested_index";
         String type = "nested_type";
         //putIndexMapping(index, type);
-        indexDocument(index, type);
+        //indexDocument(index, type);
+        search(index, type);
+
+
     }
 }
