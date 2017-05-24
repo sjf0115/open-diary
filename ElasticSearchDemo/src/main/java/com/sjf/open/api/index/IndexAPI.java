@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import com.sjf.open.api.common.ESClientBuilder;
 import org.elasticsearch.action.admin.indices.alias.IndicesAliasesResponse;
 import org.elasticsearch.action.admin.indices.alias.exists.AliasesExistResponse;
 import org.elasticsearch.action.admin.indices.alias.get.GetAliasesResponse;
@@ -31,6 +32,7 @@ import org.elasticsearch.common.collect.ImmutableOpenMap;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,6 +56,7 @@ import io.searchbox.indices.mapping.PutMapping;
 public class IndexAPI {
 
     private static final Logger logger = LoggerFactory.getLogger(IndexAPI.class);
+    private static Client client = ESClientBuilder.builder();
 
     /**
      * 判断索引是否存在
@@ -158,6 +161,27 @@ public class IndexAPI {
         if (!Objects.equal(settings, null)) {
             createIndexRequestBuilder.setSettings(settings);
         }
+
+        if (!Objects.equal(mappingBuilder, null)) {
+            createIndexRequestBuilder.addMapping(type, mappingBuilder);
+        }
+
+        CreateIndexResponse response = createIndexRequestBuilder.get();
+        return response.isAcknowledged();
+
+    }
+
+    /**
+     * 创建索引 指定 mapping
+     * @param index
+     * @param type
+     * @param mappingBuilder
+     * @return
+     */
+    public static boolean createIndex(String index, String type, XContentBuilder mappingBuilder) {
+
+        IndicesAdminClient indicesAdminClient = client.admin().indices();
+        CreateIndexRequestBuilder createIndexRequestBuilder = indicesAdminClient.prepareCreate(index);
 
         if (!Objects.equal(mappingBuilder, null)) {
             createIndexRequestBuilder.addMapping(type, mappingBuilder);
@@ -341,17 +365,12 @@ public class IndexAPI {
             }
 
             StringBuilder mapping = new StringBuilder("{\"");
-            mapping.append(type)
-                    .append("\":{")
-                        .append("\"properties\":{")
-                            .append("\"name\":").append("{\"type\":\"string\",\"index\":\"not_analyzed\"},")
-                            .append("\"club\":").append("{\"type\":\"string\",\"index\":\"not_analyzed\"},")
-                            .append("\"country\":").append("{\"type\":\"string\",\"index\":\"not_analyzed\"}")
-                        .append("}")
-                    .append("}")
-            .append("}");
+            mapping.append(type).append("\":{").append("\"properties\":{").append("\"name\":")
+                    .append("{\"type\":\"string\",\"index\":\"not_analyzed\"},").append("\"club\":")
+                    .append("{\"type\":\"string\",\"index\":\"not_analyzed\"},").append("\"country\":")
+                    .append("{\"type\":\"string\",\"index\":\"not_analyzed\"}").append("}").append("}").append("}");
 
-            //System.out.println(mapping.toString());
+            // System.out.println(mapping.toString());
 
             PutMapping.Builder putMapping = new PutMapping.Builder(index, type, mapping);
             JestResult execute = client.execute(putMapping.build());
@@ -425,6 +444,10 @@ public class IndexAPI {
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         UpdateSettingsResponse response = indicesAdminClient.prepareUpdateSettings(index).setSettings(settings).get();
         return response.isAcknowledged();
+
+    }
+
+    public static void main(String[] args) {
 
     }
 

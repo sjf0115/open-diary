@@ -14,6 +14,8 @@ import org.elasticsearch.common.unit.TimeValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by xiaosi on 17-5-5.
  */
@@ -60,15 +62,15 @@ public class BulkAPI {
     public static void bulkProcessor(String index, String type, String ... sources){
         BulkProcessor.Builder builder = BulkProcessor.builder(client, new BulkProcessor.Listener() {
             public void beforeBulk(long executionId, BulkRequest request) {
-
+                logger.info("beforeBulk --------- executionId --- {} request --- {}", executionId, request.toString());
             }
 
             public void afterBulk(long executionId, BulkRequest request, BulkResponse response) {
-
+                logger.info("afterBulk ---------- executionId --- {} request --- {}", executionId, response.toString());
             }
 
             public void afterBulk(long executionId, BulkRequest request, Throwable failure) {
-
+                logger.error("执行失败 --------- executionId --- {} request --- {}", executionId, failure.getMessage());
             }
         });
         builder.setBulkActions(10000);
@@ -76,15 +78,30 @@ public class BulkAPI {
         builder.setFlushInterval(TimeValue.timeValueSeconds(5));
         builder.setConcurrentRequests(1);
         builder.setBackoffPolicy(BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3));
-        builder.build();
+        BulkProcessor bulkProcessor = builder.build();
+
+        for(String source : sources){
+            // Index
+            IndexRequestBuilder indexRequestBuilder = client.prepareIndex();
+            indexRequestBuilder.setIndex(index);
+            indexRequestBuilder.setType(type);
+            indexRequestBuilder.setSource(source);
+            indexRequestBuilder.setTTL(8000);
+
+            bulkProcessor.add(indexRequestBuilder.request());
+        }
+
+        bulkProcessor.flush();
+        bulkProcessor.close();
+
     }
 
     public static void main(String[] args) {
-        String player1 = "{\"country\":\"阿根廷\",\"club\":\"巴萨罗那俱乐部\",\"name\":\"梅西\"}";
-        String player2 = "{\"country\":\"巴西\",\"club\":\"巴萨罗那俱乐部\",\"name\":\"内马尔\"}";
-        String player3 = "{\"country\":\"葡萄牙\",\"club\":\"皇家马德里俱乐部\",\"name\":\"C罗\"}";
-        String player4 = "{\"country\":\"德国\",\"club\":\"拜仁俱乐部\",\"name\":\"诺伊尔\"}";
-        bulkRequest("football-index", "football-type", player1, player2, player3, player4);
+        String player1 = "{\"country\":\"西班牙\",\"club\":\"切尔西俱乐部\",\"name\":\"佩德罗\"}";
+        String player2 = "{\"country\":\"西班牙\",\"club\":\"曼城俱乐部\",\"name\":\"大卫.席尔瓦\"}";
+        String player3 = "{\"country\":\"西班牙\",\"club\":\"切尔西俱乐部\",\"name\":\"法布雷加斯\"}";
+        String player4 = "{\"country\":\"法国\",\"club\":\"曼联俱乐部\",\"name\":\"博格巴\"}";
+        bulkProcessor("football-index1", "football-type", player1, player2, player3, player4);
     }
 
 }

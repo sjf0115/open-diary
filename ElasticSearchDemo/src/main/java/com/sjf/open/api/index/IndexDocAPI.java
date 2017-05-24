@@ -26,14 +26,13 @@ public class IndexDocAPI {
 
     /**
      * 使用帮助类XContentBuilder 产生JSON 索引文档
-     * @param client
      * @param index
      * @param type
      * @param id
      * @param xContentBuilder
      * @return
      */
-    public static boolean indexDocByXContentBuilder(Client client, String index, String type, String id, XContentBuilder xContentBuilder) {
+    public static boolean indexDocByXContentBuilder(String index, String type, String id, XContentBuilder xContentBuilder) {
 
         // Index
         IndexRequestBuilder indexRequestBuilder = client.prepareIndex();
@@ -52,12 +51,11 @@ public class IndexDocAPI {
     /**
      * 利用Json序列化 产生JSON 索引文档
      * 
-     * @param client
      * @param index
      * @param type
      * @param id
      */
-    public static boolean indexDocByBean(Client client, String index, String type, String id, Object bean) {
+    public static boolean indexDocByBean(String index, String type, String id, Object bean) {
 
         // Bean转换为字节
         ObjectMapper mapper = new ObjectMapper();
@@ -84,12 +82,11 @@ public class IndexDocAPI {
 
     /**
      *  使用Map 产生JSON 索引文档
-     * @param client
      * @param index
      * @param type
      * @param id
      */
-    public static boolean indexDocByMap(Client client, String index, String type, String id, Map<String, Object> map) {
+    public static boolean indexDocByMap(String index, String type, String id, Map<String, Object> map) {
 
         // Index
         IndexRequestBuilder indexRequestBuilder = client.prepareIndex();
@@ -107,13 +104,12 @@ public class IndexDocAPI {
 
     /**
      *  手动方式 产生JSON 索引文档
-     * @param client
      * @param index
      * @param type
      * @param id
      * @param json
      */
-    public static boolean indexDocByJSON(Client client, String index, String type, String id, String json) {
+    public static boolean indexDocByJSON(String index, String type, String id, String json) {
 
         // Index
         IndexRequestBuilder indexRequestBuilder = client.prepareIndex();

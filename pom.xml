@@ -20,6 +20,7 @@
         <module>ThriftDemo</module>
         <module>HiveCode</module>
         <module>FlumeDemo</module>
+        <module>SparkDemo</module>
     </modules>
 
     <properties>
@@ -45,6 +46,7 @@
         <apache.commons.version>3.4</apache.commons.version>
         <junit.version>4.12</junit.version>
         <jest.version>2.4.0</jest.version>
+        <spark.version>2.1.0</spark.version>
     </properties>
 
     <dependencyManagement>
@@ -175,6 +177,31 @@
                 <version>${hive.version}</version>
             </dependency>
 
+            <!-- spark -->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <!-- spark streaming-->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
 
             <!-- kafka -->
             <dependency>
@@ -317,4 +344,17 @@
 
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

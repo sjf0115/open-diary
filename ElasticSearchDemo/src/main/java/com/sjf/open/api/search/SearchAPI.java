@@ -2,6 +2,7 @@ package com.sjf.open.api.search;
 
 import java.util.List;
 
+import com.sjf.open.api.common.ESClientBuilder;
 import org.elasticsearch.action.search.ClearScrollRequestBuilder;
 import org.elasticsearch.action.search.ClearScrollResponse;
 import org.elasticsearch.action.search.MultiSearchRequestBuilder;
@@ -26,6 +27,8 @@ import org.slf4j.LoggerFactory;
 public class SearchAPI {
 
     private static final Logger logger = LoggerFactory.getLogger(SearchAPI.class);
+
+    private static Client client = ESClientBuilder.builder();
 
     /**
      * 打印返回信息
@@ -115,13 +118,12 @@ public class SearchAPI {
     /**
      * 分页查询
      *
-     * @param client
      * @param index
      * @param type
      * @param from
      * @param size
      */
-    public static void searchByPage(Client client, String index, String type, int from, int size) {
+    public static void searchByPage(String index, String type, int from, int size) {
 
         // 搜索
         SearchRequestBuilder searchRequestBuilder = client.prepareSearch();
