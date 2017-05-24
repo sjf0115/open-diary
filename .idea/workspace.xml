@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="267f9f46-6ccc-4061-a294-2f76d178b873" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElasticSearchDemo/src/main/resources/es.alone.properties" afterPath="$PROJECT_DIR$/ElasticSearchDemo/src/main/resources/es.alone.properties" />
-    </list>
+    <list default="true" id="267f9f46-6ccc-4061-a294-2f76d178b873" name="Default" comment="" />
     <ignored path="openDiary.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1874,7 +1872,7 @@
       <workItem from="1495444875325" duration="1678000" />
       <workItem from="1495542317034" duration="1396000" />
       <workItem from="1495598242933" duration="1845000" />
-      <workItem from="1495606058932" duration="236000" />
+      <workItem from="1495606058932" duration="256000" />
     </task>
     <task id="LOCAL-00001" summary="反射指南">
       <created>1482113342301</created>
@@ -1919,7 +1917,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="752886000" />
+    <option name="totallyTimeSpent" value="752906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
