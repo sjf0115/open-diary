@@ -42,10 +42,10 @@ public class JoinQueryAPI {
     }
 
     public static void main(String[] args) {
-        String index = "nested_index";
+        String index = "nested_test";
         String type = "nested_type";
 
-        nestedQuery(index, type, "userInfo", "userInfo.gid", "0006F0F0-A311-A176-57BE-FB7260A63024");
+        nestedQuery(index, type, "comments", "comments.name", "Alice White");
     }
 
 }

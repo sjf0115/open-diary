@@ -32,6 +32,10 @@ hbase_name="hbase"
 hbase_home="HBASE_HOME"
 hbase_location="/home/xiaosi/opt/hbase-1.2.2"
 
+kibana_name="kibana"
+kibana_home="KIBANA_HOME"
+kibana_location="/home/xiaosi/opt/kibana-4.5.1"
+
 
 ## 配置环境
 # home_desc -> export 注释
@@ -48,10 +52,11 @@ function export_env_home
     sudo echo 'export PATH=${'"${home_key}"'}/bin:$PATH'  >>  /etc/profile
 }
 
-export_env_home ${kylin_name} ${kylin_home} ${kylin_location}
+#export_env_home ${kylin_name} ${kylin_home} ${kylin_location}
 #export_env_home ${kafka_name} ${kafka_home} ${kafka_location}
 #export_env_home ${scala_name} ${scala_home} ${scala_location}
 #export_env_home ${mongodb_name} ${mongodb_home} ${mongodb_location}
 #export_env_home ${robomongo_name} ${robomongo_home} ${robomongo_location}
 #export_env_home ${flume_name} ${flume_home} ${flume_location}
 #export_env_home ${hbase_name} ${hbase_home} ${hbase_location}
+export_env_home ${kibana_name} ${kibana_home} ${kibana_location}

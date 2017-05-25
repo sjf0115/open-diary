@@ -61,11 +61,10 @@ public class IndexAPI {
     /**
      * 判断索引是否存在
      * 
-     * @param client
      * @param index
      * @return
      */
-    public static boolean isIndexExists(Client client, String index) {
+    public static boolean isIndexExists(String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         IndicesExistsResponse response = indicesAdminClient.prepareExists(index).get();
@@ -80,14 +79,13 @@ public class IndexAPI {
     /**
      * 判断类型是否存在
      * 
-     * @param client
      * @param index
      * @param type
      * @return
      */
-    public static boolean isTypeExists(Client client, String index, String type) {
+    public static boolean isTypeExists(String index, String type) {
 
-        if (!isIndexExists(client, index)) {
+        if (!isIndexExists(index)) {
             logger.info("--------- isTypeExists 索引 [{}] 不存在", index);
             return false;
         }
@@ -101,10 +99,9 @@ public class IndexAPI {
     /**
      * 索引统计
      * 
-     * @param client
      * @param index
      */
-    public static void indexStats(Client client, String index) {
+    public static void indexStats(String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         IndicesStatsResponse response = indicesAdminClient.prepareStats(index).all().get();
@@ -130,11 +127,10 @@ public class IndexAPI {
     /**
      * 创建空索引 默认setting 无mapping
      * 
-     * @param client
      * @param index
      * @return
      */
-    public static boolean createSimpleIndex(Client client, String index) {
+    public static boolean createSimpleIndex(String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         CreateIndexResponse response = indicesAdminClient.prepareCreate(index).get();
@@ -145,14 +141,13 @@ public class IndexAPI {
     /**
      * 创建索引 指定setting mapping
      * 
-     * @param client
      * @param index
      * @param type
      * @param settings
      * @param mappingBuilder
      * @return
      */
-    public static boolean createIndex(Client client, String index, String type, Settings settings,
+    public static boolean createIndex(String index, String type, Settings settings,
             XContentBuilder mappingBuilder) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
