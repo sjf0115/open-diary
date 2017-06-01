@@ -21,6 +21,7 @@
         <module>HiveCode</module>
         <module>FlumeDemo</module>
         <module>SparkDemo</module>
+        <module>ZeppelinDemo</module>
     </modules>
 
     <properties>
@@ -47,6 +48,9 @@
         <junit.version>4.12</junit.version>
         <jest.version>2.4.0</jest.version>
         <spark.version>2.1.0</spark.version>
+        <mysql.version>6.0.6</mysql.version>
+        <zeppelin.version>0.7.1</zeppelin.version>
+        <redis.version>2.9.0</redis.version>
     </properties>
 
     <dependencyManagement>
@@ -208,6 +212,27 @@
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
                 <version>${kafka.version}</version>
+            </dependency>
+
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- zeppelin -->
+            <dependency>
+                <groupId>org.apache.zeppelin</groupId>
+                <artifactId>zeppelin-interpreter</artifactId>
+                <version>${zeppelin.version}</version>
+            </dependency>
+
+            <!-- redis -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.version}</version>
             </dependency>
 
             <!-- log -->

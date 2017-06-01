@@ -11,11 +11,15 @@
 
     <artifactId>open-base</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>../KafkaDemo</module>
-    </modules>
 
     <dependencies>
+
+        <!-- redis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
         <!-- guava -->
         <dependency>
             <groupId>com.google.guava</groupId>

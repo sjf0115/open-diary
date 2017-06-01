@@ -27,12 +27,12 @@
         <module name="ElasticSearchDemo" />
         <module name="FlumeDemo" />
         <module name="HiveCode" />
-        <module name="KafkaDemo" />
         <module name="MapReduceDemo" />
         <module name="RestFullServiceDemo" />
         <module name="RocketMQ" />
         <module name="SparkDemo" />
         <module name="ThriftDemo" />
+        <module name="ZeppelinDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -48,6 +48,7 @@
       <module name="RocketMQ" target="1.6" />
       <module name="SparkDemo" target="1.8" />
       <module name="ThriftDemo" target="1.8" />
+      <module name="ZeppelinDemo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
