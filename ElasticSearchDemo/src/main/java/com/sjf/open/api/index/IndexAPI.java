@@ -190,10 +190,9 @@ public class IndexAPI {
     /**
      * 删除索引
      * 
-     * @param client
      * @param index
      */
-    public static boolean deleteIndex(Client client, String index) {
+    public static boolean deleteIndex(String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         DeleteIndexResponse response = indicesAdminClient.prepareDelete(index).get();
@@ -208,7 +207,7 @@ public class IndexAPI {
      * @param index
      * @return
      */
-    public static boolean closeIndex(Client client, String index) {
+    public static boolean closeIndex(String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         CloseIndexResponse response = indicesAdminClient.prepareClose(index).get();
@@ -218,11 +217,10 @@ public class IndexAPI {
     /**
      * 关闭索引
      * 
-     * @param client
      * @param index
      * @return
      */
-    public static boolean openIndex(Client client, String index) {
+    public static boolean openIndex(String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         OpenIndexResponse response = indicesAdminClient.prepareOpen(index).get();
@@ -232,11 +230,10 @@ public class IndexAPI {
     /**
      * 判断别名是否存在
      * 
-     * @param client
      * @param aliases
      * @return
      */
-    public static boolean isAliasExist(Client client, String... aliases) {
+    public static boolean isAliasExist(String... aliases) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         AliasesExistResponse response = indicesAdminClient.prepareAliasesExist(aliases).get();
@@ -247,12 +244,11 @@ public class IndexAPI {
     /**
      * 为索引创建别名
      * 
-     * @param client
      * @param index
      * @param alias
      * @return
      */
-    public static boolean addAliasIndex(Client client, String index, String alias) {
+    public static boolean addAliasIndex(String index, String alias) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         IndicesAliasesResponse response = indicesAdminClient.prepareAliases().addAlias(index, alias).get();
@@ -263,10 +259,9 @@ public class IndexAPI {
     /**
      * 获取别名
      * 
-     * @param client
      * @param aliases
      */
-    public static void getAliasIndex(Client client, String... aliases) {
+    public static void getAliasIndex(String... aliases) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         GetAliasesResponse response = indicesAdminClient.prepareGetAliases(aliases).get();
@@ -286,12 +281,11 @@ public class IndexAPI {
     /**
      * 删除别名
      * 
-     * @param client
      * @param index
      * @param aliases
      * @return
      */
-    public static boolean deleteAliasIndex(Client client, String index, String... aliases) {
+    public static boolean deleteAliasIndex(String index, String... aliases) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         IndicesAliasesResponse response = indicesAdminClient.prepareAliases().removeAlias(index, aliases).get();
@@ -302,12 +296,11 @@ public class IndexAPI {
     /**
      * 设置映射
      * 
-     * @param client
      * @param index
      * @param type
      * @return
      */
-    public static boolean putIndexMapping(Client client, String index, String type) {
+    public static boolean putIndexMapping(String index, String type) {
 
         // mapping
         XContentBuilder mappingBuilder;
@@ -377,37 +370,12 @@ public class IndexAPI {
         }
     }
 
-    public static boolean putIndexMapping2(Client client, String index, String type) {
-
-        // mapping
-        XContentBuilder mappingBuilder;
-        try {
-            mappingBuilder = XContentFactory.jsonBuilder().startObject().startObject(type).startObject("properties")
-                    .startObject("club").field("type", "string").field("index", "analyzed").field("analyzer", "english")
-                    .endObject().endObject().endObject().endObject();
-        } catch (Exception e) {
-            logger.error("--------- putIndexMapping 创建 mapping 失败：", e);
-            return false;
-        }
-
-        IndicesAdminClient indicesAdminClient = client.admin().indices();
-        PutMappingRequestBuilder putMappingRequestBuilder = indicesAdminClient.preparePutMapping(index);
-        putMappingRequestBuilder.setType(type);
-        putMappingRequestBuilder.setSource(mappingBuilder);
-
-        // 结果
-        PutMappingResponse response = putMappingRequestBuilder.get();
-        return response.isAcknowledged();
-
-    }
-
     /**
      * 获取mapping
      * 
-     * @param client
      * @param index
      */
-    public static void getIndexMapping(Client client, String index) {
+    public static void getIndexMapping(String index) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         GetMappingsRequestBuilder getMappingsRequestBuilder = indicesAdminClient.prepareGetMappings(index);
@@ -429,21 +397,15 @@ public class IndexAPI {
     /**
      * 更新设置
      * 
-     * @param client
      * @param index
      * @param settings
      * @return
      */
-    public static boolean updateSettingsIndex(Client client, String index, Settings settings) {
+    public static boolean updateSettingsIndex(String index, Settings settings) {
 
         IndicesAdminClient indicesAdminClient = client.admin().indices();
         UpdateSettingsResponse response = indicesAdminClient.prepareUpdateSettings(index).setSettings(settings).get();
         return response.isAcknowledged();
 
     }
-
-    public static void main(String[] args) {
-
-    }
-
 }

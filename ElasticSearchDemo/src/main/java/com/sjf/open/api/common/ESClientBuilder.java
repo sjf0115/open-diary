@@ -12,9 +12,6 @@ import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Created by zhipengwu on 16-7-4.
- */
 public class ESClientBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(ESClientBuilder.class);
@@ -42,7 +39,7 @@ public class ESClientBuilder {
         if (client == null) {
             synchronized (ESClientBuilder.class) {
                 if (client == null) {
-                    client = createClient2();
+                    client = createClient();
                 }
             }
         }
@@ -54,7 +51,7 @@ public class ESClientBuilder {
      *
      * @return
      */
-    private static Client createClient2() {
+    private static Client createClient() {
         // 设置
         Settings settings = Settings.settingsBuilder().put("client.transport.sniff", true)
                 .put("cluster.name", clusterName).build();

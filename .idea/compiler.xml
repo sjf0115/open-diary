@@ -28,6 +28,7 @@
         <module name="FlumeDemo" />
         <module name="HiveCode" />
         <module name="MapReduceDemo" />
+        <module name="open-kafka" />
         <module name="RestFullServiceDemo" />
         <module name="RocketMQ" />
         <module name="SparkDemo" />
@@ -43,6 +44,7 @@
       <module name="HiveCode" target="1.8" />
       <module name="KafkaDemo" target="1.8" />
       <module name="MapReduceDemo" target="1.8" />
+      <module name="open-kafka" target="1.8" />
       <module name="openDiary" target="1.8" />
       <module name="RestFullServiceDemo" target="1.8" />
       <module name="RocketMQ" target="1.6" />
