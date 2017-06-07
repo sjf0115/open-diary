@@ -1,20 +1,11 @@
 package com.sjf.open.demo;
 
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
-import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.FileInputFormat;
-import org.apache.hadoop.mapred.JobConf;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.FlatMapFunction;
-import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.VoidFunction;
 
@@ -80,8 +71,27 @@ public final class ActionRDDAPI {
         System.out.println(result); // aa#bb#cc#dd
     }
 
+    // collect
+    public static void collectTest(){
+        List<String> list = Lists.newArrayList("aa", "bb", "cc", "dd");
+        JavaRDD<String> rdd = sc.parallelize(list);
+        List<String> collect = rdd.collect();
+        System.out.println(collect); // [aa, bb, cc, dd]
+    }
+
+    // take
+    public static void takeTest(){
+        List<String> list = Lists.newArrayList("aa", "bb", "cc", "dd");
+        JavaRDD<String> rdd = sc.parallelize(list);
+        List<String> collect = rdd.take(3);
+        System.out.println(collect); // [aa, bb, cc]
+    }
+
+
     public static void main(String[] args) {
-        reduceTest();
+//        reduceTest();
+//        collectTest();
+        takeTest();
     }
 
 }

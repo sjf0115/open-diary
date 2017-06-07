@@ -22,6 +22,10 @@
         <module>FlumeDemo</module>
         <module>SparkDemo</module>
         <module>ZeppelinDemo</module>
+        <module>ScalaDemo</module>
+        <module>ScalaDemo</module>
+        <module>ScalaDemo</module>
+        <module>ScalaDemo</module>
     </modules>
 
     <properties>
@@ -51,6 +55,7 @@
         <mysql.version>6.0.6</mysql.version>
         <zeppelin.version>0.7.1</zeppelin.version>
         <redis.version>2.9.0</redis.version>
+        <scala.version>2.13.0-M1</scala.version>
     </properties>
 
     <dependencyManagement>
@@ -233,6 +238,20 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${redis.version}</version>
+            </dependency>
+
+            <!-- scala -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-compiler</artifactId>
+                <version>${scala.version}</version>
+                <scope>compile</scope>
             </dependency>
 
             <!-- log -->

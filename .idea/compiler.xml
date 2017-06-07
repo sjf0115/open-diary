@@ -27,10 +27,12 @@
         <module name="ElasticSearchDemo" />
         <module name="FlumeDemo" />
         <module name="HiveCode" />
+        <module name="kafkaDemo" />
         <module name="MapReduceDemo" />
         <module name="open-kafka" />
         <module name="RestFullServiceDemo" />
         <module name="RocketMQ" />
+        <module name="ScalaDemo" />
         <module name="SparkDemo" />
         <module name="ThriftDemo" />
         <module name="ZeppelinDemo" />
@@ -43,11 +45,13 @@
       <module name="FlumeDemo" target="1.8" />
       <module name="HiveCode" target="1.8" />
       <module name="KafkaDemo" target="1.8" />
+      <module name="kafkaDemo" target="1.8" />
       <module name="MapReduceDemo" target="1.8" />
       <module name="open-kafka" target="1.8" />
       <module name="openDiary" target="1.8" />
       <module name="RestFullServiceDemo" target="1.8" />
       <module name="RocketMQ" target="1.6" />
+      <module name="ScalaDemo" target="1.5" />
       <module name="SparkDemo" target="1.8" />
       <module name="ThriftDemo" target="1.8" />
       <module name="ZeppelinDemo" target="1.8" />

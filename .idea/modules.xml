@@ -15,7 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/SparkDemo/SparkDemo.iml" filepath="$PROJECT_DIR$/SparkDemo/SparkDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThriftDemo/ThriftDemo.iml" filepath="$PROJECT_DIR$/ThriftDemo/ThriftDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZeppelinDemo/ZeppelinDemo.iml" filepath="$PROJECT_DIR$/ZeppelinDemo/ZeppelinDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KafkaDemo/open-kafka.iml" filepath="$PROJECT_DIR$/KafkaDemo/open-kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KafkaDemo/kafkaDemo.iml" filepath="$PROJECT_DIR$/KafkaDemo/kafkaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/openDiary.iml" filepath="$PROJECT_DIR$/openDiary.iml" />
     </modules>
   </component>

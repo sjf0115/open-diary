@@ -107,12 +107,6 @@ public final class TransformationsRDDAPI {
      */
     public static void externalDataSets() {
 
-        // lambda表达式
-        /*
-         * JavaRDD<String> lines = sc.textFile("/home/xiaosi/a.txt"); JavaRDD<Integer> lineLengths = lines.map(s ->
-         * s.length()); int totalLength = lineLengths.reduce((a, b) -> a + b); System.out.println(totalLength);
-         */
-
         // 匿名内部类
         JavaRDD<String> lines2 = sc.textFile("/home/xiaosi/a.txt");
         JavaRDD<Integer> lineLengths2 = lines2.map(new Function<String, Integer>() {
@@ -170,10 +164,10 @@ public final class TransformationsRDDAPI {
 
     // 映射
     public static void mapTest() {
-        // 外部数据集
-        JavaRDD<String> linesRDD = sc.textFile("/home/xiaosi/a.txt");
+        List<String> aList = Lists.newArrayList("a", "B", "c", "b");
+        JavaRDD<String> rdd = sc.parallelize(aList);
         // 小写转大写
-        JavaRDD<String> upperLinesRDD = linesRDD.map(new Function<String, String>() {
+        JavaRDD<String> upperLinesRDD = rdd.map(new Function<String, String>() {
             @Override
             public String call(String str) throws Exception {
                 if (StringUtils.isBlank(str)) {
@@ -182,15 +176,16 @@ public final class TransformationsRDDAPI {
                 return str.toUpperCase();
             }
         });
+        // A B C B
         // 输出
         simplePrint(upperLinesRDD);
     }
 
     // 过滤
     public static void filterTest() {
-        // 外部数据集
-        JavaRDD<String> linesRDD = sc.textFile("/home/xiaosi/a.txt");
-        JavaRDD<String> filterRDD = linesRDD.filter(new Function<String, Boolean>() {
+        List<String> aList = Lists.newArrayList("a", "B", "c", "b");
+        JavaRDD<String> rdd = sc.parallelize(aList);
+        JavaRDD<String> filterRDD = rdd.filter(new Function<String, Boolean>() {
             @Override
             public Boolean call(String str) throws Exception {
                 return !str.startsWith("a");
@@ -202,10 +197,10 @@ public final class TransformationsRDDAPI {
 
     // 一行转多行
     public static void flatMapTest() {
-        List<String> list = Lists.newArrayList("a 1", "b 3", "c 2", "d 3");
-        JavaRDD<String> linesRDD = sc.parallelize(list);
+        List<String> list = Lists.newArrayList("a 1", "B 2");
+        JavaRDD<String> rdd = sc.parallelize(list);
         // 一行转多行 以空格分割
-        JavaRDD<String> rdd = linesRDD.flatMap(new FlatMapFunction<String, String>() {
+        JavaRDD<String> resultRDD = rdd.flatMap(new FlatMapFunction<String, String>() {
             @Override
             public Iterator<String> call(String s) throws Exception {
                 if (StringUtils.isBlank(s)) {
@@ -216,7 +211,7 @@ public final class TransformationsRDDAPI {
             }
         });
         // 输出
-        simplePrint(rdd);
+        simplePrint(resultRDD);
     }
 
     // 去重
@@ -337,20 +332,19 @@ public final class TransformationsRDDAPI {
         });
     }
 
-
     public static void main(String[] args) throws Exception {
         // parallelCollections();
         // externalDataSets();
         // wholeText();
         // pairTest();
-        // mapTest();
-        // filterTest();
-        // flatMapTest();
+//        mapTest();
+//         filterTest();
+         flatMapTest();
         // distinctTest();
         // unionTest();
         // intersectionTest();
         // subtractTest();
-         groupByKeyTest();
-//        reduceByKeyTest();
+        // groupByKeyTest();
+        // reduceByKeyTest();
     }
 }
