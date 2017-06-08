@@ -1,9 +1,12 @@
 package com.sjf.open.maxTemperature;
 
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.compress.CompressionCodec;
+import org.apache.hadoop.io.compress.GzipCodec;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -32,7 +35,11 @@ public class MaxTemperature extends Configured implements Tool{
         String inputPath = args[0];
         String outputPath = args[1];
 
-        Job job = Job.getInstance();
+        Configuration conf = this.getConf();
+        conf.setBoolean("mapred.output.compress", true);
+        conf.setClass("mapred.output.compression.codec", GzipCodec.class, CompressionCodec.class);
+
+        Job job = Job.getInstance(conf);
 
         job.setJarByClass(MaxTemperature.class);
         job.setMapperClass(MaxTemperatureMapper.class);
