@@ -1,6 +1,8 @@
 package com.sjf.open.sql;
 
+import com.sjf.open.model.Employee;
 import com.sjf.open.model.MyAverage;
+import com.sjf.open.model.MyAverage2;
 import com.sjf.open.model.Person;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function;
@@ -12,6 +14,7 @@ import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.RowFactory;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.TypedColumn;
 import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
@@ -243,7 +246,7 @@ public class SparkSQLDemo {
      * Untyped User-Defined Aggregate Functions
      * @param session
      */
-    public static void UntypedAggregate(SparkSession session){
+    public static void untypedAggregate(SparkSession session){
 
         // 注册自定义聚合函数
         session.udf().register("myAverage", new MyAverage());
@@ -257,13 +260,25 @@ public class SparkSQLDemo {
         result.show();
     }
 
-    public static void TypeSafeAggregate(SparkSession session){
+    /**
+     * Type-Safe User-Defined Aggregate Functions
+     * @param session
+     */
+    public static void typeSafeAggregate(SparkSession session){
+        Encoder<Employee> employeeEncoder = Encoders.bean(Employee.class);
+        Dataset<Employee> ds = session.read().json(employeePath).as(employeeEncoder);
+        ds.show();
 
+        MyAverage2 myAverage2 = new MyAverage2();
+        // 将函数转换为TypedColumn 并赋予一个名称
+        TypedColumn<Employee, Double> averageSalary = myAverage2.toColumn().name("average_salary");
+        Dataset<Double> result = ds.select(averageSalary);
+        result.show();
     }
 
     public static void main(String[] args) throws Exception {
         SparkSession session = init();
-        interOperateRDDByInterface(session);
+        typeSafeAggregate(session);
     }
 
 }

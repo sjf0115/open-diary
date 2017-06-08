@@ -10,6 +10,10 @@ public class Average implements Serializable{
     private long sum;
     private long count;
 
+    public Average(){
+
+    }
+
     public Average(long sum, long count) {
         this.sum = sum;
         this.count = count;
