@@ -1,19 +1,15 @@
-package com.sjf.open.demo;
+package com.sjf.open.rdd;
 
 import com.sjf.open.api.common.ESClientBuilder;
 import com.sjf.open.api.index.IndexAPI;
 import com.sjf.open.api.index.IndexDocAPI;
-import com.sjf.open.api.query.TermQueryAPI;
 import com.sjf.open.utils.ESUtil;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
-import org.elasticsearch.cluster.metadata.AliasOrIndex;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
-import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.ConstantScoreQueryBuilder;
-import org.elasticsearch.index.query.NestedQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

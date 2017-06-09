@@ -32,7 +32,6 @@
         <module name="open-kafka" />
         <module name="RestFullServiceDemo" />
         <module name="RocketMQ" />
-        <module name="ScalaDemo" />
         <module name="SparkDemo" />
         <module name="ThriftDemo" />
         <module name="ZeppelinDemo" />

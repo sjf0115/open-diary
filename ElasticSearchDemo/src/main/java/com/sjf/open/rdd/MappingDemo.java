@@ -1,4 +1,4 @@
-package com.sjf.open.demo;
+package com.sjf.open.rdd;
 
 import com.google.common.base.Objects;
 import com.sjf.open.api.index.IndexAPI;

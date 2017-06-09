@@ -209,6 +209,12 @@
                 <version>${spark.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-hive_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
             <!-- spark streaming-->
             <dependency>
                 <groupId>org.apache.spark</groupId>
@@ -248,20 +254,6 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${redis.version}</version>
-            </dependency>
-
-            <!-- scala -->
-            <dependency>
-                <groupId>org.scala-lang</groupId>
-                <artifactId>scala-library</artifactId>
-                <version>${scala.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.scala-lang</groupId>
-                <artifactId>scala-compiler</artifactId>
-                <version>${scala.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- mrunit -->

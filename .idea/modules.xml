@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/PythonDemo/PythonDemo.iml" filepath="$PROJECT_DIR$/PythonDemo/PythonDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RestFullServiceDemo/RestFullServiceDemo.iml" filepath="$PROJECT_DIR$/RestFullServiceDemo/RestFullServiceDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RocketMQ/RocketMQ.iml" filepath="$PROJECT_DIR$/RocketMQ/RocketMQ.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ScalaDemo/ScalaDemo.iml" filepath="$PROJECT_DIR$/ScalaDemo/ScalaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SparkDemo/SparkDemo.iml" filepath="$PROJECT_DIR$/SparkDemo/SparkDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThriftDemo/ThriftDemo.iml" filepath="$PROJECT_DIR$/ThriftDemo/ThriftDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZeppelinDemo/ZeppelinDemo.iml" filepath="$PROJECT_DIR$/ZeppelinDemo/ZeppelinDemo.iml" />
