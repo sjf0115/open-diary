@@ -1,5 +1,6 @@
 package com.sjf.open.rdd;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.spark.SparkConf;
@@ -73,10 +74,10 @@ public final class ActionRDDAPI {
 
     // collect
     public static void collectTest(){
-        List<String> list = Lists.newArrayList("aa", "bb", "cc", "dd");
-        JavaRDD<String> rdd = sc.parallelize(list);
-        List<String> collect = rdd.collect();
-        System.out.println(collect); // [aa, bb, cc, dd]
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+        JavaRDD<Integer> rdd = sc.parallelize(list);
+        List<Integer> collect = rdd.collect();
+        System.out.println(collect); // [1, 2, 3, 4, 5]
     }
 
     // take
@@ -91,7 +92,17 @@ public final class ActionRDDAPI {
     public static void main(String[] args) {
 //        reduceTest();
 //        collectTest();
-        takeTest();
+//        collectTest();
+
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+        JavaRDD<Integer> rdd = sc.parallelize(list);
+        Integer resultRDD = rdd.reduce(new Function2<Integer, Integer, Integer>() {
+            @Override
+            public Integer call(Integer v1, Integer v2) throws Exception {
+                return v1 + v2;
+            }
+        });
+        System.out.println(resultRDD);
     }
 
 }

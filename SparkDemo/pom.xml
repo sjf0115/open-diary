@@ -52,5 +52,11 @@
             <version>2.6.5</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
     </dependencies>
 </project>
