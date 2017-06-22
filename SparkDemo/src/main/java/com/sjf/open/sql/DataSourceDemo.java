@@ -1,6 +1,8 @@
 package com.sjf.open.sql;
 
+import com.sjf.open.model.Cube;
 import com.sjf.open.model.Record;
+import com.sjf.open.model.Square;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.MapFunction;
@@ -98,6 +100,42 @@ public class DataSourceDemo {
             }
         }, Encoders.STRING());
         namesDS.show();
+    }
+
+    /**
+     * 与parquet交互
+     * @param session
+     */
+    public static void sparkParquet(SparkSession session){
+
+        List<Square> squares = new ArrayList<>();
+        for (int value = 1; value <= 5; value++) {
+            Square square = new Square();
+            square.setValue(value);
+            square.setSquare(value * value);
+            squares.add(square);
+        }
+
+        // Create a simple DataFrame, store into a partition directory
+        Dataset<Row> squaresDF = session.createDataFrame(squares, Square.class);
+        squaresDF.write().parquet("data/test_table/key=1");
+
+        List<Cube> cubes = new ArrayList<>();
+        for (int value = 6; value <= 10; value++) {
+            Cube cube = new Cube();
+            cube.setValue(value);
+            cube.setCube(value * value * value);
+            cubes.add(cube);
+        }
+
+        // Create another DataFrame in a new partition directory,
+        // adding a new column and dropping an existing column
+        Dataset<Row> cubesDF = session.createDataFrame(cubes, Cube.class);
+        cubesDF.write().parquet("data/test_table/key=2");
+
+        // Read the partitioned table
+        Dataset<Row> mergedDF = session.read().option("mergeSchema", true).parquet("data/test_table");
+        mergedDF.printSchema();
     }
 
     /**
@@ -214,7 +252,7 @@ public class DataSourceDemo {
 
     public static void main(String[] args) throws Exception {
         SparkSession session = init();
-        sparkJson(session);
+        sparkParquet(session);
     }
 
 }

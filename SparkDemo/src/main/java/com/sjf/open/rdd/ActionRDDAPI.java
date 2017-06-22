@@ -93,16 +93,6 @@ public final class ActionRDDAPI {
 //        reduceTest();
 //        collectTest();
 //        collectTest();
-
-        List<Integer> list = Arrays.asList(1,2,3,4,5);
-        JavaRDD<Integer> rdd = sc.parallelize(list);
-        Integer resultRDD = rdd.reduce(new Function2<Integer, Integer, Integer>() {
-            @Override
-            public Integer call(Integer v1, Integer v2) throws Exception {
-                return v1 + v2;
-            }
-        });
-        System.out.println(resultRDD);
     }
 
 }
