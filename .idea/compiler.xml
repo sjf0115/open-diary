@@ -48,10 +48,12 @@
       <module name="MapReduceDemo" target="1.8" />
       <module name="open-kafka" target="1.8" />
       <module name="openDiary" target="1.8" />
+      <module name="QuartzDemo" target="1.8" />
       <module name="RestFullServiceDemo" target="1.8" />
       <module name="RocketMQ" target="1.6" />
       <module name="ScalaDemo" target="1.5" />
       <module name="SparkDemo" target="1.8" />
+      <module name="SpringDemo" target="1.8" />
       <module name="ThriftDemo" target="1.8" />
       <module name="ZeppelinDemo" target="1.8" />
     </bytecodeTargetLevel>
