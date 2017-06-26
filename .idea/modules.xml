@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AvroDemo/AvroDemo.iml" filepath="$PROJECT_DIR$/AvroDemo/AvroDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/BaseOperation/BaseOperation.iml" filepath="$PROJECT_DIR$/BaseOperation/BaseOperation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommonUtil/CommonUtil.iml" filepath="$PROJECT_DIR$/CommonUtil/CommonUtil.iml" />
       <module fileurl="file://$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" filepath="$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/FlumeDemo/FlumeDemo.iml" filepath="$PROJECT_DIR$/FlumeDemo/FlumeDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/HiveCode/HiveCode.iml" filepath="$PROJECT_DIR$/HiveCode/HiveCode.iml" />

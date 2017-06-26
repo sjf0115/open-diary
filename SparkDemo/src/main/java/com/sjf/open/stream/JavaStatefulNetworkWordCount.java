@@ -75,7 +75,8 @@ public class JavaStatefulNetworkWordCount {
         Function3<String, Optional<Integer>, State<Integer>, Tuple2<String, Integer>> updateStateFunction = new Function3<String, Optional<Integer>, State<Integer>, Tuple2<String, Integer>>() {
 
             @Override
-            public Tuple2<String, Integer> call(String word, Optional<Integer> one, State<Integer> state) throws Exception {
+            public Tuple2<String, Integer> call(String word, Optional<Integer> one, State<Integer> state)
+                    throws Exception {
                 int sum = one.orElse(0) + (state.exists() ? state.get() : 0);
                 Tuple2<String, Integer> output = new Tuple2<>(word, sum);
                 state.update(sum);

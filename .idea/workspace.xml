@@ -2,19 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="267f9f46-6ccc-4061-a294-2f76d178b873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SpringDemo_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SpringDemo_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/CommonUtil.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/BusinessUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConstantUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConvertUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/DateUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/FileUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/FilterPropertyUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/GsonUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/GuessYouLikeUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/HDFSUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/HttpUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/JodaTimeUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/JsonUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/MD5Util.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/NumUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/PathUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/PropertyUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/RandomUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/RegexUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/SQLUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/SequenceFileUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/SuggestionUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Spring_4_3_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Spring_4_3_1_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Spring_MVC_4_3_1_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Spring_MVC_4_3_1_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AvroDemo/AvroDemo.iml" afterPath="$PROJECT_DIR$/AvroDemo/AvroDemo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseOperation/BaseOperation.iml" afterPath="$PROJECT_DIR$/BaseOperation/BaseOperation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" afterPath="$PROJECT_DIR$/ElasticSearchDemo/ElasticSearchDemo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HiveCode/HiveCode.iml" afterPath="$PROJECT_DIR$/HiveCode/HiveCode.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" afterPath="$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java" afterPath="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="openDiary.iws" />
@@ -40,6 +54,7 @@
     <ignored path="$PROJECT_DIR$/ScalaDemo/target/" />
     <ignored path="$PROJECT_DIR$/QuartzDemo/target/" />
     <ignored path="$PROJECT_DIR$/SpringDemo/target/" />
+    <ignored path="$PROJECT_DIR$/CommonUtil/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,26 +142,96 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="JavaStatefulNetworkWordCount.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SuggestionUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/SuggestionUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstantUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConstantUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConvertUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConvertUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-703">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DateUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/DateUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1525">
+              <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2355#2356#0" expanded="true" />
-                <element signature="e#2434#2435#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocketSparkStreaming.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/SocketSparkStreaming.java">
+      <file leaf-file-name="FileUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/FileUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="40" />
+            <state relative-caret-position="575">
+              <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BaseOperation/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="48" column="21" selection-start-line="22" selection-start-column="8" selection-end-line="48" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="372" column="0" selection-start-line="372" selection-start-column="0" selection-end-line="377" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropertyUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/PropertyUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -178,10 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ScalaDemo/src/com/sjf/open/spark/sql/SparkSQLExample.scala" />
-        <option value="$PROJECT_DIR$/ScalaDemo/src/main/scala/com/sjf/open/App.scala" />
-        <option value="$PROJECT_DIR$/ScalaDemo/src/resources/people.json" />
-        <option value="$PROJECT_DIR$/ScalaDemo/pom.xml" />
         <option value="$PROJECT_DIR$/ScalaDemo/src/main/scala/com/sjf/open/SparkSQLExample.scala" />
         <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/model/Person.java" />
         <option value="$PROJECT_DIR$/SparkDemo/src/main/resources/people.txt" />
@@ -229,6 +310,10 @@
         <option value="$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/web/dao/EntranceDao.java" />
         <option value="$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/web/controller/EntranceController.java" />
         <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java" />
+        <option value="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConfigUtil.java" />
+        <option value="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/BucketUtil.java" />
+        <option value="$PROJECT_DIR$/CommonUtil/pom.xml" />
+        <option value="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/FileUtil.java" />
       </list>
     </option>
   </component>
@@ -326,7 +411,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -337,6 +421,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -365,7 +451,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SparkDemo" />
+              <option name="myItemId" value="CommonUtil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,7 +465,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SparkDemo" />
+              <option name="myItemId" value="CommonUtil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -397,7 +483,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SparkDemo" />
+              <option name="myItemId" value="CommonUtil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -419,7 +505,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SparkDemo" />
+              <option name="myItemId" value="CommonUtil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -439,7 +525,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stream" />
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -453,7 +539,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SparkDemo" />
+              <option name="myItemId" value="CommonUtil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -475,7 +561,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -490,7 +575,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Common-Tool" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -512,19 +597,19 @@
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SpringDemo/src/main" />
-      <recent name="$PROJECT_DIR$/SparkDemo/src/main/resources" />
-      <recent name="$PROJECT_DIR$/ScalaDemo/src/main/scala" />
-      <recent name="$PROJECT_DIR$/BaseOperation" />
-      <recent name="$PROJECT_DIR$/PythonDemo/scrapy" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.sjf.open.hive.udf" />
       <recent name="com.sjf.open.api.updateAPI" />
       <recent name="com.sjf.open.api.queryAPI" />
       <recent name="com.sjf.open.api.indexAPI" />
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils" />
+      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open" />
+      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/resources" />
+      <recent name="$PROJECT_DIR$/SpringDemo/src/main/resources/spring" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sjf.open.sql" />
@@ -533,12 +618,12 @@
       <recent name="com.sjf.open.hive.udf.udtf" />
       <recent name="com.sjf.open.hive.udf" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open" />
-      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/resources" />
-      <recent name="$PROJECT_DIR$/SpringDemo/src/main/resources/spring" />
-      <recent name="$PROJECT_DIR$/SpringDemo/src/main/resources.local" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SpringDemo/src/main" />
+      <recent name="$PROJECT_DIR$/SparkDemo/src/main/resources" />
+      <recent name="$PROJECT_DIR$/ScalaDemo/src/main/scala" />
+      <recent name="$PROJECT_DIR$/BaseOperation" />
+      <recent name="$PROJECT_DIR$/PythonDemo/scrapy" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -904,6 +989,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -1187,6 +1273,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1739,7 +1831,8 @@
       <workItem from="1498204206838" duration="405000" />
       <workItem from="1498204621034" duration="372000" />
       <workItem from="1498205000672" duration="185000" />
-      <workItem from="1498444561183" duration="1532000" />
+      <workItem from="1498444561183" duration="2205000" />
+      <workItem from="1498447306387" duration="483000" />
     </task>
     <task id="LOCAL-00001" summary="反射指南">
       <created>1482113342301</created>
@@ -1784,7 +1877,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="868343000" />
+    <option name="totallyTimeSpent" value="869499000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1945,79 +2038,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/webapp/WEB-INF/dispatch-servlet.xml" />
-    <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/web/dao/EntranceDao.java" />
-    <entry file="file://$PROJECT_DIR$/QuartzDemo/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/web/dao/EntranceDao.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="32" column="48" selection-start-line="30" selection-start-column="8" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/api/analyze/AnalyzeAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringDemo/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringDemo/src/main/webapp/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringDemo/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringDemo/src/main/webapp/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6000">
-          <caret line="240" column="12" selection-start-line="240" selection-start-column="12" selection-end-line="250" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringDemo/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SpringDemo/src/main/webapp/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/SocketSparkStreaming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/sql/DataSourceDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2525">
-          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MapReduceDemo/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2077,13 +2097,6 @@
     <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/web/Interceptor/LoginInterceptor.java" />
     <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/web/service/impl/EntranceServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/exception/UnauthorizedException.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/web/dao/EntranceDao.java" />
     <entry file="file://$PROJECT_DIR$/QuartzDemo/src/main/webapp/WEB-INF/dispatch-servlet.xml" />
     <entry file="uml://MAVEN/com.sjf.open:open-quartz:1.0-SNAPSHOT" />
@@ -2091,7 +2104,7 @@
     <entry file="file://$PROJECT_DIR$/QuartzDemo/pom.xml" />
     <entry file="file://$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/SocketSparkStreaming.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="500">
           <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="40" />
           <folding />
         </state>
@@ -2101,18 +2114,183 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="483">
+          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2355#2356#0" expanded="true" />
-            <element signature="e#2434#2435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/RandomUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/RegexUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/BusinessUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/SequenceFileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/SuggestionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/PropertyUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConfigUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseOperation/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="48" column="21" selection-start-line="22" selection-start-column="8" selection-end-line="48" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/BucketUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/CheckRecords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/Compressor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConstantUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/ConvertUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-703">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="372" column="0" selection-start-line="372" selection-start-column="0" selection-end-line="377" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/FileSystemUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/EncryptUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1103">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

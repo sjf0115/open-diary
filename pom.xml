@@ -24,6 +24,7 @@
         <module>ZeppelinDemo</module>
         <module>QuartzDemo</module>
         <module>SpringDemo</module>
+        <module>CommonUtil</module>
     </modules>
 
     <properties>
