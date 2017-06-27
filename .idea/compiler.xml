@@ -30,6 +30,7 @@
         <module name="HiveCode" />
         <module name="kafkaDemo" />
         <module name="MapReduceDemo" />
+        <module name="NLPDemo" />
         <module name="open-kafka" />
         <module name="RestFullServiceDemo" />
         <module name="RocketMQ" />
@@ -48,6 +49,7 @@
       <module name="KafkaDemo" target="1.8" />
       <module name="kafkaDemo" target="1.8" />
       <module name="MapReduceDemo" target="1.8" />
+      <module name="NLPDemo" target="1.8" />
       <module name="open-kafka" target="1.8" />
       <module name="openDiary" target="1.8" />
       <module name="QuartzDemo" target="1.8" />

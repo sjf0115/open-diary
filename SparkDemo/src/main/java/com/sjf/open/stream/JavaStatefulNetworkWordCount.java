@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
+ * 状态追踪函数
+ *
  * Created by xiaosi on 17-6-26.
  */
 public class JavaStatefulNetworkWordCount {
@@ -88,8 +90,8 @@ public class JavaStatefulNetworkWordCount {
         JavaMapWithStateDStream<String, Integer, Integer, Tuple2<String, Integer>> stateDstream =
                 wordsDStream.mapWithState(StateSpec.function(updateStateFunction).initialState(initialRDD));
 
-
         stateDstream.print();
+        jsc.checkpoint("/home/xiaosi/logs/spark/checkpoint");
         jsc.start();
         jsc.awaitTermination();
     }
