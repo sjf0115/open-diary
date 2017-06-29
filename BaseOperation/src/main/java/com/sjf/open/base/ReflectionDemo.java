@@ -9,9 +9,6 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 
 import com.google.common.base.Objects;
-import org.apache.commons.math3.analysis.function.Add;
-import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
 /**
  * Created by xiaosi on 16-12-16.
@@ -20,7 +17,6 @@ import org.junit.experimental.theories.suppliers.TestedOn;
 public class ReflectionDemo {
 
 
-    @Test
     public void test1(){
         Method[] methodArray = Student.class.getMethods();
         for(Method method : methodArray){
@@ -28,7 +24,6 @@ public class ReflectionDemo {
         }
     }
 
-    @Test
     public void test2(){
         String className = "com.sjf.open.base.Address2";
         try {
@@ -40,14 +35,12 @@ public class ReflectionDemo {
         }
     }
 
-    @Test
     public void test3(){
         Class studentClass = Student.class;
         System.out.println(studentClass.getSimpleName()); // Student
         System.out.println(studentClass.getName()); // com.sjf.open.base.Student
     }
 
-    @Test
     public void test4(){
 
         int publicNum = Modifier.PUBLIC; // 1
@@ -65,7 +58,6 @@ public class ReflectionDemo {
 
     }
 
-    @Test
     public void test5(){
         Class studentClass = Student.class;
         Annotation[] annotationArray = studentClass.getAnnotations();
@@ -77,7 +69,6 @@ public class ReflectionDemo {
         System.out.println(studentClass.getPackage()); // package com.sjf.open.base
     }
 
-    @Test
     public void test6(){
         Class addressClass = Address.class;
         try {
@@ -102,7 +93,6 @@ public class ReflectionDemo {
         Constructor[] constructorArray = addressClass.getConstructors();
     }
 
-    @Test
     public void test7(){
         Class addressClass = Address.class;
 
@@ -127,7 +117,6 @@ public class ReflectionDemo {
     }
 
 
-    @Test
     public void test8(){
         Class addressClass = Address.class;
 
@@ -156,7 +145,6 @@ public class ReflectionDemo {
         }
     }
 
-    @Test
     public void test9(){
         Class addressClass = Address.class;
         Method[] methods = addressClass.getMethods();
@@ -207,7 +195,6 @@ public class ReflectionDemo {
 
     }
 
-    @Test
     public void test10() throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         Address address = new Address("山东", "青岛");
         Class addressClass = Address.class;

@@ -48,7 +48,7 @@
     <orderEntry type="library" name="Maven: com.ning:compress-lzf:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.tdunning:t-digest:3.0" level="project" />
     <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.6" level="project" />
-    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.3.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.4" level="project" />
     <orderEntry type="library" name="Maven: com.twitter:jsr166e:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: io.searchbox:jest:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: io.searchbox:jest-common:2.4.0" level="project" />

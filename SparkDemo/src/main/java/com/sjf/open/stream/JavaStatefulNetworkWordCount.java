@@ -87,10 +87,10 @@ public class JavaStatefulNetworkWordCount {
         };
 
         // 更新状态
-        JavaMapWithStateDStream<String, Integer, Integer, Tuple2<String, Integer>> stateDstream =
+        JavaMapWithStateDStream<String, Integer, Integer, Tuple2<String, Integer>> stateDStream =
                 wordsDStream.mapWithState(StateSpec.function(updateStateFunction).initialState(initialRDD));
 
-        stateDstream.print();
+        stateDStream.print();
         jsc.checkpoint("/home/xiaosi/logs/spark/checkpoint");
         jsc.start();
         jsc.awaitTermination();
