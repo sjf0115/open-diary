@@ -237,7 +237,7 @@ public class DefaultParser implements CommandLineParser {
     // ------------------------------------------------------------------------------------------------------------------
 
     /**
-     * 如果当前选项没有接收到期望的参数个数抛出异常
+     * 检查是否需要参数 如果当前选项没有接收到期望的参数个数抛出异常
      * @throws ParseException
      */
     private void checkRequiredArgs() throws ParseException {

@@ -163,7 +163,7 @@ public class Option implements Cloneable, Serializable {
     }
 
     /**
-     * 判断选项参数个数是否与期望的参数个数一致
+     * 是否需要参数
      * @return
      */
     public boolean requiresArg() {

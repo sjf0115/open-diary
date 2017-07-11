@@ -1,6 +1,5 @@
 package com.sjf.open.bean;
 
-import com.sjf.open.bean.Option;
 import com.sjf.open.utils.Util;
 
 import java.io.Serializable;
@@ -21,9 +20,10 @@ public class Options implements Serializable {
 
     private final Map<String, Option> shortOpts = new LinkedHashMap<String, Option>();
     private final Map<String, Option> longOpts = new LinkedHashMap<String, Option>();
+    private final Map<String, OptionGroup> optionGroups = new LinkedHashMap<String, OptionGroup>();
+
     // TODO this seems wrong
     private final List<Object> requiredOpts = new ArrayList<Object>();
-    private final Map<String, OptionGroup> optionGroups = new LinkedHashMap<String, OptionGroup>();
 
     /**
      * 添加Option分组
@@ -32,6 +32,7 @@ public class Options implements Serializable {
      * @return
      */
     public Options addOptionGroup(final OptionGroup group) {
+
         if (group.isRequired()) {
             requiredOpts.add(group);
         }
@@ -43,52 +44,101 @@ public class Options implements Serializable {
         }
 
         return this;
+
     }
 
     public Collection<OptionGroup> getOptionGroups() {
         return new HashSet<OptionGroup>(optionGroups.values());
     }
 
-    public Options addOption(final String opt, final String description) {
+    //------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * 添加Option选项
+     * 
+     * @param opt 短名称
+     * @param description 描述信息
+     * @return
+     */
+    public Options addOption(String opt, String description) {
+
         addOption(opt, null, false, description);
         return this;
+
     }
 
-    public Options addOption(final String opt, final boolean hasArg, final String description) {
+    /**
+     * 添加Option选项
+     * 
+     * @param opt 短名称
+     * @param hasArg 是否有参数
+     * @param description 描述信息
+     * @return
+     */
+    public Options addOption(String opt, boolean hasArg, String description) {
+
         addOption(opt, null, hasArg, description);
         return this;
+
     }
 
+    /**
+     * 添加Option选项
+     * 
+     * @param opt 短名称
+     * @param longOpt 长名称
+     * @param hasArg 是否有参数
+     * @param description 描述信息
+     * @return
+     */
     public Options addOption(final String opt, final String longOpt, final boolean hasArg, final String description) {
+
         addOption(new Option(opt, longOpt, hasArg, description));
         return this;
+
     }
 
-    public Options addRequiredOption(final String opt, final String longOpt, final boolean hasArg,
-            final String description) {
-        final Option option = new Option(opt, longOpt, hasArg, description);
+    /**
+     * 添加Option选项 指定选项是必需的
+     *
+     * @param opt 短名称
+     * @param longOpt 长名称
+     * @param hasArg 是否有参数
+     * @param description 描述信息
+     * @return
+     */
+    public Options addRequiredOption(String opt, String longOpt, boolean hasArg, String description) {
+
+        Option option = new Option(opt, longOpt, hasArg, description);
         option.setRequired(true);
         addOption(option);
         return this;
+
     }
 
-    public Options addOption(final Option opt) {
-        final String key = opt.getKey();
+    /**
+     * 添加Option选项
+     * @param opt 添加的Option实例
+     * @return
+     */
+    public Options addOption(Option opt) {
 
-        // add it to the long option list
+        String key = opt.getKey();
+        // 是否有长选项名称
         if (opt.hasLongOpt()) {
             longOpts.put(opt.getLongOpt(), opt);
         }
 
-        // if the option is required add it to the required list
+        // 短选项
+        shortOpts.put(key, opt);
+
+        // 选项是否必需
         if (opt.isRequired()) {
             if (requiredOpts.contains(key)) {
                 requiredOpts.remove(requiredOpts.indexOf(key));
             }
             requiredOpts.add(key);
         }
-
-        shortOpts.put(key, opt);
 
         return this;
     }
@@ -148,6 +198,10 @@ public class Options implements Serializable {
 
     }
 
+    /**
+     * 返回所有必须的选项
+     * @return
+     */
     public List getRequiredOptions() {
 
         return Collections.unmodifiableList(requiredOpts);
