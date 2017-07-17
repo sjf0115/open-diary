@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ltp4j">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/NLPDemo/lib/ltp4j.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

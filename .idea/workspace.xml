@@ -2,18 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="267f9f46-6ccc-4061-a294-2f76d178b873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mvel_mvel2_2_3_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/cli/LongOption.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/cli/demo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseOperation/src/main/java/mvel/MvelTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/lib/ltp4j.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_hankcs_hanlp_portable_1_2_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/ltp4j.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/mvel/Fruit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/LTPTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/hanlp/Test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp/LTPUrlTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp/Test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/FileUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/HttpUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/NLPUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/resources/CoreNLP-chinese-ctb.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/resources/dict/sentimentWords.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPDemo/src/main/resources/dict/stopwords.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/BaseOperation/src/main/java/mvel/MvelTest.java" afterPath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/mvel/MvelTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseOperation/BaseOperation.iml" afterPath="$PROJECT_DIR$/BaseOperation/BaseOperation.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseOperation/pom.xml" afterPath="$PROJECT_DIR$/BaseOperation/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/Test.java" afterPath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/json/demo/JsonParserDemo.java" afterPath="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/json/demo/JsonParserDemo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/bean/Option.java" afterPath="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/bean/Option.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/bean/Options.java" afterPath="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/bean/Options.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/parser/impl/DefaultParser.java" afterPath="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/parser/impl/DefaultParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPDemo/NLPDemo.iml" afterPath="$PROJECT_DIR$/NLPDemo/NLPDemo.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPDemo/pom.xml" afterPath="$PROJECT_DIR$/NLPDemo/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/Test.java" afterPath="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/Test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="openDiary.iws" />
@@ -71,7 +79,7 @@
       <favorite_root url="file://$PROJECT_DIR$/BaseOperation" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
         <favorite_root url="file://$PROJECT_DIR$/BaseOperation/src" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
           <favorite_root url="file://$PROJECT_DIR$/BaseOperation" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-            <favorite_root url="file://$PROJECT_DIR$/BaseOperation/src/main/java" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+            <favorite_root url="file://$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
               <favorite_root url="file://$PROJECT_DIR$/BaseOperation/src/main/java/com" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
                 <favorite_root url="file://$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
                   <favorite_root url="file://$PROJECT_DIR$/BaseOperation" module="BaseOperation" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
@@ -131,35 +139,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="MvelTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/java/mvel/MvelTest.java">
+        <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/mvel/MvelTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+            <state relative-caret-position="114">
+              <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="175" selection-end-column="40" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2179#2180#0" expanded="true" />
-                <element signature="e#2208#2209#0" expanded="true" />
+                <element signature="e#5184#5185#0" expanded="true" />
+                <element signature="e#5219#5220#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="484" column="12" selection-start-line="484" selection-start-column="12" selection-end-line="489" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BaseOperation/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -190,19 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-common/2.7.2/hadoop-mapreduce-client-common-2.7.2.jar!/org/apache/hadoop/mapred/LocalJobRunner.class" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/model/MyAverage2.java" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/sql/SparkSQLDemo.java" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/model/Average.java" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/model/Record.java" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/resources/kv1.txt" />
-        <option value="$PROJECT_DIR$/SparkDemo/pom.xml" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/rdd/ActionRDDAPI.java" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/model/Square.java" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/model/Cube.java" />
-        <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/sql/DataSourceDemo.java" />
-        <option value="$PROJECT_DIR$/SpringDemo/src/main/resources/db.kt" />
-        <option value="$PROJECT_DIR$/SpringDemo/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/SpringDemo/pom.xml" />
         <option value="$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open/exception/InvalidException.java" />
         <option value="$PROJECT_DIR$/QuartzDemo/pom.xml" />
@@ -213,9 +187,7 @@
         <option value="$PROJECT_DIR$/CommonUtil/pom.xml" />
         <option value="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/FileUtil.java" />
         <option value="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/CookieUtil.java" />
-        <option value="$PROJECT_DIR$/NLPDemo/pom.xml" />
         <option value="$PROJECT_DIR$/NLPDemo/src/main/resources/CoreNLP-chinese.properties" />
-        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/Test.java" />
         <option value="$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java" />
         <option value="$PROJECT_DIR$/CliDemo/pom.xml" />
         <option value="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/OptionValidator.java" />
@@ -238,9 +210,24 @@
         <option value="$PROJECT_DIR$/CliDemo/src/main/java/com/sjf/open/bean/Options.java" />
         <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/cli/demo.java" />
         <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/json/demo/JsonParserDemo.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/BaseOperation/pom.xml" />
         <option value="$PROJECT_DIR$/BaseOperation/src/main/java/mvel/MvelTest.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/parser/HotelParser.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/FileUtil.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/parser/TextParticiple.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/parser/NLPUtil.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/resources/dict/stopwords.txt" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/Test.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/NLPDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/hanlp/Test.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/resources/CoreNLP-chinese-ctb.properties" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/NLPUtil.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/LTPTest.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp/LTPUrlTest.java" />
+        <option value="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp/Test.java" />
+        <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/mvel/Fruit.java" />
+        <option value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/mvel/MvelTest.java" />
       </list>
     </option>
   </component>
@@ -274,9 +261,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1414" />
-    <option name="y" value="18" />
+    <option name="y" value="-7" />
     <option name="width" value="1872" />
-    <option name="height" value="1059" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -286,23 +273,396 @@
             <id />
           </State>
           <State>
+            <id>CollectionsScala</id>
+          </State>
+          <State>
+            <id>AOP</id>
+          </State>
+          <State>
+            <id>Abstraction issuesJava</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Application Server Specific Inspections</id>
+          </State>
+          <State>
+            <id>ArquillianJava</id>
+          </State>
+          <State>
+            <id>Assignment issuesGroovy</id>
+          </State>
+          <State>
+            <id>Assignment issuesJava</id>
+          </State>
+          <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>BashSupport</id>
+          </State>
+          <State>
+            <id>Bitwise operation issuesJava</id>
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Buildout</id>
+          </State>
+          <State>
+            <id>CDI(Contexts and Dependency Injection) issues</id>
+          </State>
+          <State>
+            <id>CFML</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Class metricsJava</id>
+          </State>
+          <State>
+            <id>Class structureJava</id>
+          </State>
+          <State>
+            <id>Cloning issuesJava</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>Comparing CollectionsScala</id>
+          </State>
+          <State>
+            <id>Compiler issuesJava</id>
+          </State>
+          <State>
+            <id>Control FlowGroovy</id>
+          </State>
+          <State>
+            <id>Control flow issuesJava</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Cucumber Java</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flow issuesGroovy</id>
+          </State>
+          <State>
+            <id>Data flow issuesJava</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Dependency issuesJava</id>
+          </State>
+          <State>
+            <id>Django</id>
+          </State>
+          <State>
+            <id>Encapsulation issuesJava</id>
+          </State>
+          <State>
+            <id>Error handlingGroovy</id>
+          </State>
+          <State>
+            <id>Error handlingJava</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>Faces Model</id>
+          </State>
+          <State>
+            <id>FlexUnit inspections</id>
+          </State>
+          <State>
+            <id>FreeMarker inspections</id>
+          </State>
+          <State>
+            <id>GPath inspectionsGroovy</id>
+          </State>
+          <State>
             <id>General</id>
+          </State>
+          <State>
+            <id>GeneralCoffeeScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralScala</id>
+          </State>
+          <State>
+            <id>Google App Engine (Python)</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Guice Inspections</id>
+          </State>
+          <State>
+            <id>Hibernate Issues</id>
+          </State>
+          <State>
+            <id>ImportsJava</id>
+          </State>
+          <State>
+            <id>Inheritance issuesJava</id>
+          </State>
+          <State>
+            <id>Initialization issuesJava</id>
+          </State>
+          <State>
+            <id>Internationalization issuesJava</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>J2ME SupportJava</id>
+          </State>
+          <State>
+            <id>J2ME issuesJava</id>
+          </State>
+          <State>
+            <id>JBoss Seam issues</id>
+          </State>
+          <State>
+            <id>JPA issues</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JUnit issuesJava</id>
           </State>
           <State>
             <id>Java</id>
           </State>
           <State>
+            <id>Java EE issues</id>
+          </State>
+          <State>
+            <id>Java language level issuesJava</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Javadoc issuesJava</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Logging issuesJava</id>
+          </State>
+          <State>
+            <id>Mako</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>Memory issuesJava</id>
+          </State>
+          <State>
+            <id>Method MetricsGroovy</id>
+          </State>
+          <State>
+            <id>Method metricsJava</id>
+          </State>
+          <State>
+            <id>Method signatureScala</id>
+          </State>
+          <State>
+            <id>Naming ConventionsGroovy</id>
+          </State>
+          <State>
+            <id>Naming conventionsJava</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>Numeric issuesJava</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+          <State>
+            <id>Other CollectionsScala</id>
+          </State>
+          <State>
+            <id>Packaging issuesJava</id>
+          </State>
+          <State>
+            <id>Pages Navigation Model</id>
+          </State>
+          <State>
+            <id>Pattern Validation</id>
+          </State>
+          <State>
+            <id>Performance issuesJava</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Portability issuesJava</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>Properties FilesJava</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>RESTful Web Service</id>
+          </State>
+          <State>
+            <id>Resource management issuesJava</id>
+          </State>
+          <State>
+            <id>SBT</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Scala</id>
+          </State>
+          <State>
+            <id>ScaladocScala</id>
+          </State>
+          <State>
+            <id>Security issuesJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+          <State>
             <id>Spring</id>
           </State>
           <State>
-            <id>Spring AOPSpring</id>
+            <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>Spring DataSpring</id>
+          </State>
+          <State>
+            <id>Spring MVCSpring</id>
+          </State>
+          <State>
+            <id>Struts</id>
+          </State>
+          <State>
+            <id>Struts 1Struts</id>
+          </State>
+          <State>
+            <id>Struts 2Struts</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+          <State>
+            <id>Thrift</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
+          <State>
+            <id>UI Form Problems</id>
+          </State>
+          <State>
+            <id>Velocity inspections</id>
+          </State>
+          <State>
+            <id>Verbose or redundant code constructsJava</id>
+          </State>
+          <State>
+            <id>Visibility issuesJava</id>
+          </State>
+          <State>
+            <id>Web Services</id>
+          </State>
+          <State>
+            <id>WebSocket issues</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XMLSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
           </State>
         </expanded-state>
-        <selected-state>
-          <State>
-            <id>Duplicates</id>
-          </State>
-        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -331,7 +691,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -412,7 +772,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mvel" />
+              <option name="myItemId" value="open" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,8 +805,15 @@
               <option name="myItemId" value="open" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
       </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -458,7 +825,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -475,9 +841,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="jdk.selected.PYTHON_MODULE" value="Python 2.7.10 (/usr/bin/python2.7)" />
@@ -495,19 +861,19 @@
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SpringDemo/src/main" />
-      <recent name="$PROJECT_DIR$/SparkDemo/src/main/resources" />
-      <recent name="$PROJECT_DIR$/ScalaDemo/src/main/scala" />
-      <recent name="$PROJECT_DIR$/BaseOperation" />
-      <recent name="$PROJECT_DIR$/PythonDemo/scrapy" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.sjf.open.hive.udf" />
       <recent name="com.sjf.open.api.updateAPI" />
       <recent name="com.sjf.open.api.queryAPI" />
       <recent name="com.sjf.open.api.indexAPI" />
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils" />
+      <recent name="$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp" />
+      <recent name="$PROJECT_DIR$/NLPDemo/lib" />
+      <recent name="$PROJECT_DIR$/NLPDemo/src/main/resources/dict" />
+      <recent name="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sjf.open" />
@@ -516,12 +882,12 @@
       <recent name="com.sjf.open.base" />
       <recent name="com.sjf.open.hive.udf.udtf" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils" />
-      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/java/com/sjf/open" />
-      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/QuartzDemo/src/main/resources" />
-      <recent name="$PROJECT_DIR$/SpringDemo/src/main/resources/spring" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SpringDemo/src/main" />
+      <recent name="$PROJECT_DIR$/SparkDemo/src/main/resources" />
+      <recent name="$PROJECT_DIR$/ScalaDemo/src/main/scala" />
+      <recent name="$PROJECT_DIR$/BaseOperation" />
+      <recent name="$PROJECT_DIR$/PythonDemo/scrapy" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -537,7 +903,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.MvelTest">
-    <configuration default="false" name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.sjf.open.*" />
@@ -553,18 +919,18 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BaseOperation" />
+      <module name="NLPDemo" />
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="LongOption" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NLPUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sjf.open.cli.*" />
+          <option name="PATTERN" value="com.sjf.open.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.sjf.open.cli.LongOption" />
+      <option name="MAIN_CLASS_NAME" value="com.sjf.open.utils.NLPUtil" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -573,18 +939,38 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BaseOperation" />
+      <module name="NLPDemo" />
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Test2" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sjf.open.cli.*" />
+          <option name="PATTERN" value="com.sjf.open.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.sjf.open.cli.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.sjf.open.ltp.Test" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="--segment-model=$PROJECT_DIR$/../ltp4j/ltp_data/cws.model" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="NLPDemo" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LTPUrlTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sjf.open.ltp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.sjf.open.ltp.LTPUrlTest" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -593,38 +979,18 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BaseOperation" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="JsonParserDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.sjf.open.json.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.sjf.open.json.demo.JsonParserDemo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BaseOperation" />
+      <module name="NLPDemo" />
       <envs />
       <method />
     </configuration>
     <configuration default="false" name="MvelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="mvel.*" />
+          <option name="PATTERN" value="com.sjf.open.mvel.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="mvel.MvelTest" />
+      <option name="MAIN_CLASS_NAME" value="com.sjf.open.mvel.MvelTest" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1324,6 +1690,30 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="params" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BaseOperation/src/main/sh/sh_params.sh" />
+      <option name="PARAMETERS" value="flight hotel vacation" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="sh_env.sh" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/sh" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/sh_env.sh" />
+      <option name="PARAMETERS" value="" />
+      <module name="BaseOperation" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.47" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -1396,47 +1786,23 @@
         </option>
       </method>
     </configuration>
-    <configuration default="false" name="params" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BaseOperation/src/main/sh/sh_params.sh" />
-      <option name="PARAMETERS" value="flight hotel vacation" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="false" name="sh_env.sh" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/sh" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/sh_env.sh" />
-      <option name="PARAMETERS" value="" />
-      <module name="BaseOperation" />
-      <envs />
-      <method />
-    </configuration>
     <list size="8">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
-      <item index="1" class="java.lang.String" itemvalue="Bash.params" />
-      <item index="2" class="java.lang.String" itemvalue="Bash.sh_env.sh" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Test (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.LongOption" />
-      <item index="5" class="java.lang.String" itemvalue="Application.demo" />
-      <item index="6" class="java.lang.String" itemvalue="Application.JsonParserDemo" />
+      <item index="0" class="java.lang.String" itemvalue="Bash.params" />
+      <item index="1" class="java.lang.String" itemvalue="Bash.sh_env.sh" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Test" />
+      <item index="4" class="java.lang.String" itemvalue="Application.NLPUtil" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Test2" />
+      <item index="6" class="java.lang.String" itemvalue="Application.LTPUrlTest" />
       <item index="7" class="java.lang.String" itemvalue="Application.MvelTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.MvelTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.JsonParserDemo" />
-        <item index="2" class="java.lang.String" itemvalue="Application.demo" />
-        <item index="3" class="java.lang.String" itemvalue="Application.LongOption" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Test (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.LTPUrlTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Test2" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="4" class="java.lang.String" itemvalue="Application.NLPUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -1751,7 +2117,13 @@
       <workItem from="1499083320364" duration="962000" />
       <workItem from="1499134644822" duration="4706000" />
       <workItem from="1499220844701" duration="373000" />
-      <workItem from="1499753706007" duration="2259000" />
+      <workItem from="1499753706007" duration="2287000" />
+      <workItem from="1499912009611" duration="3646000" />
+      <workItem from="1500090191900" duration="3314000" />
+      <workItem from="1500099201319" duration="22884000" />
+      <workItem from="1500154188366" duration="590000" />
+      <workItem from="1500155673529" duration="72000" />
+      <workItem from="1500273371521" duration="2677000" />
     </task>
     <task id="LOCAL-00001" summary="反射指南">
       <created>1482113342301</created>
@@ -1796,7 +2168,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="921953000" />
+    <option name="totallyTimeSpent" value="955164000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1808,12 +2180,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1414" y="18" width="1872" height="1059" extended-state="0" />
+    <frame x="1414" y="-7" width="1872" height="1087" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49500555" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49407965" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1821,15 +2193,16 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3254665" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19533852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3853606" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35844994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38512763" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.298573" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.233809" sideWeight="0.49328858" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2342246" sideWeight="0.5067114" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980174" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973261" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1844,7 +2217,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1919,8 +2291,14 @@
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp/Test.java</url>
+          <line>150</line>
+          <properties />
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="56" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1929,98 +2307,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/RegexUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1028">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/RandomUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1453">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/PropertyUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-753">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/NumUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-903">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/JsonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/JodaTimeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4775">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/HttpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2003">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonUtil/src/main/java/com/sjf/open/utils/CookieUtil.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.8.0/stanford-corenlp-3.8.0.jar!/edu/stanford/nlp/pipeline/Annotation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.8.0/stanford-corenlp-3.8.0.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="545" column="16" selection-start-line="545" selection-start-column="16" selection-end-line="545" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.8.0/stanford-corenlp-3.8.0-sources.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="596" column="11" selection-start-line="596" selection-start-column="11" selection-end-line="596" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SparkDemo/src/main/java/com/sjf/open/stream/JavaStatefulNetworkWordCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ElasticSearchDemo/src/main/java/com/sjf/open/api/query/TermQueryAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1750">
@@ -2039,20 +2325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/resources/CoreNLP-chinese.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLPDemo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2233,7 +2505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="844">
           <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2241,7 +2512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2249,34 +2519,156 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseOperation/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/resources/dict/stopwords.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1450">
+          <caret line="74" column="2" selection-start-line="74" selection-start-column="2" selection-end-line="74" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/resources/dict/sentimentWords.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/hanlp/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/resources/CoreNLP-chinese.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/resources/CoreNLP-chinese-ctb.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.8.0/stanford-corenlp-3.8.0-sources.jar!/edu/stanford/nlp/semgraph/SemanticGraphCoreAnnotations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="40" column="49" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/NLPDemo/lib/ltp4j.jar!/edu/hit/ir/ltp4j/Segmentor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/LTPTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/ltp/LTPUrlTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="484" column="12" selection-start-line="484" selection-start-column="12" selection-end-line="489" selection-end-column="25" />
+        <state relative-caret-position="813">
+          <caret line="462" column="0" selection-start-line="462" selection-start-column="0" selection-end-line="462" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BaseOperation/pom.xml">
+    <entry file="file://$PROJECT_DIR$/NLPDemo/src/main/java/com/sjf/open/utils/NLPUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/java/mvel/MvelTest.java">
+    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/mvel/Fruit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+        <state relative-caret-position="200">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2208#2209#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseOperation/src/main/java/com/sjf/open/mvel/MvelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="175" selection-end-column="40" />
+          <folding>
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5219#5220#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2312,7 +2704,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>scala-sdk-2.11.8</last-edited>
+          <last-edited>libs</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2336,7 +2728,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|SpringDemo</last-edited>
+          <last-edited>NLPDemo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

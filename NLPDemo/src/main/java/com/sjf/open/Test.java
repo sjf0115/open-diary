@@ -16,7 +16,7 @@ public class Test {
         StanfordCoreNLP pipeline = new StanfordCoreNLP("CoreNLP-chinese.properties");
 
         // 初始化Annotation
-        Annotation annotation = new Annotation("已经很多次到这家农家院，室内卫生比较干净，但是使用热水的时候，需要放很长时间，老板家提供很多的图书，麻将，棋牌等，房子后面就是大山，距离幽谷神潭和天池（问一下老板小路）距离差不错，最重要的是老板家的食物特别美味，大家可以去尝一尝。");
+        Annotation annotation = new Annotation("悬空寺是恒山最为奇妙的建筑");
 
         //
         pipeline.annotate(annotation);

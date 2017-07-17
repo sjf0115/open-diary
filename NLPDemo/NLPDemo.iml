@@ -11,6 +11,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="ltp4j" level="project" />
+    <orderEntry type="library" name="libs" level="application" />
     <orderEntry type="library" name="Maven: edu.stanford.nlp:stanford-corenlp:3.8.0" level="project" />
     <orderEntry type="library" name="Maven: com.apple:AppleJavaExtensions:1.4" level="project" />
     <orderEntry type="library" name="Maven: de.jollyday:jollyday:0.4.9" level="project" />
@@ -34,5 +36,6 @@
     <orderEntry type="library" name="Maven: edu.stanford.nlp:stanford-corenlp:models:3.8.0" level="project" />
     <orderEntry type="library" name="Maven: edu.stanford.nlp:stanford-corenlp:models-chinese:3.8.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" name="Maven: com.hankcs:hanlp:portable-1.2.8" level="project" />
   </component>
 </module>

@@ -72,7 +72,7 @@
             <artifactId>commons-cli</artifactId>
         </dependency>
 
-        <!-- mvel -->
+        <!-- com.sjf.open.mvel -->
         <dependency>
             <groupId>org.mvel</groupId>
             <artifactId>mvel2</artifactId>

@@ -63,7 +63,7 @@
         <tomcat.jdbc.version>9.0.0.M21</tomcat.jdbc.version>
         <corenlp.version>3.8.0</corenlp.version>
         <cli.version>1.4</cli.version>
-        <mvel.version>2.3.1.Final</mvel.version>
+        <com.sjf.open.mvel.version>2.3.1.Final</com.sjf.open.mvel.version>
     </properties>
 
     <dependencyManagement>
@@ -482,11 +482,18 @@
                 <version>${cli.version}</version>
             </dependency>
 
-            <!-- mvel -->
+            <!-- com.sjf.open.mvel -->
             <dependency>
-                <groupId>org.mvel</groupId>
+                <groupId>org.com.sjf.open.mvel</groupId>
                 <artifactId>mvel2</artifactId>
-                <version>${mvel.version}</version>
+                <version>${com.sjf.open.mvel.version}</version>
+            </dependency>
+
+            <!-- hanlp -->
+            <dependency>
+                <groupId>com.hankcs</groupId>
+                <artifactId>hanlp</artifactId>
+                <version>portable-1.2.8</version>
             </dependency>
 
         </dependencies>
